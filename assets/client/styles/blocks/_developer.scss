@@ -1,0 +1,11 @@
+.developer {
+    margin-left: auto;
+    margin-right: auto;
+    width: 181px;
+    height: 24px;
+    background-image: url("/assets/static/images/developer.svg");
+
+    &:hover {
+        background-image: url("/assets/static/images/developer-hover.svg");
+    }
+}

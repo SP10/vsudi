@@ -1,0 +1,100 @@
+@use '../helpers' as *;
+
+html.is-locked,
+body.is-locked {
+    overflow: hidden;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    background: rgba(0, 0, 0, .5);
+    z-index: var(--z-index-modal);
+
+    &.m-open {
+        display: block;
+    }
+
+    &-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 24px;
+
+        &__title {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 32px;
+            letter-spacing: -0.48px;
+        }
+
+        &__subtitle {
+            color: #858585;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 26px;
+        }
+    }
+
+    &-wrapper {
+        position: relative;
+        max-width: 458px;
+        margin: 6vh auto;
+        background: #fff;
+        border-radius: 16px;
+        padding: 24px;
+
+        @include mobile {
+            max-width: none;
+            margin: 6vh 16px;
+        }
+    }
+
+    /* Плаваюча кнопка */
+    &-actions {
+        position: absolute;
+        top: 0px;
+        right: -64px;
+        z-index: calc(var(--z-index-modal) + 1);
+
+        @include mobile {
+            position: fixed;
+            top: auto;
+            right: auto;
+            left: 50%;
+            transform: translateX(-50%);
+
+            /* safe-area для iOS */
+            @supports (top: env(safe-area-inset-top)) {
+                top: calc(env(safe-area-inset-top) + 16px);
+            }
+        }
+    }
+
+    &-close {
+        width: 48px;
+        height: 48px;
+        padding: 0;
+        border: 0;
+        border-radius: 120px;
+        background: #FCFCFF;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        line-height: 0;
+
+        &:hover {
+            box-shadow: 0 14px 36px rgba(0, 0, 0, .16);
+        }
+    }
+
+    /* розмір іконки усередині */
+    &-close img,
+    &-close svg {
+        width: 22px;
+        height: 22px;
+        pointer-events: none;
+    }
+}

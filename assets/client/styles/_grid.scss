@@ -1,0 +1,579 @@
+// 📦 SCSS Grid System
+@use "./helpers/media" as *;
+@use "./helpers/mixins" as *;
+
+// --- VARIABLES ---
+$grid-columns: 12;
+$gap-values: (
+  0: 0,
+  1: 0.25rem,
+  2: 0.5rem,
+  3: 1rem,
+  4: 1.5rem,
+  5: 3rem,
+);
+
+$spacers-px: (
+  0: 0px,
+  1: 4px,
+  2: 8px,
+  3: 16px,
+  4: 24px,
+  5: 32px,
+  6: 48px,
+  7: 64px,
+  8: 80px,
+  9: 96px,
+);
+
+// --- CONTAINER ---
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+// --- ROW ---
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-inline: calc(-1 * var(--gutter-x, 1.5rem) * 0.5);
+  margin-block-start: calc(-1 * var(--gutter-y, 0) * 1);
+
+  > * {
+    padding-inline: calc(var(--gutter-x, 1.5rem) * 0.5);
+    margin-block-start: var(--gutter-y, 0);
+    flex-shrink: 0;
+    width: 100%;
+  }
+  &.m-managers-grid {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+}
+
+// --- COLUMNS ---
+.col {
+  flex: 1 0 0%;
+}
+
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    flex: 0 0 percentage($i / $grid-columns);
+    max-width: percentage($i / $grid-columns);
+  }
+}
+
+@include laptop {
+  @for $i from 1 through $grid-columns {
+    .col-lg-#{$i} {
+      flex: 0 0 percentage($i / $grid-columns);
+      max-width: percentage($i / $grid-columns);
+    }
+  }
+}
+
+@include tablet {
+  @for $i from 1 through $grid-columns {
+    .col-md-#{$i} {
+      flex: 0 0 percentage($i / $grid-columns);
+      max-width: percentage($i / $grid-columns);
+    }
+  }
+}
+
+@include mobile {
+  @for $i from 1 through $grid-columns {
+    .col-sm-#{$i} {
+      flex: 0 0 percentage($i / $grid-columns);
+      max-width: percentage($i / $grid-columns);
+    }
+  }
+}
+
+@include mobile-s {
+  @for $i from 1 through $grid-columns {
+    .col-xs-#{$i} {
+      flex: 0 0 percentage($i / $grid-columns);
+      max-width: percentage($i / $grid-columns);
+    }
+  }
+}
+
+// --- OFFSETS ---
+@for $i from 1 through ($grid-columns - 1) {
+  .offset-#{$i} {
+    margin-left: percentage($i / $grid-columns);
+  }
+}
+
+@include laptop {
+  @for $i from 1 through ($grid-columns - 1) {
+    .offset-lg-#{$i} {
+      margin-left: percentage($i / $grid-columns);
+    }
+  }
+}
+
+@include tablet {
+  @for $i from 1 through ($grid-columns - 1) {
+    .offset-md-#{$i} {
+      margin-left: percentage($i / $grid-columns);
+    }
+  }
+}
+
+@include mobile {
+  @for $i from 1 through ($grid-columns - 1) {
+    .offset-sm-#{$i} {
+      margin-left: percentage($i / $grid-columns);
+    }
+  }
+}
+
+@include mobile-s {
+  @for $i from 1 through ($grid-columns - 1) {
+    .offset-xs-#{$i} {
+      margin-left: percentage($i / $grid-columns);
+    }
+  }
+}
+
+// --- ALIGNMENT ---
+.align-items-start {
+  align-items: flex-start !important;
+}
+.align-items-center {
+  align-items: center !important;
+}
+.align-items-end {
+  align-items: flex-end !important;
+}
+
+.justify-content-start {
+  justify-content: flex-start !important;
+}
+.justify-content-center {
+  justify-content: center !important;
+}
+.justify-content-end {
+  justify-content: flex-end !important;
+}
+.justify-content-between {
+  justify-content: space-between !important;
+}
+.justify-content-around {
+  justify-content: space-around !important;
+}
+
+// --- ROW COLS ---
+@for $i from 1 through $grid-columns {
+  .row-cols-#{$i} > * {
+    flex: 0 0 auto;
+    width: calc(100% / #{$i});
+  }
+}
+
+// --- GAP UTILS ---
+@each $key, $val in $gap-values {
+  .g-#{$key} {
+    --gutter-x: #{$val};
+    --gutter-y: #{$val};
+  }
+
+  .gx-#{$key} {
+    --gutter-x: #{$val};
+  }
+
+  .gy-#{$key} {
+    --gutter-y: #{$val};
+  }
+}
+
+@include laptop-above {
+  // --- COLUMNS ---
+  @for $i from 1 through $grid-columns {
+    .col-xl-#{$i} {
+      flex: 0 0 percentage($i / $grid-columns);
+      max-width: percentage($i / $grid-columns);
+    }
+  }
+
+  // --- OFFSETS ---
+  @for $i from 1 through ($grid-columns - 1) {
+    .offset-xl-#{$i} {
+      margin-left: percentage($i / $grid-columns);
+    }
+  }
+
+  // --- ROW COLS ---
+  @for $i from 1 through $grid-columns {
+    .row-cols-xl-#{$i} > * {
+      flex: 0 0 auto;
+      width: calc(100% / #{$i});
+    }
+  }
+}
+
+// --- ORDER UTILS ---
+@for $i from 0 through $grid-columns {
+  .order-#{$i} {
+    order: $i !important;
+  }
+}
+
+.order-first {
+  order: -1 !important;
+}
+
+.order-last {
+  order: 9999 !important;
+}
+
+@include mobile-s {
+  @for $i from 0 through $grid-columns {
+    .order-xs-#{$i} {
+      order: $i !important;
+    }
+  }
+  .order-xs-first {
+    order: -1 !important;
+  }
+  .order-xs-last {
+    order: 9999 !important;
+  }
+}
+
+@include mobile {
+  @for $i from 0 through $grid-columns {
+    .order-sm-#{$i} {
+      order: $i !important;
+    }
+  }
+  .order-sm-first {
+    order: -1 !important;
+  }
+  .order-sm-last {
+    order: 9999 !important;
+  }
+}
+
+@include tablet {
+  @for $i from 0 through $grid-columns {
+    .order-md-#{$i} {
+      order: $i !important;
+    }
+  }
+  .order-md-first {
+    order: -1 !important;
+  }
+  .order-md-last {
+    order: 9999 !important;
+  }
+}
+
+@include laptop {
+  @for $i from 0 through $grid-columns {
+    .order-lg-#{$i} {
+      order: $i !important;
+    }
+  }
+  .order-lg-first {
+    order: -1 !important;
+  }
+  .order-lg-last {
+    order: 9999 !important;
+  }
+}
+
+@include laptop-above {
+  @for $i from 0 through $grid-columns {
+    .order-xl-#{$i} {
+      order: $i !important;
+    }
+  }
+  .order-xl-first {
+    order: -1 !important;
+  }
+  .order-xl-last {
+    order: 9999 !important;
+  }
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+@include mobile-s {
+  .w-xs-100 {
+    width: 100% !important;
+  }
+}
+
+@include mobile {
+  .w-sm-100 {
+    width: 100% !important;
+  }
+}
+
+@include tablet {
+  .w-md-100 {
+    width: 100% !important;
+  }
+}
+
+@include laptop {
+  .w-lg-100 {
+    width: 100% !important;
+  }
+}
+
+@include laptop-above {
+  .w-xl-100 {
+    width: 100% !important;
+  }
+}
+
+
+.d-none {
+  display: none !important;
+}
+
+@include mobile-s {
+  .d-xs-none {
+    display: none !important;
+  }
+}
+
+@include mobile {
+  .d-sm-none {
+    display: none !important;
+  }
+}
+
+@include tablet {
+  .d-md-none {
+    display: none !important;
+  }
+}
+
+@include laptop {
+  .d-lg-none {
+    display: none !important;
+  }
+}
+
+@include laptop-above {
+  .d-xl-none {
+    display: none !important;
+  }
+}
+
+// --- DISPLAY FLEX ---
+.d-flex {
+  display: flex !important;
+}
+
+@include mobile-s {
+  .d-xs-flex {
+    display: flex !important;
+  }
+}
+
+@include mobile {
+  .d-sm-flex {
+    display: flex !important;
+  }
+}
+
+@include tablet {
+  .d-md-flex {
+    display: flex !important;
+  }
+}
+
+@include laptop {
+  .d-lg-flex {
+    display: flex !important;
+  }
+}
+
+@include laptop-above {
+  .d-xl-flex {
+    display: flex !important;
+  }
+}
+
+// --- DISPLAY BLOCK ---
+.d-block {
+  display: block !important;
+}
+
+@include mobile-s {
+  .d-xs-block {
+    display: block !important;
+  }
+}
+
+@include mobile {
+  .d-sm-block {
+    display: block !important;
+  }
+}
+
+@include tablet {
+  .d-md-block {
+    display: block !important;
+  }
+}
+
+@include laptop {
+  .d-lg-block {
+    display: block !important;
+  }
+}
+
+@include laptop-above {
+  .d-xl-block {
+    display: block !important;
+  }
+}
+
+// --- DISPLAY GRID ---
+.d-grid {
+  display: grid !important;
+}
+
+@include mobile-s {
+  .d-xs-grid {
+    display: grid !important;
+  }
+}
+
+@include mobile {
+  .d-sm-grid {
+    display: grid !important;
+  }
+}
+
+@include tablet {
+  .d-md-grid {
+    display: grid !important;
+  }
+}
+
+@include laptop {
+  .d-lg-grid {
+    display: grid !important;
+  }
+}
+
+@include laptop-above {
+  .d-xl-grid {
+    display: grid !important;
+  }
+}
+
+@each $key, $val in $spacers-px {
+  // Margin
+  .m-#{$key}  { margin:        $val !important; }
+  .mt-#{$key} { margin-top:    $val !important; }
+  .mb-#{$key} { margin-bottom: $val !important; }
+  .ms-#{$key} { margin-left:   $val !important; }
+  .me-#{$key} { margin-right:  $val !important; }
+  .mx-#{$key} {
+    margin-left:  $val !important;
+    margin-right: $val !important;
+  }
+  .my-#{$key} {
+    margin-top:    $val !important;
+    margin-bottom: $val !important;
+  }
+
+  // Padding
+  .p-#{$key}  { padding:        $val !important; }
+  .pt-#{$key} { padding-top:    $val !important; }
+  .pb-#{$key} { padding-bottom: $val !important; }
+  .ps-#{$key} { padding-left:   $val !important; }
+  .pe-#{$key} { padding-right:  $val !important; }
+  .px-#{$key} {
+    padding-left:  $val !important;
+    padding-right: $val !important;
+  }
+  .py-#{$key} {
+    padding-top:    $val !important;
+    padding-bottom: $val !important;
+  }
+}
+
+@include mobile-s {
+  @include generate-spacing(xs);
+}
+
+@include mobile {
+  @include generate-spacing(sm);
+}
+
+@include tablet {
+  @include generate-spacing(md);
+}
+
+@include laptop {
+  @include generate-spacing(lg);
+}
+
+@include laptop-above {
+  @include generate-spacing(xl);
+}
+
+// --- Z-INDEX UTILS ---
+@for $i from 0 through 10 {
+  $z: $i * 10;
+  .z-#{$z} {
+    z-index: #{$z} !important;
+  }
+}
+
+
+.justify-items-start   { justify-items: start !important; }
+.justify-items-center  { justify-items: center !important; }
+.justify-items-end     { justify-items: end !important; }
+.justify-items-stretch { justify-items: stretch !important; }
+
+// Адаптивні варіанти
+@include mobile-s {
+  .justify-items-xs-start   { justify-items: start !important; }
+  .justify-items-xs-center  { justify-items: center !important; }
+  .justify-items-xs-end     { justify-items: end !important; }
+  .justify-items-xs-stretch { justify-items: stretch !important; }
+}
+
+@include mobile {
+  .justify-items-sm-start   { justify-items: start !important; }
+  .justify-items-sm-center  { justify-items: center !important; }
+  .justify-items-sm-end     { justify-items: end !important; }
+  .justify-items-sm-stretch { justify-items: stretch !important; }
+}
+
+@include tablet {
+  .justify-items-md-start   { justify-items: start !important; }
+  .justify-items-md-center  { justify-items: center !important; }
+  .justify-items-md-end     { justify-items: end !important; }
+  .justify-items-md-stretch { justify-items: stretch !important; }
+}
+
+@include laptop {
+  .justify-items-lg-start   { justify-items: start !important; }
+  .justify-items-lg-center  { justify-items: center !important; }
+  .justify-items-lg-end     { justify-items: end !important; }
+  .justify-items-lg-stretch { justify-items: stretch !important; }
+}
+
+@include laptop-above {
+  .justify-items-xl-start   { justify-items: start !important; }
+  .justify-items-xl-center  { justify-items: center !important; }
+  .justify-items-xl-end     { justify-items: end !important; }
+  .justify-items-xl-stretch { justify-items: stretch !important; }
+}

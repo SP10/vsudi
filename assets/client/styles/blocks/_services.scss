@@ -1,0 +1,69 @@
+.services {
+    border-radius: 48px;
+    background: #F5F6F8;
+    padding: 80px 24px 24px 24px;
+}
+
+.service-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    border: 1px solid rgba(37, 40, 44, 0.10);
+    background: linear-gradient(180deg, #F5F6F8 0%, #F5F6F8 100%);
+
+    &__body {
+        position: relative;
+        margin: 16px 0 0 16px;
+        padding: 25.7px 25.7px 24px 25.7px;
+        border-radius: 9.582px;
+        outline: 1.5px solid #e7e9eb;
+        background: #fff;
+
+        &.m-animation {
+            transform: translate(0px, -11px) rotate(-1.403deg);
+            transition: transform 0.2s ease 0s;
+        }
+    }
+
+    &__header {
+        display: flex;
+        column-gap: 6px;
+        margin-bottom: 33.4px;
+    }
+
+    &__icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    &__title {
+        color: #101015;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 32px;
+        letter-spacing: -0.24px;
+    }
+
+    &__content { display: grid; gap: 18px; }
+
+    &__footer {
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__cover {
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: calc(100% - 160px);
+        justify-content: center;
+        align-items: end;
+        border-radius: 24px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #FFF 50%);
+        padding-bottom: 24px;
+    }
+}

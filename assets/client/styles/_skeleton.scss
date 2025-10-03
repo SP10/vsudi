@@ -1,0 +1,55 @@
+// 🎨 Змінні
+$skeleton-bg: #F7F7F7;
+$skeleton-radius: 8.567px;
+
+// 📦 Skeleton базовий стиль
+.skeleton {
+    background-color: $skeleton-bg;
+    border-radius: $skeleton-radius;
+    display: inline-block;
+}
+
+// 📏 Генерація ширини (в % і px)
+@for $i from 1 through 12 {
+    .skeleton-w-#{$i} {
+        width: percentage($i / 12); // skeleton-w-6 → 50%
+    }
+}
+
+@each $size in (40, 60, 80, 100, 120, 160, 200, 240, 320, 400) {
+    .skeleton-w-#{$size}px {
+        width: #{$size}px;
+    }
+}
+
+// 📐 Генерація висоти (px)
+@each $size in (16, 24, 32, 40, 48, 64, 80, 100, 120) {
+    .skeleton-h-#{$size}px {
+        height: #{$size}px;
+    }
+}
+
+// 🌀 Коло
+.skeleton-circle {
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200px 0;
+    }
+
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+.skeleton-shimmer {
+    background: linear-gradient(90deg,
+            $skeleton-bg 25%,
+            #e0e0e0 50%,
+            $skeleton-bg 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.4s infinite linear;
+}

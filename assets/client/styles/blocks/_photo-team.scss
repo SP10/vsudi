@@ -1,0 +1,11 @@
+@use "../helpers" as *;
+
+.photo-team {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  &__item {
+    width: 100%;
+    height: auto;
+  }
+}

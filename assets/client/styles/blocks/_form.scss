@@ -1,0 +1,128 @@
+.c-form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 24px;
+
+  &-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    &__image {
+      display: flex;
+      margin-bottom: 16px;
+      justify-content: center;
+    }
+
+    &__title {
+      color: #000;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 32px;
+      letter-spacing: -0.24px;
+      margin-bottom: 6px;
+    }
+
+    &__subtitle {
+      color: #858585;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 24px;
+      margin-bottom: 32px;
+    }
+  }
+
+  label {
+    display: block;
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0.16px;
+    margin-bottom: 6px;
+  }
+
+  input,
+  textarea {
+    display: block;
+    border-radius: 12px;
+    border: 1px solid #d2d1cf;
+    background: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    width: 100%;
+    padding: 12px 16px;
+    color: #000;
+  }
+
+  input:hover,
+  textarea:hover {
+    border: 1px solid #373229;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #A5A29D;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"] {
+    padding: 12px 16px;
+  }
+
+  input[type="checkbox"] {
+    display: inline-block;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    border: 1px solid #D2D1CF;
+    accent-color: #FFF;
+  }
+
+  input[type="checkbox"]:hover {
+    border-radius: 6px;
+    accent-color: #3B3730;
+  }
+
+  input[type="checkbox"]:checked {
+    border-radius: 6px;
+    accent-color: #25221C;
+  }
+
+  input.m-error,
+  textarea.m-error {
+    border-radius: 12px;
+    border: 1px solid #FF4C16;
+    background: #FFF;
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+    position: relative;
+  }
+
+  &-group {
+    margin-bottom: 0;
+  }
+
+  .iti {
+    width: 100%;
+  }
+
+  .iti--separate-dial-code .iti__selected-dial-code {
+    font-weight: 700;
+  }
+
+  .iti__country-list {
+    max-height: 240px;
+    overflow: auto;
+  }
+}

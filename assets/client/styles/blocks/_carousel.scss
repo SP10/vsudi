@@ -1,0 +1,81 @@
+@use '../helpers' as *;
+
+:root {
+    --swiper-pagination-bullet-horizontal-gap: 6px;
+    --swiper-pagination-bullet-width: 10px;
+    --swiper-pagination-bullet-height: 4px;
+}
+
+.c-swiper {
+    .swiper-slide {
+        .row {
+            margin: 0 80px;
+        }
+
+        @include tablet {
+            .row {
+                margin: 0;
+            }
+        }
+    }
+
+    .swiper-controls {
+        display: flex;
+
+        @include tablet {
+            position: relative;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 32px;
+        }
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: flex;
+        width: 48px;
+        height: 48px;
+        padding: 13px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 120px;
+        background: rgba(65, 65, 81, 0.05);
+
+        @include tablet {
+            position: relative;
+            margin-top: 0;
+        }
+    }
+
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+        display: none;
+        font-size: 12px;
+        color: #414151;
+    }
+
+    .swiper-pagination {
+        @include tablet {
+            position: relative;
+        }
+
+        &.swiper-pagination-horizontal {
+            width: auto;
+        }
+    }
+
+    .swiper-pagination-bullets {
+        .swiper-pagination-bullet {
+            border-radius: 48px;
+            background: #CFD1D6;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--color-dark-12);
+        }
+
+        @include tablet-above {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,84 @@
+@use "../helpers" as *;
+
+.team-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 246px;
+
+  &__image {
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    margin-bottom: 8px;
+    color: #000;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -0.24px;
+  }
+
+  .manager-link {
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    border: none;
+    background-color: transparent;
+    margin-bottom: 8px;
+  }
+
+  .manager-description {
+    --clamp-lines: 3;      // скільки рядків показувати спочатку
+    --lh: 24px;            // має збігатися з line-height тексту
+
+    color: #8e8da4;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: var(--lh);
+
+    .toggle { display: none; }
+
+    &__text {
+      position: relative;
+      overflow: hidden;
+
+      // Кросбраузерний кламп
+      max-height: calc(var(--lh) * var(--clamp-lines)); // фолбек
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: var(--clamp-lines);
+
+      // Фейд внизу
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0; right: 0; bottom: 0;
+        height: 2.2em;
+        background: linear-gradient(to bottom, rgba(255,255,255,0), #fff 60%);
+        pointer-events: none;
+      }
+    }
+
+    .show-more {
+      display: inline-block;
+      margin-top: 8px;
+      cursor: pointer;
+      border: 0;
+      background: transparent;
+      text-decoration: underline;
+      color: #8e8da4;
+
+      &::after { content: attr(data-more); }
+    }
+
+    // Розкрито
+    .toggle:checked ~ .manager-description__text {
+      max-height: none;
+      -webkit-line-clamp: unset;
+    }
+    .toggle:checked ~ .manager-description__text::after { display: none; }
+    .toggle:checked ~ .show-more::after { content: attr(data-less); }
+  }
+}

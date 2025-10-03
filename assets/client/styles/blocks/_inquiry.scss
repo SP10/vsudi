@@ -1,0 +1,171 @@
+@use "../helpers" as *;
+
+.b-inquiry {
+    position: relative;
+    z-index: 2;
+
+    @include mobile-above {
+        margin: 0 155px;
+    }
+
+    @include tablet-above {
+        margin: 0 260px;
+    }
+
+    @include laptop-above {
+        margin: 0 480px;
+    }
+
+    &-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        &__image {
+            display: flex;
+            margin-bottom: 16px;
+            justify-content: center;
+        }
+
+        &__title {
+            color: #000;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 32px;
+            letter-spacing: -0.24px;
+            margin-bottom: 6px;
+        }
+
+        &__subtitle {
+            color: #858585;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 24px;
+            margin-bottom: 32px;
+        }
+    }
+
+    &-footer {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 12px;
+
+        &__text {
+            color: #858585;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 18px;
+            letter-spacing: -0.14px;
+            margin-bottom: 64px;
+        }
+
+        &__image {
+            width: 100%;
+            mask-image: linear-gradient(180deg, rgba(217, 217, 217, 0.84) 0%, rgba(217, 217, 217, 0.00) 100%);
+            -webkit-mask-image: linear-gradient(180deg, rgba(217, 217, 217, 0.84) 0%, rgba(217, 217, 217, 0.00) 100%); // Safari
+            padding: 0 calc(var(--container-padding-x) * 4);
+            max-height: 300px;
+
+            @include mobile {
+                max-height: 200px;
+                padding: 0 calc(var(--container-padding-x) * 2);
+            }
+
+            @include mobile-s {
+                max-height: 180px;
+                padding: 0 calc(var(--container-padding-x));
+            }
+
+            @include tablet-above {
+                display: none;
+            }
+        }
+    }
+
+    &-background {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        margin-top: 250px;
+        z-index: 1;
+      
+        &__footer {
+          position: absolute;
+          flex-shrink: 0;
+          width: 100%;
+          height: calc(50% - 200px);
+          bottom: 0;
+          left: 0;
+          background: linear-gradient(0deg, #fff 0%, rgba(255, 255, 255, 0.00) 100%);
+        }
+      
+        .cover,
+        .paper {
+          position: absolute;
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          top: 0;
+          left: 0;
+        }
+      
+        .cover {
+          z-index: 1;
+      
+          .cover-image {
+            display: block;
+            opacity: 0.5;
+            filter: blur(1.899999976158142px);
+      
+            &.m-left {
+              align-self: flex-start;
+              transition: transform 0.6s ease 0.2s, filter 0.6s ease 0.2s;
+              transform: translate(18px, 82px) rotate(-4deg); 
+            }
+      
+            &.m-right {
+              align-self: flex-start;
+              transition: transform 0.6s ease 0.2s, filter 0.6s ease 0.2s;
+              transform: translate(45px, 40px) rotate(0deg);
+            }
+      
+            &.m-animation {
+              transform: translate(0, 0) rotate(0deg);
+              filter: blur(0);
+            }
+          }
+        }
+      
+        .paper {
+          z-index: 2;
+      
+          .paper-image {
+            display: block;
+            filter: blur(3.5px);
+      
+            &.m-left {
+              align-self: flex-start;
+              transition: transform 0.6s ease 0.2s, filter 0.6s ease 0.2s;
+              transform: translate(-36px, 40px) rotate(8deg); 
+            }
+      
+            &.m-animation {
+              transform: translate(0, 0) rotate(0deg) !important;
+              filter: blur(0);
+            }
+      
+            &.m-right {
+              align-self: flex-start;
+              transition: transform 0.6s ease 0.2s, filter 0.6s ease 0.2s;
+              transform: translate(45px, 40px) rotate(0deg);
+            }
+          }
+        }
+      }
+}

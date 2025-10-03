@@ -1,0 +1,14 @@
+.c-textarea {
+    position: relative;
+
+    &__counter {
+        position: absolute;
+        right: 17px;
+        bottom: 10px;
+        color: #A5A29D;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+        letter-spacing: 0.14px;
+    }
+}

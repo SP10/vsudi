@@ -1,0 +1,138 @@
+@use "../helpers" as *;
+
+.footer {
+  background: #FFF0D6 url("/assets/static/images/bg-footer.svg") top center / 100% auto no-repeat;
+  background-color: #FFF0D6;
+
+  @include mobile-s {
+    background: #FFF0D6 url("/assets/static/images/bg-footer-mobile.svg") top center / 100% auto no-repeat;
+  }
+
+  &__logo {
+    @include mobile-s {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 1rem;
+    padding: 130px 0 40px 0;
+    border-bottom: var(--border);
+
+    @include mobile-s {
+      flex-direction: column;
+      align-items: start;
+      padding: 24px 0 40px 0;
+    }
+  }
+
+  /* ===== MENU ===== */
+  &__menu {
+    /* на tablet робимо 2 колонки; на mobile — 1 (нижче) */
+    display: flex;
+    column-gap: 24px;
+
+    @include mobile {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      row-gap: 24px;
+    }
+
+    &-column {
+      display: contents;
+    }
+
+    &-list {
+      display: grid;
+      grid-auto-flow: column;          /* в ряд */
+      grid-auto-columns: max-content;  /* ширина під контент */
+      column-gap: 24px;
+      row-gap: 0;
+
+      /* mobile: 1 колонка */
+      @include mobile {
+        display: contents;
+      }
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      column-gap: 24px;
+      list-style: none;
+
+      @include mobile {
+        display: block;
+      }
+    }
+
+    &-link {
+      color: var(--text-color-footer);
+      text-align: center;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 22px;
+      letter-spacing: 0.16px;
+      text-decoration: none;
+    }
+  }
+
+  /* ===== EXTRA ===== */
+  &__extra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 1rem;
+    padding-bottom: 48px;
+
+    @include mobile {
+      flex-direction: column;
+    }
+
+    @include mobile-s {
+      align-items: start;
+    }
+
+    &-menu {
+      &-list { display: flex; }
+      &-item:not(:last-child)::after {
+        content: "|";
+        margin-inline: rem(11);
+      }
+    }
+  }
+
+  &__soc1als {
+    @include mobile { 
+      order: -1; 
+      margin-bottom: 40px;
+    }
+  }
+
+  &__copyright {
+    color: var(--text-color-footer);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    opacity: 0.5;
+    margin-bottom: 8px;
+  }
+
+  /* ===== DEVELOPER LINK (ховер по всьому лінку) ===== */
+  &__developer-link {
+    display: block;
+    line-height: 0;
+    width: 181px;
+    height: 24px;
+    margin-inline: auto;
+    background: url("/assets/static/images/developer.svg") center / contain no-repeat;
+    transition: opacity .2s ease;
+  }
+  &__developer-link:hover,
+  &__developer-link:focus-visible {
+    background-image: url("/assets/static/images/developer-hover.svg");
+  }
+}

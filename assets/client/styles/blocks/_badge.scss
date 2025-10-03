@@ -1,0 +1,22 @@
+@use "../helpers" as *;
+
+.badge {
+  &.m-time {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    color: #5757d7;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px; /* 137.5% */
+    letter-spacing: 0.16px;
+    border-radius: 40px;
+    border: 1px solid #eceff7;
+    padding: 8px 12px 8px 8px;
+    @include mobile-s {
+      padding: 5px 12px 5px 5px;
+      font-size: 14px;
+      column-gap: 4px;
+    }
+  }
+}
