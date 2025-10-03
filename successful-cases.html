@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta property="og:title" content="Viza Work Agency" />
+  <meta property="og:description" content="" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com/сторінка" />
+  <meta property="og:image" content="/assets/static/images/OG.png" />
+  <title>Viza Work Agency</title>
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/css/intlTelInput.css" />
+  <link rel="stylesheet" href="/assets/client/styles/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div include-html="/template/sprite.html"></div>
+
+  <div include-html="/template/header.html"></div>
+  <div include-html="/template/successful-cases.html"></div>
+  <div include-html="/template/footer.html"></div>
+
+  <main>
+    <!-- <div include-html="/template/hero.html"></div>
+    <div include-html="/template/services.html"></div>
+    <div include-html="/template/country/carousel.html"></div>
+    <div include-html="/template/opportunities.html"></div>
+    <div include-html="/template/about.html"></div>
+    <div include-html="/template/offices.html"></div>
+    <div include-html="/template/managers.html"></div>
+    <div include-html="/template/photo-team.html"></div>
+    <div include-html="/template/team.html"></div>
+    <div include-html="/template/reviews.html"></div>
+    <div include-html="/template/form.html"></div> -->
+    <!-- Add other content here -->
+  </main>
+  <div class="modal" data-component="Modal">
+    <div class="modal-wrapper">
+      <div class="modal-header">
+        <div class="modal-header__content">
+          <div class="modal-header__title">Contact Us</div>
+          <p class="modal-header__subtitle">We will reply within 30m.</p>
+        </div>
+        <img class="modal-header__image" src="/assets/static/images/inquire/avatars.svg" alt="Avatar illustration" />
+      </div>
+      <div class="modal-actions">
+        <button class="modal-close" data-component="CloseButton">
+          <img src="/assets/static/icons/close.svg" alt="Close" />
+        </button>
+      </div>
+      <div class="modal-content">
+        <div include-html="/template/forms/form.html"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay" data-component="Overlay"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/js/intlTelInput.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/js/utils.js"></script>
+  <script src="/assets/client/scripts/debug/dynamicComposer.js" type="module"></script>
+  <script src="/assets/client/scripts/Сarousel.js" type="module"></script>
+  <script src="/assets/client/scripts/main.js" type="module"></script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<form class="c-form" autocomplete="on" method="post" novalidate>
+  <div class="c-form-group">
+    <label for="name">Name*</label>
+    <input id="name" type="text" name="name" placeholder="Judith Rodriguez" autocomplete="name" required />
+  </div>
+
+  <div class="c-form-group">
+    <label for="phone">Phone number (WhatsApp)*</label>
+    <input id="phone" type="tel" class="form-input js-phone" placeholder="" required />
+    <input type="hidden" id="phone_e164" name="phone_e164" />
+  </div>
+
+  <div class="c-form-group">
+    <label for="email">Email*</label>
+    <input id="email" type="email" name="email" placeholder="mail@example.com" autocomplete="email" required />
+  </div>
+
+  <div class="c-form-group">
+    <label>
+      <input class="form-checkbox" type="checkbox" name="for-client" />
+      For your client
+    </label>
+  </div>
+
+  <div class="c-form-group">
+    <label for="message">Message</label>
+    <div class="c-textarea">
+        <textarea id="message" name="message" placeholder="Enter your message" maxlength="100"
+          autocomplete="off"></textarea>
+        <output class="c-textarea__counter" for="message" aria-live="polite">0/100</output>
+    </div>
+  </div>
+
+  <button class="button button-primary button-form js-inquire-button" type="submit">
+    Send inquiry
+  </button>
+</form>
