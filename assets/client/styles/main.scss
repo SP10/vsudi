@@ -1,11 +1,18 @@
 @use "normalize";
 @use "helpers" as *;
+@use "./blocks/navigation";
+@use "./blocks/button";
 
 // variables
 :root {
     --color-bg: #1C2333;
     --color-primary: #fff;
     --color-accent: #D41D17;
+    --color-secondary: #1C2333;
+    --color-grey: #CACFDA;
+    --color-blue: #1C2333;
+    --color-grey-100: #687084;
+    --transition-duration: 0.25s;
 
     // swiper
     --swiper-pagination-bullet-horizontal-gap: 8px;
@@ -20,6 +27,12 @@
 
 }
 
+html {
+    &.is-lock {
+      overflow: hidden;
+    }
+}
+
 // global styles
 body {
     font-family: "Inter", sans-serif;
@@ -29,6 +42,17 @@ body {
 p {
     font-size: rem(18);
     line-height: rem(22);
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background: var(--color-grey);
+    margin: 2px 0;
 }
 
 .sr-only {
@@ -44,7 +68,8 @@ p {
     border: 0;
 }
 
-.visually-hidden, .visually-hidden-focusable:not(:focus):not(:focus-within) {
+.visually-hidden,
+.visually-hidden-focusable:not(:focus):not(:focus-within) {
     clip: rect(0, 0, 0, 0) !important;
     white-space: nowrap !important;
     border: 0 !important;
@@ -55,7 +80,8 @@ p {
     overflow: hidden !important;
 }
 
-.visually-hidden:not(caption), .visually-hidden-focusable:not(:focus):not(:focus-within):not(caption) {
+.visually-hidden:not(caption),
+.visually-hidden-focusable:not(:focus):not(:focus-within):not(caption) {
     position: absolute !important;
 }
 
@@ -174,20 +200,20 @@ table {
 
 // container
 .container {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0 #{rem(24)};
-  box-sizing: border-box;
-  position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 #{rem(24)};
+    box-sizing: border-box;
+    position: relative;
 
-  @media (min-width: 1200px) {
-    max-width: 1240px;
-    padding: 0 #{rem(56)};
-  }
+    @media (min-width: 1200px) {
+        max-width: 1240px;
+        padding: 0 #{rem(56)};
+    }
 
-  &.m-flex {
-    display: flex;
-  }
+    &.m-flex {
+        display: flex;
+    }
 }
 
 // section
@@ -289,15 +315,29 @@ table {
 
 // component - header
 .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
     background: var(--color-bg);
     color: var(--color-primary);
     padding: 27px 0;
     border-bottom: 1px solid rgba(104, 112, 132, 1);
 
-    a {
-        color: var(--color-primary);
-        text-decoration: none;
+    @media (max-width: 899px) {
+        padding: 15px 0;
     }
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 24px;
+
+        @media (min-width: 1025px) {
+            justify-content: space-between;
+        }
+    }
+
     select {
         appearance: none;
         background-image: url('/assets/static/images/svg-arrow-down.svg');
@@ -308,109 +348,71 @@ table {
         color: #fff;
         padding-right: 24px;
     }
-}
 
-.header__container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 24px;
-
-    @media (min-width: 1025px) {
-        justify-content: space-between;
-    }
-}
-
-.header__phone {
-    display: flex;
-    font-weight: 700;
-}
-
-.header__search-button {
-    background: rgba(255, 255, 255, 0.1);
-    border: none;
-    color: var(--color-primary);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    font-weight: 500;
-    font-size: rem(16);
-    line-height: rem(24);
-    padding: 0;
-    border-radius: 5px;
-    width: 48px;
-    height: 48px;
-    align-items: center;
-    justify-content: center;
-
-    &:hover {
-        text-decoration: underline;
-    }
-
-    @media (min-width: 1025px) {
-        width: auto;
-        height: auto;
-    }
-}
-
-// component - button
-.button {
-    background: var(--color-accent);
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    font-weight: 500;
-    letter-spacing: 2%;
-    font-size: rem(18);
-    line-height: rem(24);
-    padding: rem(19) rem(40);
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    text-transform: uppercase;
-    transition: background .25s;
-
-    &:hover {
-        background: #F82C26;
-    }
-
-    @media (min-width: 1200px) {
-        padding: rem(19) rem(49);
-    }
-
-    &.m-secondary {
-        background: transparent;
-        border: 1px solid #2A344A;
-        color: #2A344A;
-        text-transform: none;
-        font-size: 16px;
-        line-height: 1;
-        padding: rem(12) rem(14);
-        transition: color .25s;
+    &__search-button {
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        color: var(--color-primary);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        font-size: rem(16);
+        line-height: rem(24);
+        padding: 0;
+        border-radius: 5px;
+        width: 48px;
+        height: 48px;
+        align-items: center;
+        justify-content: center;
 
         &:hover {
-            color: #D41D17;
+            text-decoration: underline;
+        }
+
+        @media (min-width: 1025px) {
+            width: auto;
+            height: auto;
         }
     }
 
-    &.m-tertiary {
-        background: #687084;
-        color: #fff;
-        transition: 0.2s background;
+    &__phone {
+        display: flex;
+        font-weight: 700;
 
-        &:hover {
-            background: #2A344A;
+        &-link {
+            color: var(--color-primary);
+            text-decoration: none;
+
+            @media (max-width: 1025px) {
+                color: var(--color-secondary);
+            }
+        }
+
+        @media (max-width: 1147px) {
+            display: none;
         }
     }
 
-    &.m-quaternary {
-        border: 1px solid #CACFDA;
-        background: transparent;
-        color: #fff;
-        transition: color .25s;
+    &__overlay {
+        position: fixed;
+        inset: 0;
+        display: none;
+        flex-direction: column;
+        row-gap: 3rem;
+        background-color: var(--color-primary);
+        transition-duration: var(--transition-duration);
+        color: var(--color-secondary);
+        overflow-y: scroll;
 
-        &:hover {
-            color: #D41D17;
+        &.m-active {
+            display: inline-flex !important;
+        }
+
+        @media (max-width: 1024px) {
+            &__overlay.m-active {
+                display: flex !important;
+            }
         }
     }
 }
@@ -428,27 +430,28 @@ table {
     @media (min-width: 1025px) {
         display: block;
     }
-}
 
-.nav__list {
-    display: flex;
+    .nav__list {
+        display: flex;
 
-    @media (min-width: 1025px) {
-        gap: rem(26);
-    }
+        @media (min-width: 1025px) {
+            gap: rem(26);
+        }
 
-    a {
-        font-size: rem(16);
-        line-height: 24px;
-        text-decoration-color: rgba(255, 255, 255, 0);
-        transition: text-decoration-color .25;
+        a {
+            font-size: rem(16);
+            line-height: 24px;
+            text-decoration-color: rgba(255, 255, 255, 0);
+            transition: text-decoration-color .25;
 
-        &:hover {
-            text-decoration: underline;
-            text-decoration-color: rgba(212, 29, 23, 1);
-            text-underline-offset: 4px;
+            &:hover {
+                text-decoration: underline;
+                text-decoration-color: rgba(212, 29, 23, 1);
+                text-underline-offset: 4px;
+            }
         }
     }
+
 }
 
 // component - mobile menu
@@ -522,6 +525,7 @@ table {
         font-size: rem(19);
         line-height: 100%;
         letter-spacing: 1%;
+        line-height: 120%;
         margin-bottom: rem(40);
     }
 
@@ -785,25 +789,25 @@ table {
             height: 40px;
 
             /* Set the dark background color */
-            background-color: #3b2c30; /* Approximated dark reddish-brown from the image */
+            background-color: #3b2c30;
+            /* Approximated dark reddish-brown from the image */
 
             /* Use repeating-linear-gradient for the diagonal stripes.
                 The colors and percentages control the stripe thickness and spacing.
             */
             background-image: repeating-linear-gradient(
-                /* 1. Angle: Creates the diagonal look (45deg is a common choice) */
-                135deg,
+                    /* 1. Angle: Creates the diagonal look (45deg is a common choice) */
+                    135deg,
 
-                /* 2. Stripe Color: The bright red-orange color */
-                #cc4433,
-                /* Stripe starts here and ends 4px later */
-                #cc4433 4px,
+                    /* 2. Stripe Color: The bright red-orange color */
+                    #cc4433,
+                    /* Stripe starts here and ends 4px later */
+                    #cc4433 4px,
 
-                /* 3. Background Color: The dark background color */
-                #3b2c30 4px,
-                /* Background starts here and ends 16px later (creating the gap) */
-                #3b2c30 16px
-            );
+                    /* 3. Background Color: The dark background color */
+                    #3b2c30 4px,
+                    /* Background starts here and ends 16px later (creating the gap) */
+                    #3b2c30 16px);
 
             /* Optional: Add the solid bottom border visible in the original image */
             margin-bottom: rem(12);
@@ -811,6 +815,7 @@ table {
             &.m-second {
                 height: 80px;
             }
+
             &.m-third {
                 height: 120px;
             }
@@ -911,11 +916,11 @@ table {
     overflow: hidden;
     height: 100%;
 
-    & > :first-child {
+    &> :first-child {
         margin-top: 24px;
     }
 
-    & > :last-child {
+    &> :last-child {
         margin-bottom: 24px;
     }
 
@@ -1127,6 +1132,7 @@ table {
 
 .c-collapsed {
     margin-bottom: 12px;
+
     &__label {
         cursor: pointer;
         background: #2A344A;
@@ -1171,19 +1177,19 @@ table {
         }
     }
 
-    &__input:checked + &__panel &__icon {
+    &__input:checked+&__panel &__icon {
         display: none;
     }
 
-    &__input:checked ~ &__panel &__icon.m-active {
+    &__input:checked~&__panel &__icon.m-active {
         display: block;
     }
 
-    &__input:checked ~ &__panel &__icon-arrow {
+    &__input:checked~&__panel &__icon-arrow {
         transform: rotate(180deg);
     }
 
-    &__input:checked ~ &__panel &__content {
+    &__input:checked~&__panel &__content {
         display: block;
     }
 
@@ -1226,7 +1232,7 @@ table {
             }
         }
 
-        .c-collapsed__input:checked ~ .c-collapsed__panel .c-collapsed__content {
+        .c-collapsed__input:checked~.c-collapsed__panel .c-collapsed__content {
             max-height: none;
             margin-bottom: 32px;
 
@@ -1235,7 +1241,7 @@ table {
             }
         }
 
-        .c-collapsed__input:checked + .c-collapsed__icon {
+        .c-collapsed__input:checked+.c-collapsed__icon {
             transform: translate(-50%) rotate(180deg);
         }
     }
@@ -1247,6 +1253,7 @@ table {
         background: #1C2333;
         padding: 80px 0;
         color: #fff;
+
         a {
             color: #fff;
             text-decoration: none;
@@ -1256,6 +1263,7 @@ table {
             }
         }
     }
+
     &__container {
         display: flex;
         justify-content: space-between;
@@ -1266,10 +1274,12 @@ table {
             flex-direction: row;
         }
     }
+
     &__bottom {
         background: #2A344A;
         padding: 30px 0;
     }
+
     &-nav {
         &.m-secondary {
             display: flex;
@@ -1311,6 +1321,7 @@ table {
             li:last-child a {
                 font-weight: 600;
             }
+
             li {
                 margin-bottom: 12px;
             }
@@ -1344,6 +1355,7 @@ table {
             text-align: left;
         }
     }
+
     .button {
         width: 100%;
         margin-top: 30px;
@@ -1378,7 +1390,7 @@ table {
 
     img {
         max-width: 380px;
-        width: 100% ;
+        width: 100%;
         margin: 0 auto 20px;
         border-radius: 50%;
     }
@@ -1432,7 +1444,7 @@ table {
 
     img {
         max-width: 200px;
-        width: 100% ;
+        width: 100%;
         margin: 0 auto 20px;
         border-radius: 50%;
     }
@@ -1472,8 +1484,10 @@ table {
 .consultation-block__content {
     max-width: 730px;
     width: 100%;
-    margin: 0 auto; /* Center the content block */
-    background: var(--color-primary); /* White background for the inner content */
+    margin: 0 auto;
+    /* Center the content block */
+    background: var(--color-primary);
+    /* White background for the inner content */
     padding: 0;
     text-align: center;
 
@@ -1520,7 +1534,8 @@ table {
 /* Define a consistent, reduced width for the form elements */
 .form-element-width {
     width: 100%;
-    max-width: 300px; /* Example: Constrains the width of the interactive elements */
+    max-width: 300px;
+    /* Example: Constrains the width of the interactive elements */
 }
 
 .consultation-block__input {
@@ -1581,7 +1596,8 @@ table {
 .consultation-block__submit,
 .consultation-block__telegram {
     width: 100%;
-    max-width: 360px; /* Constrain width to 360px */
+    max-width: 360px;
+    /* Constrain width to 360px */
     margin-left: auto;
     margin-right: auto;
 }
@@ -1592,8 +1608,10 @@ table {
 // component - what we can
 // Custom styles for the services list section
 .services-list {
-    background: #1C2333; /* Section background color */
-    color: var(--color-primary); /* White text on dark background */
+    background: #1C2333;
+    /* Section background color */
+    color: var(--color-primary);
+    /* White text on dark background */
 
     h3 {
         font-size: rem(18);
@@ -1608,7 +1626,8 @@ table {
 
     /* Styling for the SVG triangle inside h3 */
     h3 svg {
-        flex-shrink: 0; /* Prevents the SVG from shrinking */
+        flex-shrink: 0;
+        /* Prevents the SVG from shrinking */
     }
 
     ul {
@@ -1634,7 +1653,8 @@ table {
             top: rem(8);
             width: rem(5);
             height: rem(5);
-            background-color: var(--color-primary); /* White disc */
+            background-color: var(--color-primary);
+            /* White disc */
             border-radius: 50%;
         }
     }
@@ -1655,7 +1675,8 @@ table {
 }
 
 .service-category {
-    background: #2A344A; /* Card background color */
+    background: #2A344A;
+    /* Card background color */
     padding: 40px 30px 40px 40px;
     display: flex;
     flex-direction: column;
@@ -1664,6 +1685,7 @@ table {
         @media (min-width: 768px) {
             grid-column: span 2;
         }
+
         @media (min-width: 1025px) {
             grid-column: span 2;
         }
@@ -1673,7 +1695,8 @@ table {
 /* Ensure the section uses the dark background from the modifier */
 .section.other-services {
     /* Using m-quaternary: background: #1C2333; */
-    color: var(--color-primary); /* White text */
+    color: var(--color-primary);
+    /* White text */
 }
 
 .other-services__title {
@@ -1700,11 +1723,15 @@ table {
     align-items: center;
     gap: rem(20);
     padding: 22px 40px;
-    background: #2A344A; /* Card background color */
-    color: var(--color-primary); /* White text color */
+    background: #2A344A;
+    /* Card background color */
+    color: var(--color-primary);
+    /* White text color */
     transition: background-color 0.3s ease;
-    border: 1px solid #2A344A; /* Match border color to background initially */
-    cursor: default; /* Indicate it is not a clickable link */
+    border: 1px solid #2A344A;
+    /* Match border color to background initially */
+    cursor: default;
+    /* Indicate it is not a clickable link */
 }
 
 .service-card__icon {
@@ -1740,8 +1767,9 @@ table {
         &:first-child a {
             font-weight: 400;
         }
-        &.separator{
-            padding:0 35px 0 5px;
+
+        &.separator {
+            padding: 0 35px 0 5px;
         }
     }
 
@@ -1833,6 +1861,7 @@ table {
     position: relative;
     max-width: 530px;
     margin: 0 auto;
+
     button {
         position: absolute;
         bottom: 20px;

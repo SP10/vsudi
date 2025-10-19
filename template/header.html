@@ -1,46 +1,172 @@
-<header class="header">
-  <div class="header__container container">
-      <a href="/" class="header__logo logo">
-          <img src="/assets/static/images/logo.svg" alt="VSUDI Logo" class="logo__image" />
-      </a>
-      <nav class="header__nav nav active">
-          <ul class="nav__list">
-              <li class="nav__item"><a href="/service-page.html" class="nav__link">Послуги <svg width="24" height="24">
-                          <use xlink:href="#svg-arrow-down" />
-                      </svg></a></li>
-              <li class="nav__item"><a href="/successful-cases.html" class="nav__link">Успішні справи</a></li>
-              <li class="nav__item"><a href="/pricing.html" class="nav__link">Вартість послуг</a></li>
-              <li class="nav__item"><a href="/about-us.html" class="nav__link">Про нас</a></li>
-              <li class="nav__item"><a href="/contact.html" class="nav__link">Контакти</a></li>
-          </ul>
-      </nav>
-      <div class="header__phone">
-          <a href="tel:+380991981986" class="header__phone-link">
-              <svg width="24" height="24">
-                  <use xlink:href="#svg-phone" />
-              </svg>
-              +38 (099) 198 19 8
-          </a>
-      </div>
-      <div class="header__language">
-          <select name="language" id="language">
-              <option value="uk">Укр</option>
-              <option value="ru">Рус</option>
-          </select>
-      </div>
-      <div class="header__search">
-          <button href="#" class="header__search-button">
-              <svg width="24" height="24">
-                  <use xlink:href="#svg-search" />
-              </svg>
-              <div class="sr-only">Пошук</div>
-          </button>
-      </div>
-      <button href="#" class="mobile-menu-button" aria-label="Menu">
-          <svg width="48" height="48">
-              <use xlink:href="#svg-menu" />
-          </svg>
-          <div class="sr-only">Меню</div>
-      </button>
-  </div>
+<header class="header" data-component="Header">
+    <div class="header__container container">
+        <a href="/" class="header__logo logo">
+            <picture>
+                <source media="(max-width: 899px)" srcset="/assets/static/images/logo-mobile.svg" />
+                <img src="/assets/static/images/logo.svg" alt="VSUDI Logo" class="logo__image">
+            </picture>
+        </a>
+        <nav class="header__nav nav">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="/service-page.html" class="nav__link">Послуги
+                            <svg width="24" height="24">
+                                <use xlink:href="#svg-arrow-down" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="nav__item"><a href="/successful-cases.html" class="nav__link">Успішні справи</a></li>
+                    <li class="nav__item"><a href="/pricing.html" class="nav__link">Вартість послуг</a></li>
+                    <li class="nav__item"><a href="/about-us.html" class="nav__link">Про нас</a></li>
+                    <li class="nav__item"><a href="/contact.html" class="nav__link">Контакти</a></li>
+                </ul>
+        </nav>
+        <div class="header__phone">
+            <a href="tel:+380991981986" class="header__phone-link">
+                <svg width="24" height="24">
+                    <use xlink:href="#svg-phone" />
+                </svg>
+                +38 (099) 198 19 8
+            </a>
+        </div>
+        <div class="header__language">
+            <select name="language" id="language">
+                <option value="uk">Укр</option>
+                <option value="ru">Рус</option>
+            </select>
+        </div>
+        <div class="header__search">
+            <button href="#" class="header__search-button">
+                <svg width="24" height="24">
+                    <use xlink:href="#svg-search" />
+                </svg>
+                <div class="sr-only">Пошук</div>
+            </button>
+        </div>
+        <button href="#" class="mobile-menu-button" data-component="BurgerButton" data-target="#menu" aria-label="Відкрити меню">
+            <svg width="48" height="48">
+                <use xlink:href="#svg-menu" />
+            </svg>
+            <div class="sr-only">Меню</div>
+        </button>
+
+        <div class="header__overlay js-header-overlay" id="menu">
+            <nav class="c-navigation">
+                <div class="c-navigation__header">
+                    <a href="/" class="c-navigation__logo">
+                        <img src="/assets/static/images/logo-mobile.svg" alt="VSUDI Logo" class="logo__image">
+                    </a>
+                    <div class="header-actions">
+                        <button href="#" class="icon-button m-white m-search">
+                            <svg width="24" height="24">
+                                <use xlink:href="#svg-search" />
+                            </svg>
+                        </button>
+                        <button href="#" class="icon-button m-white" data-component="CloseMenuButton" data-target="#menu" aria-label="Закрити меню">
+                            <svg width="48" height="48">
+                                <use xlink:href="#close" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <ul class="c-navigation__list">
+                    <li class="c-navigation__item">
+                        <a href="#" class="c-navigation__link">Послуги
+                            <svg width="9" height="5">
+                                <use xlink:href="#svg-arrow-down" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="c-navigation__item"><a href="/successful-cases.html" class="c-navigation__link">Успішні справи</a></li>
+                    <li class="c-navigation__item"><a href="/pricing.html" class="c-navigation__link">Вартість послуг</a></li>
+                    <li class="c-navigation__item"><a href="/about-us.html" class="c-navigation__link">Про нас</a></li>
+                    <li class="c-navigation__item"><a href="/contact.html" class="c-navigation__link">Контакти</a></li>
+                </ul>
+                <div class="c-navigation__footer">
+                    <ul class="contact-list">
+                        <li class="contact-list__item">
+                           <div class="contact-list__header">Наші контакти</div>
+                        </li>
+                        <li class="contact-list__item">
+                            <a href="tel:+380991981986" class="contact-list__link" aria-label="Зателефонувати на номер +38 (099) 198-19-86">
+                                <svg width="24" height="24">
+                                    <use xlink:href="#svg-phone" />
+                                </svg>
+                                +38 (099) 198-19-86
+                            </a>
+                        </li>
+                        <li class="contact-list__item">
+                            <a href="tel:+380732323663" class="contact-list__link" aria-label="Зателефонувати на номер +38 (073) 232-36-63">
+                                <svg width="24" height="24">
+                                    <use xlink:href="#svg-phone" />
+                                </svg>
+                                +38 (073) 232-36-63
+                            </a>
+                        </li>
+                        <li class="contact-list__item">
+                            <a href="tel:+380501567392" class="contact-list__link" aria-label="Зателефонувати на номер +38 (050) 156-73-92">
+                                <svg width="24" height="24">
+                                    <use xlink:href="#svg-phone" />
+                                </svg>
+                                +38 (050) 156-73-92
+                            </a>
+                        </li>
+                        <li class="contact-list__item">
+                            <a href="tel:+380680620763" class="contact-list__link" aria-label="Зателефонувати на номер +38 (068) 062-07-63">
+                                <svg width="24" height="24">
+                                    <use xlink:href="#svg-phone" />
+                                </svg>
+                                +38 (068) 062-07-63
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="work-time">
+                        <div class="work-time__header">Графік роботи</div>
+                        <div class="work-time__hours">
+                            Пн-Пт: 9:00 - 18:00<br />
+                            Сб-Нд: 10:00 - 14:00
+                        </div>
+                    </div>
+                    <ul class="social-list">
+                        <li class="social-list__item">
+                            <a href="https://www.youtube.com/channel/UCeai_Ea_ZSnejcBeDcDs7lA" class="social-list__link m-youtube" aria-label="YouTube">
+                                <svg width="32" height="32">
+                                    <use xlink:href="#youtube" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="social-list__item">
+                            <a href="https://t.me/AO_vSude" class="social-list__link" aria-label="Telegram">
+                                <svg width="32" height="32">
+                                    <use xlink:href="#telegram" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="social-list__item">
+                            <a href="https://www.instagram.com/vsudi_advocate?utm_medium=copy_link" class="social-list__link" aria-label="Instagram">
+                                <svg width="32" height="32">
+                                    <use xlink:href="#instagram" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="social-list__item">
+                            <a href="https://www.facebook.com/vSude.Advokat/" class="social-list__link" aria-label="Facebook">
+                                <svg width="32" height="32">
+                                    <use xlink:href="#facebook" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="language-list">
+                        <li class="language-list__item">
+                            <a href="/" class="button m-secondary w-100" title="Українська мова" aria-label="Українська мова">Укр</a>
+                        </li>
+                        <li class="language-list__item">
+                            <a href="/ru" class="button m-primary w-100" title="Російська мова" aria-label="Російська мова">Рус</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
 </header>

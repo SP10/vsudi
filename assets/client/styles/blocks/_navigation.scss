@@ -1,0 +1,131 @@
+.c-navigation {
+    &__logo {
+        margin-right: 25px;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px 26px;
+        background-color: var(--color-blue);
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__item {
+        border-bottom: 1px solid var(--color-grey);
+    }
+
+    &__link {
+        display: flex;
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: none;
+        letter-spacing: 0.28px;
+        text-transform: uppercase;
+        align-items: center;
+        padding: 20px 10px;
+
+        svg {
+            margin-left: 12px;
+            color: var(--color-accent);
+        }
+    }
+
+    &__footer {
+        margin: 10px;
+        row-gap: 40px;
+        display: flex;
+        flex-direction: column;
+
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            row-gap: 12px;
+            list-style: none;
+            margin-top: 10px;
+
+            &__header {
+                font-size: 18px;
+                letter-spacing: 0.28px;
+                text-transform: uppercase;
+                margin-bottom: 4px;
+            }
+
+            &__item {
+                svg {
+                    margin-right: 12px;
+                    color: var(--color-accent);
+                }
+            }
+
+            &__link {
+                font-size: 18px;
+                font-weight: 700;
+                text-decoration: none;
+            }
+        }
+
+        .social-list {
+            display: flex;
+            column-gap: 24px;
+            list-style: none;
+
+            &__item {
+                display: flex;
+            }
+
+            &__link {
+                color: var(--color-grey-100);
+
+                &.m-youtube {
+                    svg {
+                        color: #fff;
+                        background-color: var(--color-grey-100);
+                        border-radius: 25px;
+                    }
+                }
+            }
+        }
+
+        .work-time {
+            &__header {
+                font-size: 18px;
+                letter-spacing: 0.28px;
+                text-transform: uppercase;
+                margin-bottom: 16px;
+            }
+
+            &__hours {
+                font-size: 18px;
+            }
+        }
+
+        .language-list {
+            display: flex;
+            justify-content: space-between;
+            column-gap: 12px;
+            list-style: none;
+            margin: 10px 0;
+            border-top: 1px solid var(--color-grey);
+            padding: 25px 0;
+
+            &__item {
+                width: 100%;
+            }
+        }
+    }
+}

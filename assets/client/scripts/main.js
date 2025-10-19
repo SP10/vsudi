@@ -1,6 +1,4 @@
 import Header from "./Header.js";
-import TextAnimation from "./TextAnimation.js";
-import QuickFilter from "./QuickFilter.js";
 import Carousel from "./Сarousel.js";
 import TelInput from "./TelInput.js";
 import TextArea from "./TextArea.js";
@@ -10,6 +8,10 @@ import Modal from "./Modal.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   setTimeout(() => {
+    const header = document.querySelector('[data-component="Header"]');
+    if (header) {
+      new Header(header);
+    }
     // const overlayElement = document.querySelector('[data-component="Overlay"]');
     // const overlay = new Overlay(overlayElement, {
     //   activeClass: 'm-show',

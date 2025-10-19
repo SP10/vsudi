@@ -111,7 +111,6 @@ html {
     Убираем скачок интерфейса по горизонтали
     при появлении / исчезновении скроллбара
    */
-  scrollbar-gutter: stable;
 }
 
 /**
@@ -181,10 +180,210 @@ svg * {
     scroll-behavior: auto !important;
   }
 }
+.c-navigation__logo {
+  margin-right: 25px;
+}
+.c-navigation__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 26px;
+  background-color: var(--color-blue);
+}
+.c-navigation__header .header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.c-navigation__list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.c-navigation__item {
+  border-bottom: 1px solid var(--color-grey);
+}
+.c-navigation__link {
+  display: flex;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.28px;
+  text-transform: uppercase;
+  align-items: center;
+  padding: 20px 10px;
+}
+.c-navigation__link svg {
+  margin-left: 12px;
+  color: var(--color-accent);
+}
+.c-navigation__footer {
+  margin: 10px;
+  row-gap: 40px;
+  display: flex;
+  flex-direction: column;
+}
+.c-navigation__footer .contact-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  list-style: none;
+  margin-top: 10px;
+}
+.c-navigation__footer .contact-list__header {
+  font-size: 18px;
+  letter-spacing: 0.28px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.c-navigation__footer .contact-list__item svg {
+  margin-right: 12px;
+  color: var(--color-accent);
+}
+.c-navigation__footer .contact-list__link {
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.c-navigation__footer .social-list {
+  display: flex;
+  column-gap: 24px;
+  list-style: none;
+}
+.c-navigation__footer .social-list__item {
+  display: flex;
+}
+.c-navigation__footer .social-list__link {
+  color: var(--color-grey-100);
+}
+.c-navigation__footer .social-list__link.m-youtube svg {
+  color: #fff;
+  background-color: var(--color-grey-100);
+  border-radius: 25px;
+}
+.c-navigation__footer .work-time__header {
+  font-size: 18px;
+  letter-spacing: 0.28px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.c-navigation__footer .work-time__hours {
+  font-size: 18px;
+}
+.c-navigation__footer .language-list {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 12px;
+  list-style: none;
+  margin: 10px 0;
+  border-top: 1px solid var(--color-grey);
+  padding: 25px 0;
+}
+.c-navigation__footer .language-list__item {
+  width: 100%;
+}
+
+.button {
+  background: var(--color-accent);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  letter-spacing: 0.28px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  padding: 1.1875rem 2.5rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  transition: background 0.25s;
+}
+.button.w-100 {
+  width: 100%;
+}
+.button:hover {
+  background: #F82C26;
+}
+@media (min-width: 1200px) {
+  .button {
+    padding: 1.1875rem 3.0625rem;
+  }
+}
+.button.m-secondary {
+  background: transparent;
+  border: 1px solid #2A344A;
+  color: #2A344A;
+  text-transform: none;
+  font-size: 16px;
+  line-height: 1;
+  padding: 0.75rem 0.875rem;
+  transition: color 0.25s;
+}
+.button.m-secondary:hover {
+  color: #D41D17;
+}
+.button.m-tertiary {
+  background: #687084;
+  color: #fff;
+  transition: 0.2s background;
+}
+.button.m-tertiary:hover {
+  background: #2A344A;
+}
+.button.m-quaternary {
+  border: 1px solid #CACFDA;
+  background: transparent;
+  color: #fff;
+  transition: color 0.25s;
+}
+.button.m-quaternary:hover {
+  color: #D41D17;
+}
+.button.m-primary {
+  background: var(--color-grey-100);
+  color: #fff;
+  text-transform: none;
+  font-size: 16px;
+  line-height: 1;
+  padding: 0.75rem 0.875rem;
+  transition: color 0.25s;
+}
+.button.m-primary:hover {
+  background-color: #2A344A;
+}
+
+.icon-button {
+  display: inline-flex;
+  border: 0;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+.icon-button.m-white svg {
+  color: #fff;
+}
+.icon-button.m-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
 :root {
   --color-bg: #1C2333;
   --color-primary: #fff;
   --color-accent: #D41D17;
+  --color-secondary: #1C2333;
+  --color-grey: #CACFDA;
+  --color-blue: #1C2333;
+  --color-grey-100: #687084;
+  --transition-duration: 0.25s;
   --swiper-pagination-bullet-horizontal-gap: 8px;
   --swiper-pagination-bullet-width: 24px;
   --swiper-pagination-bullet-height: 5px;
@@ -196,6 +395,10 @@ svg * {
   --swiper-navigation-top-offset: 0;
 }
 
+html.is-lock {
+  overflow: hidden;
+}
+
 body {
   font-family: "Inter", sans-serif;
   color: #2A344A;
@@ -204,6 +407,17 @@ body {
 p {
   font-size: 1.125rem;
   line-height: 1.375rem;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--color-grey);
+  margin: 2px 0;
 }
 
 .sr-only {
@@ -219,7 +433,8 @@ p {
   border: 0;
 }
 
-.visually-hidden, .visually-hidden-focusable:not(:focus):not(:focus-within) {
+.visually-hidden,
+.visually-hidden-focusable:not(:focus):not(:focus-within) {
   clip: rect(0, 0, 0, 0) !important;
   white-space: nowrap !important;
   border: 0 !important;
@@ -230,7 +445,8 @@ p {
   overflow: hidden !important;
 }
 
-.visually-hidden:not(caption), .visually-hidden-focusable:not(:focus):not(:focus-within):not(caption) {
+.visually-hidden:not(caption),
+.visually-hidden-focusable:not(:focus):not(:focus-within):not(caption) {
   position: absolute !important;
 }
 
@@ -454,26 +670,19 @@ table td {
 }
 
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   background: var(--color-bg);
   color: var(--color-primary);
   padding: 27px 0;
   border-bottom: 1px solid rgb(104, 112, 132);
 }
-.header a {
-  color: var(--color-primary);
-  text-decoration: none;
+@media (max-width: 899px) {
+  .header {
+    padding: 15px 0;
+  }
 }
-.header select {
-  appearance: none;
-  background-image: url("/assets/static/images/svg-arrow-down.svg");
-  background-repeat: no-repeat;
-  background-position: center right;
-  background-color: transparent;
-  border: none;
-  color: #fff;
-  padding-right: 24px;
-}
-
 .header__container {
   display: flex;
   align-items: center;
@@ -485,12 +694,16 @@ table td {
     justify-content: space-between;
   }
 }
-
-.header__phone {
-  display: flex;
-  font-weight: 700;
+.header select {
+  appearance: none;
+  background-image: url("/assets/static/images/svg-arrow-down.svg");
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  padding-right: 24px;
 }
-
 .header__search-button {
   background: rgba(255, 255, 255, 0.1);
   border: none;
@@ -517,60 +730,42 @@ table td {
     height: auto;
   }
 }
-
-.button {
-  background: var(--color-accent);
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  font-weight: 500;
-  letter-spacing: 2%;
-  font-size: 1.125rem;
-  line-height: 1.5rem;
-  padding: 1.1875rem 2.5rem;
-  text-align: center;
+.header__phone {
+  display: flex;
+  font-weight: 700;
+}
+.header__phone-link {
+  color: var(--color-primary);
   text-decoration: none;
-  display: inline-block;
-  text-transform: uppercase;
-  transition: background 0.25s;
 }
-.button:hover {
-  background: #F82C26;
-}
-@media (min-width: 1200px) {
-  .button {
-    padding: 1.1875rem 3.0625rem;
+@media (max-width: 1025px) {
+  .header__phone-link {
+    color: var(--color-secondary);
   }
 }
-.button.m-secondary {
-  background: transparent;
-  border: 1px solid #2A344A;
-  color: #2A344A;
-  text-transform: none;
-  font-size: 16px;
-  line-height: 1;
-  padding: 0.75rem 0.875rem;
-  transition: color 0.25s;
+@media (max-width: 1147px) {
+  .header__phone {
+    display: none;
+  }
 }
-.button.m-secondary:hover {
-  color: #D41D17;
+.header__overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  row-gap: 3rem;
+  background-color: var(--color-primary);
+  transition-duration: var(--transition-duration);
+  color: var(--color-secondary);
+  overflow-y: scroll;
 }
-.button.m-tertiary {
-  background: #687084;
-  color: #fff;
-  transition: 0.2s background;
+.header__overlay.m-active {
+  display: inline-flex !important;
 }
-.button.m-tertiary:hover {
-  background: #2A344A;
-}
-.button.m-quaternary {
-  border: 1px solid #CACFDA;
-  background: transparent;
-  color: #fff;
-  transition: color 0.25s;
-}
-.button.m-quaternary:hover {
-  color: #D41D17;
+@media (max-width: 1024px) {
+  .header__overlay__overlay.m-active {
+    display: flex !important;
+  }
 }
 
 .logo {
@@ -586,22 +781,21 @@ table td {
     display: block;
   }
 }
-
-.nav__list {
+.header__nav .nav__list {
   display: flex;
 }
 @media (min-width: 1025px) {
-  .nav__list {
+  .header__nav .nav__list {
     gap: 1.625rem;
   }
 }
-.nav__list a {
+.header__nav .nav__list a {
   font-size: 1rem;
   line-height: 24px;
   text-decoration-color: rgba(255, 255, 255, 0);
   transition: text-decoration-color 0.25;
 }
-.nav__list a:hover {
+.header__nav .nav__list a:hover {
   text-decoration: underline;
   text-decoration-color: rgb(212, 29, 23);
   text-underline-offset: 4px;
@@ -677,6 +871,7 @@ table td {
   font-size: 1.1875rem;
   line-height: 100%;
   letter-spacing: 1%;
+  line-height: 120%;
   margin-bottom: 2.5rem;
 }
 .hero__person {
@@ -920,7 +1115,8 @@ table td {
   width: 100%;
   height: 40px;
   /* Set the dark background color */
-  background-color: #3b2c30; /* Approximated dark reddish-brown from the image */
+  background-color: #3b2c30;
+  /* Approximated dark reddish-brown from the image */
   /* Use repeating-linear-gradient for the diagonal stripes.
       The colors and percentages control the stripe thickness and spacing.
   */
@@ -1512,8 +1708,10 @@ table td {
 .consultation-block__content {
   max-width: 730px;
   width: 100%;
-  margin: 0 auto; /* Center the content block */
-  background: var(--color-primary); /* White background for the inner content */
+  margin: 0 auto;
+  /* Center the content block */
+  background: var(--color-primary);
+  /* White background for the inner content */
   padding: 0;
   text-align: center;
 }
@@ -1561,7 +1759,8 @@ table td {
 /* Define a consistent, reduced width for the form elements */
 .form-element-width, .consultation-block__telegram, .consultation-block__submit, .consultation-block__input {
   width: 100%;
-  max-width: 300px; /* Example: Constrains the width of the interactive elements */
+  max-width: 300px;
+  /* Example: Constrains the width of the interactive elements */
 }
 
 .consultation-block__input {
@@ -1615,15 +1814,18 @@ table td {
 .consultation-block__submit,
 .consultation-block__telegram {
   width: 100%;
-  max-width: 360px; /* Constrain width to 360px */
+  max-width: 360px;
+  /* Constrain width to 360px */
   margin-left: auto;
   margin-right: auto;
 }
 
 /* ... rest of the individual element styles ... */
 .services-list {
-  background: #1C2333; /* Section background color */
-  color: var(--color-primary); /* White text on dark background */
+  background: #1C2333;
+  /* Section background color */
+  color: var(--color-primary);
+  /* White text on dark background */
   /* Styling for the SVG triangle inside h3 */
 }
 .services-list h3 {
@@ -1637,7 +1839,8 @@ table td {
   gap: 0.625rem;
 }
 .services-list h3 svg {
-  flex-shrink: 0; /* Prevents the SVG from shrinking */
+  flex-shrink: 0;
+  /* Prevents the SVG from shrinking */
 }
 .services-list ul {
   list-style: none;
@@ -1660,7 +1863,8 @@ table td {
   top: 0.5rem;
   width: 0.3125rem;
   height: 0.3125rem;
-  background-color: var(--color-primary); /* White disc */
+  background-color: var(--color-primary);
+  /* White disc */
   border-radius: 50%;
 }
 
@@ -1681,7 +1885,8 @@ table td {
 }
 
 .service-category {
-  background: #2A344A; /* Card background color */
+  background: #2A344A;
+  /* Card background color */
   padding: 40px 30px 40px 40px;
   display: flex;
   flex-direction: column;
@@ -1700,7 +1905,8 @@ table td {
 /* Ensure the section uses the dark background from the modifier */
 .section.other-services {
   /* Using m-quaternary: background: #1C2333; */
-  color: var(--color-primary); /* White text */
+  color: var(--color-primary);
+  /* White text */
 }
 
 .other-services__title {
@@ -1728,11 +1934,15 @@ table td {
   align-items: center;
   gap: 1.25rem;
   padding: 22px 40px;
-  background: #2A344A; /* Card background color */
-  color: var(--color-primary); /* White text color */
+  background: #2A344A;
+  /* Card background color */
+  color: var(--color-primary);
+  /* White text color */
   transition: background-color 0.3s ease;
-  border: 1px solid #2A344A; /* Match border color to background initially */
-  cursor: default; /* Indicate it is not a clickable link */
+  border: 1px solid #2A344A;
+  /* Match border color to background initially */
+  cursor: default;
+  /* Indicate it is not a clickable link */
 }
 
 .service-card__icon {
