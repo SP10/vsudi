@@ -151,14 +151,6 @@ label {
 /**
   Приводим к единому цвету svg-элементы
  */
-[fill] {
-  fill: currentColor;
-}
-
-[stroke] {
-  stroke: currentColor;
-}
-
 /**
   Чиним баг задержки смены цвета при взаимодействии с svg-элементами
  */
@@ -195,12 +187,43 @@ svg * {
   align-items: center;
   gap: 20px;
 }
+.c-navigation__header.m-hide {
+  display: none;
+}
+.c-navigation__panel {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  background-color: var(--color-blue);
+  color: var(--color-primary);
+}
+.c-navigation__panel-back {
+  color: var(--color-primary);
+}
+.c-navigation__panel-back svg {
+  margin-right: 8px;
+  transform: rotate(180deg);
+}
+.c-navigation__panel-title {
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.c-navigation__panel.m-active {
+  display: flex;
+}
 .c-navigation__list {
   display: flex;
   flex-direction: column;
   list-style: none;
   margin: 0;
   padding: 0;
+}
+.c-navigation__list.m-sublist {
+  list-style-position: outside;
+  list-style-image: url(/assets/static/icons/circle-marker.svg);
+  list-style-type: disc;
 }
 .c-navigation__item {
   border-bottom: 1px solid var(--color-grey);
@@ -216,8 +239,14 @@ svg * {
   padding: 20px 10px;
 }
 .c-navigation__link svg {
-  margin-left: 12px;
   color: var(--color-accent);
+  margin-right: 15px;
+}
+.c-navigation-menu {
+  display: none;
+}
+.c-navigation-menu.m-active {
+  display: block;
 }
 .c-navigation__footer {
   margin: 10px;
@@ -225,12 +254,15 @@ svg * {
   display: flex;
   flex-direction: column;
 }
+.c-navigation__footer.m-hide {
+  display: none;
+}
 .c-navigation__footer .contact-list {
   display: flex;
   flex-direction: column;
   row-gap: 12px;
   list-style: none;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .c-navigation__footer .contact-list__header {
   font-size: 18px;
@@ -258,10 +290,11 @@ svg * {
 .c-navigation__footer .social-list__link {
   color: var(--color-grey-100);
 }
-.c-navigation__footer .social-list__link.m-youtube svg {
-  color: #fff;
-  background-color: var(--color-grey-100);
-  border-radius: 25px;
+@media (any-hover: hover) {
+  .c-navigation__footer .social-list__link:hover {
+    color: var(--color-icon-hover);
+    transform: scale(1.05);
+  }
 }
 .c-navigation__footer .work-time__header {
   font-size: 18px;
@@ -383,6 +416,7 @@ svg * {
   --color-grey: #CACFDA;
   --color-blue: #1C2333;
   --color-grey-100: #687084;
+  --color-icon-hover: #3F3F59;
   --transition-duration: 0.25s;
   --swiper-pagination-bullet-horizontal-gap: 8px;
   --swiper-pagination-bullet-width: 24px;

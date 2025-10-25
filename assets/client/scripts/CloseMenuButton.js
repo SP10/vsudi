@@ -15,6 +15,7 @@ class CloseMenuButton extends Base {
 
     bindEvents() {
         Event.on('click', this.element, (e) => this.toggleMenu(e));
+        Event.on('event:menu:close', this.element, (e) => this.toggleMenu(e));
     }
 
     toggleMenu(e) {

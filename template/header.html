@@ -7,19 +7,19 @@
             </picture>
         </a>
         <nav class="header__nav nav">
-                <ul class="nav__list">
-                    <li class="nav__item">
-                        <a href="/service-page.html" class="nav__link">Послуги
-                            <svg width="24" height="24">
-                                <use xlink:href="#svg-arrow-down" />
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="nav__item"><a href="/successful-cases.html" class="nav__link">Успішні справи</a></li>
-                    <li class="nav__item"><a href="/pricing.html" class="nav__link">Вартість послуг</a></li>
-                    <li class="nav__item"><a href="/about-us.html" class="nav__link">Про нас</a></li>
-                    <li class="nav__item"><a href="/contact.html" class="nav__link">Контакти</a></li>
-                </ul>
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="/service-page.html" class="nav__link">Послуги
+                        <svg width="24" height="24">
+                            <use xlink:href="#svg-arrow-down" />
+                        </svg>
+                    </a>
+                </li>
+                <li class="nav__item"><a href="/successful-cases.html" class="nav__link">Успішні справи</a></li>
+                <li class="nav__item"><a href="/pricing.html" class="nav__link">Вартість послуг</a></li>
+                <li class="nav__item"><a href="/about-us.html" class="nav__link">Про нас</a></li>
+                <li class="nav__item"><a href="/contact.html" class="nav__link">Контакти</a></li>
+            </ul>
         </nav>
         <div class="header__phone">
             <a href="tel:+380991981986" class="header__phone-link">
@@ -43,7 +43,8 @@
                 <div class="sr-only">Пошук</div>
             </button>
         </div>
-        <button href="#" class="mobile-menu-button" data-component="BurgerButton" data-target="#menu" aria-label="Відкрити меню">
+        <button href="#" class="mobile-menu-button" data-component="BurgerButton" data-target="#menu"
+            aria-label="Відкрити меню">
             <svg width="48" height="48">
                 <use xlink:href="#svg-menu" />
             </svg>
@@ -51,44 +52,222 @@
         </button>
 
         <div class="header__overlay js-header-overlay" id="menu">
-            <nav class="c-navigation">
-                <div class="c-navigation__header">
+            <nav class="c-navigation js-navigation">
+                <div class="c-navigation__header js-navigation-header">
                     <a href="/" class="c-navigation__logo">
                         <img src="/assets/static/images/logo-mobile.svg" alt="VSUDI Logo" class="logo__image">
                     </a>
                     <div class="header-actions">
-                        <button href="#" class="icon-button m-white m-search">
+                        <button href="#" class="icon-button m-search">
                             <svg width="24" height="24">
                                 <use xlink:href="#svg-search" />
                             </svg>
                         </button>
-                        <button href="#" class="icon-button m-white" data-component="CloseMenuButton" data-target="#menu" aria-label="Закрити меню">
+                        <button href="#" class="icon-button" data-component="CloseMenuButton" data-target="#menu"
+                            aria-label="Закрити меню">
                             <svg width="48" height="48">
                                 <use xlink:href="#close" />
                             </svg>
                         </button>
                     </div>
                 </div>
-                <ul class="c-navigation__list">
+                <div class="c-navigation__panel js-navigation-panel">
+                    <button type="button" class="c-navigation__panel-back icon-button js-navigation-panel-back"
+                        aria-label="Назад">
+                        <svg width="24" height="24">
+                            <use xlink:href="#arrow-back" />
+                        </svg>
+                    </button>
+                    <div class="c-navigation__panel-title js-navigation-panel-title" data-title="Меню"></div>
+                    <button href="#" class="icon-button" data-component="CloseMenuButton" data-target="#menu"
+                        aria-label="Закрити меню">
+                        <svg width="48" height="48">
+                            <use xlink:href="#close" />
+                        </svg>
+                    </button>
+                </div>
+                <ul class="c-navigation__list js-navigation-list">
                     <li class="c-navigation__item">
-                        <a href="#" class="c-navigation__link">Послуги
-                            <svg width="9" height="5">
-                                <use xlink:href="#svg-arrow-down" />
+                        <a href="#" class="c-navigation__link js-parent-link" aria-expanded="false">
+                            Послуги
+                            <svg width="24" height="24">
+                                <use xlink:href="#arrow-right" />
                             </svg>
                         </a>
+
+                        <ul class="c-navigation-menu js-parent-menu">
+                            <!-- Кримінальний адвокат -->
+                            <li class="c-navigation__item">
+                                <a href="/advokat-po-ugolovnym-delam-kharkov/"
+                                    class="c-navigation__link js-parent-link">
+                                    <svg width="32" height="32">
+                                        <use xlink:href="#advokat_kryminal" />
+                                    </svg>
+                                    Кримінальний адвокат
+                                    <svg width="24" height="24">
+                                        <use xlink:href="#arrow-right" />
+                                    </svg>
+                                </a>
+                                <ul class="c-navigation-menu m-sublist js-parent-menu">
+                                    <li class="c-navigation__item"><a href="/advokat-po-ugolovnyim-delam-pri-dtp/"
+                                            class="c-navigation__link js-child-link" >Адвокат у
+                                            кримінальних справах при ДТП</a></li>
+                                    <li class="c-navigation__item"><a href="/prestupleniya-protiv-zhizni-i-zdorovya/"
+                                            class="c-navigation__link js-child-link" >Злочини проти
+                                            життя та здоров’я</a></li>
+                                    <li class="c-navigation__item"><a href="/sluzhebnyie-i-dolzhnostnyie-prestupleniya/"
+                                            class="c-navigation__link js-child-link" >Службові та
+                                            посадові злочини</a></li>
+                                    <li class="c-navigation__item"><a href="/prestupleniya-protiv-polovoj-svobodyi-i-neprikosnovennosti/"
+                                            class="c-navigation__link js-child-link" >Захист статевої
+                                            недоторканності</a></li>
+                                    <li class="c-navigation__item"><a href="/advokat-pri-provedenii-obyiska/"
+                                            class="c-navigation__link js-child-link" >Адвокат під час
+                                            обшуку</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Кредитний адвокат -->
+                            <li class="c-navigation__item">
+                                <a href="/mikrozajm/" class="c-navigation__link js-parent-link">
+                                    <svg width="32" height="32">
+                                        <use xlink:href="#bank_advokat" />
+                                    </svg>
+                                    Кредитний адвокат
+                                    <svg width="24" height="24">
+                                        <use xlink:href="#arrow-right" />
+                                    </svg>
+                                </a>
+                                <ul class="c-navigation-menu js-parent-menu">
+                                    <li class="c-navigation__item"><a href="/spory-s-bankami/" class="c-navigation__link js-child-link"
+                                            >Банківські спори</a></li>
+                                    <li class="c-navigation__item"><a href="/sud-s-bankom-po-kreditu/"
+                                            class="c-navigation__link js-child-link" >Суд із банком
+                                            по кредиту</a></li>
+                                    <li class="c-navigation__item"><a href="/restrukturizacziya-zadolzhennosti/"
+                                            class="c-navigation__link js-child-link"
+                                            >Реструктуризація заборгованості</a></li>
+                                    <li class="c-navigation__item"><a href="/vzyiskanie-dolgov/" class="c-navigation__link js-child-link"
+                                            >Стягнення боргів</a></li>
+                                    <li class="c-navigation__item"><a href="/kredit-advokat-spor/" class="c-navigation__link js-child-link"
+                                            >Кредит продали колекторам</a></li>
+                                    <li class="c-navigation__item"><a href="/kak-nakazat-kollektorov/"
+                                            class="c-navigation__link js-child-link"
+                                            >Антиколектор</a></li>
+                                    <li class="c-navigation__item"><a href="/bankrutstvo-fizychnyh-osib/"
+                                            class="c-navigation__link js-child-link" >Банкрутство
+                                            фізичних осіб</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Сімейний адвокат -->
+                            <li class="c-navigation__item">
+                                <a href="/semejnyj-advokat-jurist-harkov/"
+                                    class="c-navigation__link js-parent-link">
+                                    <svg width="32" height="32">
+                                        <use xlink:href="#simeyniy_advokat" />
+                                    </svg>
+                                    Сімейний адвокат
+                                    <svg width="24" height="24">
+                                        <use xlink:href="#arrow-right" />
+                                    </svg>
+                                </a>
+                                <ul class="c-navigation-menu js-parent-menu">
+                                    <li class="c-navigation__item"><a
+                                            href="/advokat-po-lisheniyu-roditelskix-prav/"
+                                            class="c-navigation__link js-child-link" >Позбавлення
+                                            батьківських прав</a></li>
+                                    <li class="c-navigation__item"><a href="/ustanovlenie-otcovstva/"
+                                            class="c-navigation__link js-child-link" >Встановлення
+                                            батьківства</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Нерухомість -->
+                            <li class="c-navigation__item">
+                                <a href="/yurist-po-nedvizhimosti/" class="c-navigation__link js-parent-link">
+                                    <svg width="32" height="32">
+                                        <use xlink:href="#juryst_neruhomist" />
+                                    </svg>
+                                    Нерухомість
+                                    <svg width="24" height="24">
+                                        <use xlink:href="#arrow-right" />
+                                    </svg>
+                                </a>
+                                <ul class="c-navigation-menu js-parent-menu">
+                                    <li class="c-navigation__item"><a href="/yurist-po-kuple-prodazhe-kharkov/"
+                                            class="c-navigation__link js-child-link"
+                                            >Купівля-продаж</a></li>
+                                    <li class="c-navigation__item"><a href="/advokat-po-arende/"
+                                            class="c-navigation__link js-child-link" >Оренда</a></li>
+                                    <li class="c-navigation__item"><a href="/priznanie-prava-sobstvennosti/"
+                                            class="c-navigation__link js-child-link" >Визнання права
+                                            власності</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Спадкові справи -->
+                            <li class="c-navigation__item">
+                                <a href="/priznanie-prava-sobstvennosti-na-nasledstvo/"
+                                    class="c-navigation__link js-parent-link">
+                                    <svg width="32" height="32">
+                                        <use xlink:href="#juryst_spadkovi_spravy" />
+                                    </svg>
+                                    Спадкові справи
+                                    <svg width="24" height="24">
+                                        <use xlink:href="#arrow-right" />
+                                    </svg>
+                                </a>
+                                <ul class="c-navigation-menu js-parent-menu">
+                                    <li class="c-navigation__item"><a href="/sporyi-mezhdu-naslednikami/"
+                                            class="c-navigation__link js-child-link" >Спори між
+                                            спадкоємцями</a></li>
+                                    <li class="c-navigation__item"><a href="/sporyi-po-nasledstvennyim-dolyam/"
+                                            class="c-navigation__link js-child-link" >Спори щодо
+                                            спадкових частин</a></li>
+                                    <li class="c-navigation__item"><a
+                                            href="/ustanovlenie-fakta-prinyatiya-nasledstva/"
+                                            class="c-navigation__link js-child-link" >Визнання факту
+                                            прийняття спадщини</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Митний адвокат -->
+                            <li class="c-navigation__item"><a href="/mitnij-advokat/"
+                                    class="c-navigation__link js-child-link"><svg width="32" height="32">
+                                        <use xlink:href="#advokat_po_narkotykam" />
+                                    </svg>Митний адвокат</a></li>
+
+                            <!-- Адвокат для бізнесу -->
+                            <li class="c-navigation__item"><a href="/advokat-dlja-biznesa/"
+                                    class="c-navigation__link js-child-link"><svg width="32" height="32">
+                                        <use xlink:href="#jurodychne_suprovidjenya" />
+                                    </svg>Адвокат для бізнесу</a></li>
+
+                            <!-- Онлайн-адвокат -->
+                            <li class="c-navigation__item"><a href="/advokat-onlajn/"
+                                    class="c-navigation__link js-child-link"><svg width="32" height="32">
+                                        <use xlink:href="#svg-person" />
+                                    </svg>Адвокат онлайн</a></li>
+                        </ul>
                     </li>
-                    <li class="c-navigation__item"><a href="/successful-cases.html" class="c-navigation__link">Успішні справи</a></li>
-                    <li class="c-navigation__item"><a href="/pricing.html" class="c-navigation__link">Вартість послуг</a></li>
-                    <li class="c-navigation__item"><a href="/about-us.html" class="c-navigation__link">Про нас</a></li>
-                    <li class="c-navigation__item"><a href="/contact.html" class="c-navigation__link">Контакти</a></li>
+                    <li class="c-navigation__item"><a href="/successful-cases.html"
+                            class="c-navigation__link js-nav-link">Успішні справи</a></li>
+                    <li class="c-navigation__item"><a href="/pricing.html"
+                            class="c-navigation__link js-nav-link">Вартість послуг</a></li>
+                    <li class="c-navigation__item"><a href="/about-us.html" class="c-navigation__link js-nav-link">Про
+                            нас</a></li>
+                    <li class="c-navigation__item"><a href="/contact.html"
+                            class="c-navigation__link js-nav-link">Контакти</a></li>
                 </ul>
-                <div class="c-navigation__footer">
+                <div class="c-navigation__footer js-navigation-footer">
                     <ul class="contact-list">
                         <li class="contact-list__item">
-                           <div class="contact-list__header">Наші контакти</div>
+                            <div class="contact-list__header">Наші контакти</div>
                         </li>
                         <li class="contact-list__item">
-                            <a href="tel:+380991981986" class="contact-list__link" aria-label="Зателефонувати на номер +38 (099) 198-19-86">
+                            <a href="tel:+380991981986" class="contact-list__link"
+                                aria-label="Зателефонувати на номер +38 (099) 198-19-86">
                                 <svg width="24" height="24">
                                     <use xlink:href="#svg-phone" />
                                 </svg>
@@ -96,7 +275,8 @@
                             </a>
                         </li>
                         <li class="contact-list__item">
-                            <a href="tel:+380732323663" class="contact-list__link" aria-label="Зателефонувати на номер +38 (073) 232-36-63">
+                            <a href="tel:+380732323663" class="contact-list__link"
+                                aria-label="Зателефонувати на номер +38 (073) 232-36-63">
                                 <svg width="24" height="24">
                                     <use xlink:href="#svg-phone" />
                                 </svg>
@@ -104,7 +284,8 @@
                             </a>
                         </li>
                         <li class="contact-list__item">
-                            <a href="tel:+380501567392" class="contact-list__link" aria-label="Зателефонувати на номер +38 (050) 156-73-92">
+                            <a href="tel:+380501567392" class="contact-list__link"
+                                aria-label="Зателефонувати на номер +38 (050) 156-73-92">
                                 <svg width="24" height="24">
                                     <use xlink:href="#svg-phone" />
                                 </svg>
@@ -112,7 +293,8 @@
                             </a>
                         </li>
                         <li class="contact-list__item">
-                            <a href="tel:+380680620763" class="contact-list__link" aria-label="Зателефонувати на номер +38 (068) 062-07-63">
+                            <a href="tel:+380680620763" class="contact-list__link"
+                                aria-label="Зателефонувати на номер +38 (068) 062-07-63">
                                 <svg width="24" height="24">
                                     <use xlink:href="#svg-phone" />
                                 </svg>
@@ -129,28 +311,32 @@
                     </div>
                     <ul class="social-list">
                         <li class="social-list__item">
-                            <a href="https://www.youtube.com/channel/UCeai_Ea_ZSnejcBeDcDs7lA" class="social-list__link m-youtube" aria-label="YouTube">
+                            <a href="https://www.youtube.com/channel/UCeai_Ea_ZSnejcBeDcDs7lA"
+                                class="social-list__link m-youtube" aria-label="YouTube" title="YouTube">
                                 <svg width="32" height="32">
                                     <use xlink:href="#youtube" />
                                 </svg>
                             </a>
                         </li>
                         <li class="social-list__item">
-                            <a href="https://t.me/AO_vSude" class="social-list__link" aria-label="Telegram">
+                            <a href="https://t.me/AO_vSude" class="social-list__link" aria-label="Telegram"
+                                title="Telegram">
                                 <svg width="32" height="32">
                                     <use xlink:href="#telegram" />
                                 </svg>
                             </a>
                         </li>
                         <li class="social-list__item">
-                            <a href="https://www.instagram.com/vsudi_advocate?utm_medium=copy_link" class="social-list__link" aria-label="Instagram">
+                            <a href="https://www.instagram.com/vsudi_advocate?utm_medium=copy_link"
+                                class="social-list__link" aria-label="Instagram" title="Instagram">
                                 <svg width="32" height="32">
                                     <use xlink:href="#instagram" />
                                 </svg>
                             </a>
                         </li>
                         <li class="social-list__item">
-                            <a href="https://www.facebook.com/vSude.Advokat/" class="social-list__link" aria-label="Facebook">
+                            <a href="https://www.facebook.com/vSude.Advokat/" class="social-list__link"
+                                aria-label="Facebook" title="Facebook">
                                 <svg width="32" height="32">
                                     <use xlink:href="#facebook" />
                                 </svg>
@@ -159,10 +345,12 @@
                     </ul>
                     <ul class="language-list">
                         <li class="language-list__item">
-                            <a href="/" class="button m-secondary w-100" title="Українська мова" aria-label="Українська мова">Укр</a>
+                            <a href="/" class="button m-secondary w-100" title="Українська мова"
+                                aria-label="Українська мова">Укр</a>
                         </li>
                         <li class="language-list__item">
-                            <a href="/ru" class="button m-primary w-100" title="Російська мова" aria-label="Російська мова">Рус</a>
+                            <a href="/ru" class="button m-primary w-100" title="Російська мова"
+                                aria-label="Російська мова">Рус</a>
                         </li>
                     </ul>
                 </div>
