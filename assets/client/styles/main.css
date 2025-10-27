@@ -216,6 +216,9 @@ svg * {
 .c-navigation__panel.m-active {
   display: flex;
 }
+.c-navigation__panel svg {
+  color: var(--color-primary);
+}
 .c-navigation__list {
   display: flex;
   flex-direction: column;

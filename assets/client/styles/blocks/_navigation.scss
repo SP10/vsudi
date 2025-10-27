@@ -51,6 +51,10 @@
         &.m-active {
             display: flex;
         }
+
+        svg {
+            color: var(--color-primary);
+        }
     }
 
     &__list {
