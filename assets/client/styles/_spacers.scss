@@ -1,0 +1,66 @@
+@use "helpers" as *;
+
+$spacers-px: (
+  0: 0px,
+  1: 4px,
+  2: 8px,
+  3: 16px,
+  4: 24px,
+  5: 32px,
+  6: 48px,
+  7: 64px,
+  8: 80px,
+  9: 96px,
+);
+
+@each $key, $val in $spacers-px {
+    // Margin
+    .m-#{$key}  { margin:        $val !important; }
+    .mt-#{$key} { margin-top:    $val !important; }
+    .mb-#{$key} { margin-bottom: $val !important; }
+    .ms-#{$key} { margin-left:   $val !important; }
+    .me-#{$key} { margin-right:  $val !important; }
+    .mx-#{$key} {
+      margin-left:  $val !important;
+      margin-right: $val !important;
+    }
+    .my-#{$key} {
+      margin-top:    $val !important;
+      margin-bottom: $val !important;
+    }
+  
+    // Padding
+    .p-#{$key}  { padding:        $val !important; }
+    .pt-#{$key} { padding-top:    $val !important; }
+    .pb-#{$key} { padding-bottom: $val !important; }
+    .ps-#{$key} { padding-left:   $val !important; }
+    .pe-#{$key} { padding-right:  $val !important; }
+    .px-#{$key} {
+      padding-left:  $val !important;
+      padding-right: $val !important;
+    }
+    .py-#{$key} {
+      padding-top:    $val !important;
+      padding-bottom: $val !important;
+    }
+  }
+
+  @include mobile-s {
+    @include generate-spacing(xs);
+  }
+  
+  @include mobile {
+    @include generate-spacing(sm);
+  }
+  
+  @include tablet {
+    @include generate-spacing(md);
+  }
+  
+  @include laptop {
+    @include generate-spacing(lg);
+  }
+  
+  @include laptop-above {
+    @include generate-spacing(xl);
+  }

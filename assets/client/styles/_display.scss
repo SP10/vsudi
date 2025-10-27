@@ -1,0 +1,47 @@
+@use "helpers" as *;
+
+// Base (поза media — діє на всі екрани)
+.d-none  { display: none !important; }
+.d-flex  { display: flex !important; }
+.d-block { display: block !important; }
+.d-grid  { display: grid !important; }
+
+// Спочатку НАЙБІЛЬШІ екрани
+@include laptop-above {
+  .d-xl-none  { display: none !important; }
+  .d-xl-flex  { display: flex !important; }
+  .d-xl-block { display: block !important; }
+  .d-xl-grid  { display: grid !important; }
+}
+
+// <= 1439.98
+@include laptop {
+  .d-lg-none  { display: none !important; }
+  .d-lg-flex  { display: flex !important; }
+  .d-lg-block { display: block !important; }
+  .d-lg-grid  { display: grid !important; }
+}
+
+// <= 1023.98
+@include tablet {
+  .d-md-none  { display: none !important; }
+  .d-md-flex  { display: flex !important; }
+  .d-md-block { display: block !important; }
+  .d-md-grid  { display: grid !important; }
+}
+
+// <= 767.98
+@include mobile {
+  .d-sm-none  { display: none !important; }
+  .d-sm-flex  { display: flex !important; }
+  .d-sm-block { display: block !important; }
+  .d-sm-grid  { display: grid !important; }
+}
+
+// <= 479.98
+@include mobile-s {
+  .d-xs-none  { display: none !important; }
+  .d-xs-flex  { display: flex !important; }
+  .d-xs-block { display: block !important; }
+  .d-xs-grid  { display: grid !important; }
+}

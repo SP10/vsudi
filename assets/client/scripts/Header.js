@@ -2,6 +2,7 @@ import Base from "./core/Base.js";
 import BurgerButton from "./BurgerButton.js";
 import CloseMenuButton from "./CloseMenuButton.js";
 import CascadeMenu from "./CascadeMenu.js";
+import { Event } from "./core/Event.js";
 
 class Header extends Base {
   constructor(element, options = {}) {
@@ -18,6 +19,7 @@ class Header extends Base {
     this.cache.burgerButton = this.element.querySelector("[data-component='BurgerButton']");
     this.cache.closeMenuButton = this.element.querySelectorAll("[data-component='CloseMenuButton']");
     this.cache.menu = this.element.querySelector("#menu");
+    this.cache.searchModal = this.element.querySelector("[data-component='Modal'][name='SearchForm']");
   }
 
   initStates() {
@@ -30,7 +32,11 @@ class Header extends Base {
     this.menu = new CascadeMenu(this.cache.menu);
   }
 
-  bindEvents() { }
+  bindEvents() {
+    Event.on('modal:beforeClose', this.cache.searchModal, (e) => {
+      console.log('closed search modal', e);
+    });
+  }
 
 }
 

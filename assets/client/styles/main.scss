@@ -2,6 +2,12 @@
 @use "helpers" as *;
 @use "./blocks/navigation";
 @use "./blocks/button";
+@use "./blocks/modal";
+@use "./blocks/form";
+@use "./typography";
+@use "./spacers";
+@use "./display";
+@use "./alignment";
 
 // variables
 :root {
@@ -45,6 +51,10 @@ p {
     line-height: rem(22);
 }
 
+a {
+    color: inherit;
+}
+
 .w-100 {
     width: 100%;
 }
@@ -53,7 +63,6 @@ p {
     width: 100%;
     height: 1px;
     background: var(--color-grey);
-    margin: 2px 0;
 }
 
 .sr-only {
@@ -84,63 +93,6 @@ p {
 .visually-hidden:not(caption),
 .visually-hidden-focusable:not(:focus):not(:focus-within):not(caption) {
     position: absolute !important;
-}
-
-h2,
-h1 {
-    font-size: rem(36);
-    line-height: rem(44);
-    margin-bottom: rem(40);
-    font-weight: 700;
-    margin-top: 0;
-    margin-bottom: 30px;
-
-    @media (min-width: 1200px) {
-        font-size: rem(48);
-        line-height: rem(57);
-        margin-bottom: 40px;
-    }
-}
-
-h2 {
-    @media (min-width: 1200px) {
-        font-size: rem(36);
-        line-height: rem(44);
-        margin-bottom: 40px;
-    }
-}
-
-h3 {
-    font-size: rem(28);
-    line-height: rem(34);
-    margin-top: 0;
-}
-
-h4 {
-    font-size: rem(24);
-    line-height: rem(29);
-    margin-top: 0;
-}
-
-a {
-    color: inherit;
-}
-
-blockquote {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px;
-    background: #2A344A;
-    margin: 0 0 30px 0;
-
-    @media (min-width: 1025px) {
-        margin: 0 0 30px 0;
-    }
-
-    svg {
-        flex-shrink: 0;
-    }
 }
 
 table {
@@ -432,23 +384,29 @@ table {
         display: block;
     }
 
-    .nav__list {
+    .nav-list {
         display: flex;
 
         @media (min-width: 1025px) {
             gap: rem(26);
         }
 
-        a {
+        &__link {
+            display: flex;
+            align-items: center;
             font-size: rem(16);
             line-height: 24px;
             text-decoration-color: rgba(255, 255, 255, 0);
-            transition: text-decoration-color .25;
+            transition: rgba(255, 255, 255, 0) .25;
 
             &:hover {
                 text-decoration: underline;
                 text-decoration-color: rgba(212, 29, 23, 1);
-                text-underline-offset: 4px;
+                text-underline-offset: 6px;
+            }
+
+            svg {
+                margin-left: 8px;
             }
         }
     }
@@ -1785,15 +1743,27 @@ table {
     }
 }
 
-.tags {
+.tag-list {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
 
-    li {
+    &__item {
         padding: 13px 20px;
         background: #2A344A;
         border-radius: 40px;
+
+        &:hover {
+            background: #687084;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+    }
+
+    &.m-center {
+        justify-content: center;
     }
 }
 

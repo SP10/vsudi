@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (header) {
       new Header(header);
     }
+
+    Modal.initAll();
     // const overlayElement = document.querySelector('[data-component="Overlay"]');
     // const overlay = new Overlay(overlayElement, {
     //   activeClass: 'm-show',

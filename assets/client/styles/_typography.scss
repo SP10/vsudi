@@ -1,0 +1,104 @@
+@use "helpers" as *;
+
+h2, .h2,
+h1, .h1 {
+    font-size: rem(36);
+    line-height: rem(44);
+    margin-bottom: rem(40);
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 30px;
+
+    @media (min-width: 1200px) {
+        font-size: rem(48);
+        line-height: rem(57);
+        margin-bottom: 40px;
+    }
+}
+
+h2, .h2 {
+    @media (min-width: 1200px) {
+        font-size: rem(36);
+        line-height: rem(44);
+        margin-bottom: 40px;
+    }
+}
+
+h3, .h3 {
+    font-size: rem(28);
+    line-height: rem(34);
+    margin-top: 0;
+}
+
+h4, .h4 {
+    font-size: rem(24);
+    line-height: rem(29);
+    margin-top: 0;
+}
+
+.text-secondary {
+    color: var(--color-secondary);
+}
+
+blockquote {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    background: #2A344A;
+    margin: 0 0 30px 0;
+
+    @media (min-width: 1025px) {
+        margin: 0 0 30px 0;
+    }
+
+    svg {
+        flex-shrink: 0;
+    }
+}
+
+.fw-100 { font-weight: 100; }
+.fw-200 { font-weight: 200; }
+.fw-300 { font-weight: 300; }
+.fw-400 { font-weight: 400; }
+.fw-500 { font-weight: 500; }
+.fw-600 { font-weight: 600; }
+.fw-700 { font-weight: 700; }
+.fw-800 { font-weight: 800; }
+.fw-900 { font-weight: 900; }
+
+.text-center {
+    text-align: center;
+}
+
+.text-left   { text-align: left; }
+.text-center { text-align: center; }
+.text-right  { text-align: right; }
+
+/* Лаптоп і менше */
+@include laptop {
+  .text-lg-left   { text-align: left; }
+  .text-lg-center { text-align: center; }
+  .text-lg-right  { text-align: right; }
+}
+
+/* Планшет і менше */
+@include tablet {
+  .text-md-left  { text-align: left; }
+  .text-md-center{ text-align: center; }
+  .text-md-right  { text-align: right; }
+}
+
+/* Мобільний і менше */
+@include mobile {
+  .text-sm-left   { text-align: left; }
+  .text-sm-center { text-align: center; }
+  .text-sm-right  { text-align: right; }
+}
+
+/* Малий мобільний і менше */
+@include mobile-s {
+  .text-xs-left   { text-align: left; }
+  .text-xs-center { text-align: center; }
+  .text-xs-right  { text-align: right; }
+}

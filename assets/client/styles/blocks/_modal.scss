@@ -11,6 +11,7 @@ body.is-locked {
     display: none;
     background: rgba(0, 0, 0, .5);
     z-index: var(--z-index-modal);
+    overflow-y: scroll;
 
     &.m-open {
         display: block;
@@ -21,20 +22,50 @@ body.is-locked {
         flex-direction: row;
         justify-content: space-between;
         align-items: baseline;
-        margin-bottom: 24px;
+        background-color: var(--color-bg);
+        padding: 26px 24px;
 
-        &__title {
-            font-size: 24px;
-            font-weight: 700;
-            line-height: 32px;
-            letter-spacing: -0.48px;
+        &__content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+
+            @include mobile-above {
+                justify-content: center;
+            }
         }
 
-        &__subtitle {
-            color: #858585;
-            font-size: 18px;
-            font-weight: 500;
-            line-height: 26px;
+        &__title {
+            font-size: 36px;
+            font-weight: bold;
+
+            @include mobile-above {
+                font-size: 24px;
+            }
+        }
+
+        &__actions {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        &.m-search {
+            svg {
+                color: var(--color-accent);
+            }
+            
+            @include mobile-above {
+                background-color: var(--color-primary);
+                color: var(--color-secondary);
+            }
+
+            @include mobile {
+                svg {
+                    color: var(--color-primary);
+                }
+            }
         }
     }
 
@@ -43,12 +74,14 @@ body.is-locked {
         max-width: 458px;
         margin: 6vh auto;
         background: #fff;
-        border-radius: 16px;
-        padding: 24px;
 
         @include mobile {
             max-width: none;
-            margin: 6vh 16px;
+            margin: 0;
+        }
+
+        @include mobile-above {
+            max-width: calc(100% - 200px);
         }
     }
 
@@ -73,28 +106,15 @@ body.is-locked {
         }
     }
 
-    &-close {
-        width: 48px;
-        height: 48px;
-        padding: 0;
-        border: 0;
-        border-radius: 120px;
-        background: #FCFCFF;
-        display: grid;
-        place-items: center;
-        cursor: pointer;
-        line-height: 0;
-
-        &:hover {
-            box-shadow: 0 14px 36px rgba(0, 0, 0, .16);
-        }
+    &-content {
+        padding: 40px 24px;
     }
 
-    /* розмір іконки усередині */
-    &-close img,
-    &-close svg {
-        width: 22px;
-        height: 22px;
-        pointer-events: none;
+    &-close {
+        position: absolute;
+        right: 24px;
+        padding: 0;
+        border: 0;
+        cursor: pointer;
     }
 }

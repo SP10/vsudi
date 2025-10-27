@@ -24,6 +24,8 @@ class Modal {
         returnFocus: true,
         autofocus: '[data-autofocus], [autofocus]'
       }, opts);
+      this.buttons = document.querySelectorAll(`[data-modal-target=${this.el.getAttribute('name')}]`);
+      this.closeButtons = document.querySelectorAll(`[data-modal-close=${this.el.getAttribute('name')}]`);
   
       this.isOpen = false;
       this._trigger = null;
@@ -47,6 +49,18 @@ class Modal {
   
       // Делегований клік для кнопок закриття всередині модалки
       this.el.addEventListener('click', this._onClick);
+
+      // Кнопки відкриття модалки
+      this.buttons.forEach(button => {
+        button.addEventListener('click', (e) => this._handleOpenTriggerClick(e));
+      });
+      // Кнопки закриття модалки
+      this.closeButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+          e.preventDefault();
+          this.close();
+        });
+      });
     }
   
     open(triggerEl = document.activeElement) {
@@ -181,6 +195,11 @@ class Modal {
         e.preventDefault();
         first.focus();
       }
+    }
+
+    _handleOpenTriggerClick(e) {
+      e.preventDefault();
+      this.open(e.currentTarget);
     }
   
     // ===== статичні хелпери =====
