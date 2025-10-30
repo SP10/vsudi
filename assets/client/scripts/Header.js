@@ -18,8 +18,8 @@ class Header extends Base {
     this.cache.overlay = this.element.querySelector(".js-header-overlay");
     this.cache.burgerButton = this.element.querySelector("[data-component='BurgerButton']");
     this.cache.closeMenuButton = this.element.querySelectorAll("[data-component='CloseMenuButton']");
-    this.cache.menu = this.element.querySelector("#menu");
     this.cache.searchModal = this.element.querySelector("[data-component='Modal'][name='SearchForm']");
+    this.cache.cascadMenu = this.element.querySelectorAll("[data-cascad-menu]");
   }
 
   initStates() {
@@ -29,7 +29,10 @@ class Header extends Base {
         new CloseMenuButton(btn)
       );
     }
-    this.menu = new CascadeMenu(this.cache.menu);
+
+    this.cache.cascadMenu.forEach((menu => {
+      new CascadeMenu(menu);
+    }));
   }
 
   bindEvents() {

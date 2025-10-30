@@ -9,9 +9,200 @@
         <nav class="header__nav nav">
             <ul class="nav-list">
                 <li class="nav-list__item">
-                    <a href="/service-page.html" class="nav-list__link">Послуги</a>
+                    <a href="#" class="nav-list__link"
+                        data-modal-target="ServiceModalNavigation">Послуги</a>
+                    <div class="modal" data-component="Modal" name="ServiceModalNavigation" data-cascad-menu>
+                        <nav class="c-navigation m-drawer js-navigation">
+                            <div class="c-navigation__header m-drawer js-navigation-header">
+                                <div class="c-navigation__header-title">Послуги</div>
+                                <div class="header-actions m-drawer">
+                                    <button href="#" class="icon-button" data-modal-close="ServiceModalNavigation"
+                                        data-target="#menu" aria-label="Закрити меню">
+                                        <svg width="48" height="48">
+                                            <use xlink:href="#close" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="c-navigation__panel js-navigation-panel">
+                                <button type="button"
+                                    class="c-navigation__panel-back icon-button js-navigation-panel-back"
+                                    aria-label="Назад">
+                                    <svg width="24" height="24">
+                                        <use xlink:href="#arrow-back" />
+                                    </svg>
+                                </button>
+                                <div class="c-navigation__panel-title js-navigation-panel-title" data-title="Меню">
+                                </div>
+                                <button href="#" class="icon-button" data-component="CloseMenuButton"
+                                    data-target="#menu" aria-label="Закрити меню">
+                                    <svg width="48" height="48">
+                                        <use xlink:href="#close" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <ul class="c-navigation__list js-navigation-list">
+                                <!-- Кримінальний адвокат -->
+                                <li class="c-navigation__item">
+                                    <a href="/advokat-po-ugolovnym-delam-kharkov/"
+                                        class="c-navigation__link js-parent-link">
+                                        <svg width="32" height="32">
+                                            <use xlink:href="#advokat_kryminal" />
+                                        </svg>
+                                        Кримінальний адвокат
+                                        <svg width="24" height="24">
+                                            <use xlink:href="#arrow-right" />
+                                        </svg>
+                                    </a>
+                                    <ul class="c-navigation-menu m-sublist js-parent-menu">
+                                        <li class="c-navigation__item"><a href="/advokat-po-ugolovnyim-delam-pri-dtp/"
+                                                class="c-navigation__link js-child-link">Адвокат у
+                                                кримінальних справах при ДТП</a></li>
+                                        <li class="c-navigation__item"><a
+                                                href="/prestupleniya-protiv-zhizni-i-zdorovya/"
+                                                class="c-navigation__link js-child-link">Злочини проти
+                                                життя та здоров’я</a></li>
+                                        <li class="c-navigation__item"><a
+                                                href="/sluzhebnyie-i-dolzhnostnyie-prestupleniya/"
+                                                class="c-navigation__link js-child-link">Службові та
+                                                посадові злочини</a></li>
+                                        <li class="c-navigation__item"><a
+                                                href="/prestupleniya-protiv-polovoj-svobodyi-i-neprikosnovennosti/"
+                                                class="c-navigation__link js-child-link">Захист статевої
+                                                недоторканності</a></li>
+                                        <li class="c-navigation__item"><a href="/advokat-pri-provedenii-obyiska/"
+                                                class="c-navigation__link js-child-link">Адвокат під час
+                                                обшуку</a></li>
+                                    </ul>
+                                </li>
+
+                                <!-- Кредитний адвокат -->
+                                <li class="c-navigation__item">
+                                    <a href="/mikrozajm/" class="c-navigation__link js-parent-link">
+                                        <svg width="32" height="32">
+                                            <use xlink:href="#bank_advokat" />
+                                        </svg>
+                                        Кредитний адвокат
+                                        <svg width="24" height="24">
+                                            <use xlink:href="#arrow-right" />
+                                        </svg>
+                                    </a>
+                                    <ul class="c-navigation-menu js-parent-menu">
+                                        <li class="c-navigation__item"><a href="/spory-s-bankami/"
+                                                class="c-navigation__link js-child-link">Банківські спори</a></li>
+                                        <li class="c-navigation__item"><a href="/sud-s-bankom-po-kreditu/"
+                                                class="c-navigation__link js-child-link">Суд із банком
+                                                по кредиту</a></li>
+                                        <li class="c-navigation__item"><a href="/restrukturizacziya-zadolzhennosti/"
+                                                class="c-navigation__link js-child-link">Реструктуризація
+                                                заборгованості</a>
+                                        </li>
+                                        <li class="c-navigation__item"><a href="/vzyiskanie-dolgov/"
+                                                class="c-navigation__link js-child-link">Стягнення боргів</a></li>
+                                        <li class="c-navigation__item"><a href="/kredit-advokat-spor/"
+                                                class="c-navigation__link js-child-link">Кредит продали колекторам</a>
+                                        </li>
+                                        <li class="c-navigation__item"><a href="/kak-nakazat-kollektorov/"
+                                                class="c-navigation__link js-child-link">Антиколектор</a></li>
+                                        <li class="c-navigation__item"><a href="/bankrutstvo-fizychnyh-osib/"
+                                                class="c-navigation__link js-child-link">Банкрутство
+                                                фізичних осіб</a></li>
+                                    </ul>
+                                </li>
+
+                                <!-- Сімейний адвокат -->
+                                <li class="c-navigation__item">
+                                    <a href="/semejnyj-advokat-jurist-harkov/"
+                                        class="c-navigation__link js-parent-link">
+                                        <svg width="32" height="32">
+                                            <use xlink:href="#simeyniy_advokat" />
+                                        </svg>
+                                        Сімейний адвокат
+                                        <svg width="24" height="24">
+                                            <use xlink:href="#arrow-right" />
+                                        </svg>
+                                    </a>
+                                    <ul class="c-navigation-menu js-parent-menu">
+                                        <li class="c-navigation__item"><a href="/advokat-po-lisheniyu-roditelskix-prav/"
+                                                class="c-navigation__link js-child-link">Позбавлення
+                                                батьківських прав</a></li>
+                                        <li class="c-navigation__item"><a href="/ustanovlenie-otcovstva/"
+                                                class="c-navigation__link js-child-link">Встановлення
+                                                батьківства</a></li>
+                                    </ul>
+                                </li>
+
+                                <!-- Нерухомість -->
+                                <li class="c-navigation__item">
+                                    <a href="/yurist-po-nedvizhimosti/" class="c-navigation__link js-parent-link">
+                                        <svg width="32" height="32">
+                                            <use xlink:href="#juryst_neruhomist" />
+                                        </svg>
+                                        Нерухомість
+                                        <svg width="24" height="24">
+                                            <use xlink:href="#arrow-right" />
+                                        </svg>
+                                    </a>
+                                    <ul class="c-navigation-menu js-parent-menu">
+                                        <li class="c-navigation__item"><a href="/yurist-po-kuple-prodazhe-kharkov/"
+                                                class="c-navigation__link js-child-link">Купівля-продаж</a></li>
+                                        <li class="c-navigation__item"><a href="/advokat-po-arende/"
+                                                class="c-navigation__link js-child-link">Оренда</a></li>
+                                        <li class="c-navigation__item"><a href="/priznanie-prava-sobstvennosti/"
+                                                class="c-navigation__link js-child-link">Визнання права
+                                                власності</a></li>
+                                    </ul>
+                                </li>
+
+                                <!-- Спадкові справи -->
+                                <li class="c-navigation__item">
+                                    <a href="/priznanie-prava-sobstvennosti-na-nasledstvo/"
+                                        class="c-navigation__link js-parent-link">
+                                        <svg width="32" height="32">
+                                            <use xlink:href="#juryst_spadkovi_spravy" />
+                                        </svg>
+                                        Спадкові справи
+                                        <svg width="24" height="24">
+                                            <use xlink:href="#arrow-right" />
+                                        </svg>
+                                    </a>
+                                    <ul class="c-navigation-menu js-parent-menu">
+                                        <li class="c-navigation__item"><a href="/sporyi-mezhdu-naslednikami/"
+                                                class="c-navigation__link js-child-link">Спори між
+                                                спадкоємцями</a></li>
+                                        <li class="c-navigation__item"><a href="/sporyi-po-nasledstvennyim-dolyam/"
+                                                class="c-navigation__link js-child-link">Спори щодо
+                                                спадкових частин</a></li>
+                                        <li class="c-navigation__item"><a
+                                                href="/ustanovlenie-fakta-prinyatiya-nasledstva/"
+                                                class="c-navigation__link js-child-link">Визнання факту
+                                                прийняття спадщини</a></li>
+                                    </ul>
+                                </li>
+
+                                <!-- Митний адвокат -->
+                                <li class="c-navigation__item"><a href="/mitnij-advokat/"
+                                        class="c-navigation__link js-child-link"><svg width="32" height="32">
+                                            <use xlink:href="#advokat_po_narkotykam" />
+                                        </svg>Митний адвокат</a></li>
+
+                                <!-- Адвокат для бізнесу -->
+                                <li class="c-navigation__item"><a href="/advokat-dlja-biznesa/"
+                                        class="c-navigation__link js-child-link"><svg width="32" height="32">
+                                            <use xlink:href="#jurodychne_suprovidjenya" />
+                                        </svg>Адвокат для бізнесу</a></li>
+
+                                <!-- Онлайн-адвокат -->
+                                <li class="c-navigation__item"><a href="/advokat-onlajn/"
+                                        class="c-navigation__link js-child-link"><svg width="32" height="32">
+                                            <use xlink:href="#svg-person" />
+                                        </svg>Адвокат онлайн</a></li>
+                            </ul>
+                        </nav>
+                    </div>
                 </li>
-                <li class="nav-list__item"><a href="/successful-cases.html" class="nav-list__link">Успішні справи</a></li>
+                <li class="nav-list__item"><a href="/successful-cases.html" class="nav-list__link">Успішні справи</a>
+                </li>
                 <li class="nav-list__item"><a href="/pricing.html" class="nav-list__link">Вартість послуг</a></li>
                 <li class="nav-list__item"><a href="/about-us.html" class="nav-list__link">Про нас</a></li>
                 <li class="nav-list__item"><a href="/contact.html" class="nav-list__link">Контакти</a></li>
@@ -32,7 +223,8 @@
             </select>
         </div>
         <div class="header__search">
-            <button href="#" class="header__search-button" data-modal-target="SearchForm" title="Пошук" aria-label="Відкрити пошук">
+            <button href="#" class="header__search-button" data-modal-target="SearchForm" title="Пошук"
+                aria-label="Відкрити пошук">
                 <svg width="24" height="24">
                     <use xlink:href="#svg-search" />
                 </svg>
@@ -47,7 +239,7 @@
             <div class="sr-only">Меню</div>
         </button>
 
-        <div class="header__overlay js-header-overlay" id="menu">
+        <div class="header__overlay js-header-overlay" data-cascad-menu id="menu">
             <nav class="c-navigation js-navigation">
                 <div class="c-navigation__header js-navigation-header">
                     <a href="/" class="c-navigation__logo">
@@ -355,8 +547,10 @@
             <div class="modal-header m-search">
                 <div class="modal-header__content">
                     <div class="modal-header__title d-none d-xs-flex d-sm-flex">Пошук</div>
-                    <div class="modal-header__title text-sm-center d-md-flex d-lg-flex d-xl-flex d-sm-none">Пошук по сайту</div>
-                    <button href="#" class="modal-close icon-button" data-modal-close="SearchForm" aria-label="Закрити пошук">
+                    <div class="modal-header__title text-sm-center d-md-flex d-lg-flex d-xl-flex d-sm-none">Пошук по
+                        сайту</div>
+                    <button href="#" class="modal-close icon-button" data-modal-close="SearchForm"
+                        aria-label="Закрити пошук">
                         <svg width="48" height="48">
                             <use xlink:href="#close" />
                         </svg>
@@ -376,7 +570,8 @@
                         <li class="tag-list__item"><a href="#" class="tag-list__link">Кредити</a></li>
                         <li class="tag-list__item"><a href="#" class="tag-list__link">Пенсія</a></li>
                         <li class="tag-list__item"><a href="#" class="tag-list__link">Спадщина</a></li>
-                        <li class="tag-list__item"><a href="#" class="tag-list__link">Адвокат у кримінальних справах</a></li>
+                        <li class="tag-list__item"><a href="#" class="tag-list__link">Адвокат у кримінальних справах</a>
+                        </li>
                         <li class="tag-list__item"><a href="#" class="tag-list__link">Статті</a></li>
                         <li class="tag-list__item"><a href="#" class="tag-list__link">Адвокат по наркотикам</a></li>
                         <li class="tag-list__item"><a href="#" class="tag-list__link">Юрист із земельних питань</a></li>

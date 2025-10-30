@@ -72,7 +72,7 @@ body.is-locked {
     &-wrapper {
         position: relative;
         max-width: 458px;
-        margin: 6vh auto;
+        margin: 13vh auto;
         background: #fff;
 
         @include mobile {
@@ -81,7 +81,7 @@ body.is-locked {
         }
 
         @include mobile-above {
-            max-width: calc(100% - 200px);
+            max-width: calc(100% - 250px);
         }
     }
 

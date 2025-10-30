@@ -10,6 +10,11 @@
         padding: 18px 24px;
         background-color: var(--color-blue);
 
+        &-title {
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
         .header-actions {
             display: flex;
             align-items: center;
@@ -18,10 +23,21 @@
             svg {
                 color: var(--color-primary);
             }
+
+            &.m-drawer {
+                svg {
+                    color: var(--color-accent);
+                }
+            }
         }
 
         &.m-hide {
             display: none;
+        }
+
+        &.m-drawer {
+            background-color: var(--color-primary);
+            border-bottom: 1px solid var(--color-grey);
         }
     }
 
@@ -125,7 +141,7 @@
 
             &__item {
                 svg {
-                    margin-right: 12px;
+                    margin-right: 5px;
                     color: var(--color-accent);
                 }
             }
@@ -184,5 +200,12 @@
                 width: 100%;
             }
         }
+    }
+
+    &.m-drawer {
+        max-width: 350px;
+        background-color: var(--color-primary);
+        height: 100%;
+        color: var(--color-blue);
     }
 }
