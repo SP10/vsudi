@@ -1,0 +1,38 @@
+@use '../helpers' as *;
+
+ .map {
+    height: calc(100vh - 250px);
+    width: 100%;
+    margin-bottom: 40px;
+    
+    #map {
+        height: 100%;
+    }
+
+    &-info {
+
+        &__header {
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+
+        &__body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 60px;
+            row-gap: 20px;
+
+            @include tablet {
+                grid-template-columns: 1fr;
+            }
+          }
+
+        &__address {
+            display: flex;
+            font-size: 18px;
+            line-height: 23px;
+            gap: 8px;
+        }
+    }
+}
+

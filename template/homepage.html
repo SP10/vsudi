@@ -1,12 +1,12 @@
 <section class="hero section m-background">
     <div class="container">
         <div class="hero__content">
-            <h1 class="hero__title">Адвокатське<br /> обʼєднання <span>вСуді</span></h1>
+            <div class="h1 hero__title">Адвокатське<br /> обʼєднання <span>вСуді</span></h1>
             <p class="hero__description">"вСуді" - команда професіоналів, готових взяти на себе вагу Ваших юридичних
                 турбот.</p>
             <p class="hero__description">Ми прагнемо завжди бути поруч, напоготові захистити Ваші права та інтереси з
                 рішучістю і переконливими аргументами.</p>
-            <button class="hero__button button">Отримати консультацію</button>
+            <button class="hero__button button" aria-label="Відкрити форму щоб відправити заявку на консультацію">Отримати консультацію</button>
         </div>
     </div>
     <div class="c-swiper swiper carousel" data-carousel="hero">
@@ -31,10 +31,10 @@
             <div class="swiper-slide">
                 <div class="container">
                     <div class="hero__slide">
-                        <img src="/assets/static/images/team/vitaliy-kaidashov.png" alt="Кайдашов Віталій"
+                        <img src="/assets/static/images/team/andrii.png" alt="Хлопов Андрій"
                             class="hero__image" />
                         <div class="hero__person">
-                            <h3>Кайдашов Віталій</h3>
+                            <h3>Хлопов Андрій</h3>
                             <ul>
                                 <li>Співзасновник та керуючий партнер Адвокатського об'єднання «вСуді».</li>
                                 <li>Має вищу юридичну (за спеціальністю «Правознавство») та економічну (за спеціальністю
@@ -54,59 +54,123 @@
 
 <section class="section services">
     <div class="container">
-        <h1 >Наші послуги</h1>
-        <ul>
-            <li>
-                <svg width="64" height="64">
-                    <use xlink:href="#svg-phone" />
-                </svg>
-                <p>Послуга 1</p>
-            </li>
-            <li>
-                <svg width="64" height="64">
-                    <use xlink:href="#advocat-po-narkotycam" />
-                </svg>
-                <p>Послуга 2</p>
-            </li>
-            <li>
-                <svg width="64" height="64">
-                    <use xlink:href="#svg-phone" />
-                </svg>
-                <p>Послуга 3</p>
-            </li>
-            <li>
-                <svg width="64" height="64">
-                    <use xlink:href="#svg-phone" />
-                </svg>
-                <p>Послуга 4</p>
-            </li>
-            <li>
-                <svg width="64" height="64">
-                    <use xlink:href="#svg-phone" />
-                </svg>
-                <p>Послуга 5</p>
-            </li>
-            <li>
-                <svg width="64" height="64">
-                    <use xlink:href="#svg-phone" />
-                </svg>
-                <p>Послуга 6</p>
-            </li>
-            <li>
-                <svg width="64" height="64">
-                    <use xlink:href="#advocat" />
-                </svg>
-                <p>Юрист у спадкових справах 7</p>
-            </li>
-            <li>
-                <svg width="64" height="64">
-                    <use xlink:href="#svg-phone" />
-                </svg>
-                <p>Послуга 8</p>
-            </li>
-        </ul>
+      <div class="h2">Наші послуги</div>
+      <ul>
+        <li>
+          <a href="https://vsude.com.ua/semejnyj-advokat-jurist-harkov/" aria-label="Переглянути детально послугу сімейний адвокат">
+            <span class="service-icon">
+              <svg class="icon-32" width="32" height="32" aria-hidden="true">
+                <use xlink:href="#simeyniy_advokat" />
+              </svg>
+              <svg class="icon-64" width="64" height="64" aria-hidden="true">
+                <use xlink:href="#simeyniy_advokat_x64" />
+              </svg>
+            </span>
+            <p>Сімейний адвокат</p>
+          </a>
+        </li>
+  
+        <li>
+          <a href="https://vsude.com.ua/advokat-po-ugolovnym-delam-kharkov/" aria-label="Переглянути детально послугу адвокат у кримінальних справах">
+            <span class="service-icon">
+              <svg class="icon-32" width="32" height="32" aria-hidden="true">
+                <use xlink:href="#advokat_kryminal" />
+              </svg>
+              <svg class="icon-64" width="64" height="64" aria-hidden="true">
+                <use xlink:href="#advokat_kryminal_x64" />
+              </svg>
+            </span>
+            <p>Адвокат у кримінальних справах</p>
+          </a>
+        </li>
+  
+        <li>
+          <a href="https://vsude.com.ua/advokat-po-nasledstvu-kharkov/" aria-label="Переглянути детально послугу юрист у спадкових справах">
+            <span class="service-icon">
+              <svg class="icon-32" width="32" height="32" aria-hidden="true">
+                <use xlink:href="#juryst_spadkovi_spravy" />
+              </svg>
+              <svg class="icon-64" width="64" height="64" aria-hidden="true">
+                <use xlink:href="#juryst_spadkovi_spravy_x64" />
+              </svg>
+            </span>
+            <p>Юрист у спадкових справах</p>
+          </a>
+        </li>
+  
+        <li>
+          <a href="https://vsude.com.ua/voennyj-jurist-harkov/" aria-label="Переглянути детально послугу військовий юрист">
+            <span class="service-icon">
+              <svg class="icon-32" width="32" height="32" aria-hidden="true">
+                <use xlink:href="#military_advokat" />
+              </svg>
+              <svg class="icon-64" width="64" height="64" aria-hidden="true">
+                <use xlink:href="#military_advokat_x64" />
+              </svg>
+            </span>
+            <p>Військовий юрист</p>
+          </a>
+        </li>
+  
+        <li>
+          <a href="https://vsude.com.ua/zemle-ustroitelnie-rabotyi/" aria-label="Переглянути детально послугу юрист із земельних питань">
+            <span class="service-icon">
+              <svg class="icon-32" width="32" height="32" aria-hidden="true">
+                <use xlink:href="#juryst_zemelne_pytanya" />
+              </svg>
+              <svg class="icon-64" width="64" height="64" aria-hidden="true">
+                <use xlink:href="#juryst_zemelne_pytanya_x64" />
+              </svg>
+            </span>
+            <p>Юрист із земельних питань</p>
+          </a>
+        </li>
+  
+        <li>
+          <a href="https://vsude.com.ua/ru/nalogovyj-advokat-kharkov/" aria-label="Переглянути детально послугу юрист з податкового права">
+            <span class="service-icon">
+              <svg class="icon-32" width="32" height="32" aria-hidden="true">
+                <use xlink:href="#juryst_podatkove_pravo" />
+              </svg>
+              <svg class="icon-64" width="64" height="64" aria-hidden="true">
+                <use xlink:href="#juryst_podatkove_pravo_x64" />
+              </svg>
+            </span>
+            <p>Юрист з податкового права</p>
+          </a>
+        </li>
+  
+        <li>
+          <a href="https://vsude.com.ua/avtoyurist/" aria-label="Переглянути детально послугу автоадвокат">
+            <span class="service-icon">
+              <svg class="icon-32" width="32" height="32" aria-hidden="true">
+                <use xlink:href="#avtoadvokat" />
+              </svg>
+              <svg class="icon-64" width="64" height="64" aria-hidden="true">
+                <use xlink:href="#avtoadvokat_x64" />
+              </svg>
+            </span>
+            <p>Автоадвокат</p>
+          </a>
+        </li>
+  
+        <li>
+          <a href="https://vsude.com.ua/ru/pensionnye-spory/" aria-label="Переглянути детально послугу пенсійний адвокат">
+            <span class="service-icon">
+              <svg class="icon-32" width="32" height="32" aria-hidden="true">
+                <use xlink:href="#pensiyniy_advokat" />
+              </svg>
+              <svg class="icon-64" width="64" height="64" aria-hidden="true">
+                <use xlink:href="#pensiyniy_advokat_x64" />
+              </svg>
+            </span>
+            <p>Пенсійний адвокат</p>
+          </a>
+        </li>
+      </ul>
     </div>
-</section>
+  </section>
+  
 
 <section class="section m-secondary cases">
     <div class="container">

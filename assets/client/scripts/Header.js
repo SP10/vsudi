@@ -34,13 +34,6 @@ class Header extends Base {
       new CascadeMenu(menu);
     }));
   }
-
-  bindEvents() {
-    Event.on('modal:beforeClose', this.cache.searchModal, (e) => {
-      console.log('closed search modal', e);
-    });
-  }
-
 }
 
 export default Header;

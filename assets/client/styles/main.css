@@ -335,7 +335,7 @@ svg * {
   width: 100%;
 }
 .c-navigation.m-drawer {
-  max-width: 350px;
+  max-width: 360px;
   background-color: var(--color-primary);
   height: 100%;
   color: var(--color-blue);
@@ -4154,6 +4154,36 @@ blockquote svg {
     justify-content: space-evenly !important;
   }
 }
+.map {
+  height: calc(100vh - 250px);
+  width: 100%;
+  margin-bottom: 40px;
+}
+.map #map {
+  height: 100%;
+}
+.map-info__header {
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+.map-info__body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 60px;
+  row-gap: 20px;
+}
+@media (width <= 1023.98px) {
+  .map-info__body {
+    grid-template-columns: 1fr;
+  }
+}
+.map-info__address {
+  display: flex;
+  font-size: 18px;
+  line-height: 23px;
+  gap: 8px;
+}
+
 :root {
   --color-bg: #1C2333;
   --color-primary: #fff;
@@ -4645,6 +4675,9 @@ table td {
   max-width: 100%;
 }
 
+.services {
+  /* Вся картка — це <a> */
+}
 .services ul {
   padding: 0;
   margin: 0;
@@ -4661,22 +4694,37 @@ table td {
   }
 }
 .services li {
-  display: block;
-  text-align: center;
-  flex-shrink: 0;
-  background: #F1F5FF;
+  /* лише контейнер для осередку сітки */
   aspect-ratio: 1/1;
+}
+.services li > a {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: #F1F5FF;
+  color: inherit;
+  text-decoration: none;
   padding: 0 12px;
+  border-radius: 8px; /* опційно */
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 @media (min-width: 1200px) {
-  .services li {
+  .services li > a {
     padding: 0 30px;
   }
+}
+.services li > a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+.services li > a:focus-visible {
+  outline: 2px solid #3b82f6; /* видимий фокус для доступності */
+  outline-offset: 3px;
 }
 .services p {
   font-weight: 500;
@@ -4686,6 +4734,28 @@ table td {
 @media (min-width: 1200px) {
   .services p {
     font-size: 18px;
+  }
+}
+.services .service-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  /* мобільний за замовчуванням */
+}
+.services .service-icon .icon-64 {
+  display: none;
+}
+.services .service-icon .icon-32 {
+  display: inline;
+}
+@media (width > 767.98px) {
+  .services .service-icon { /* на десктопі показуємо 64 */ }
+  .services .service-icon .icon-32 {
+    display: none;
+  }
+  .services .service-icon .icon-64 {
+    display: inline;
   }
 }
 

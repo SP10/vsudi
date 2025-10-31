@@ -200,6 +200,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     new Carousel('[data-carousel="hero"]', {
       slidesPerView: 1,
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
       autoplay: {
         delay: 10000,
         disableOnInteraction: true,
