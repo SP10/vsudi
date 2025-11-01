@@ -500,8 +500,6 @@ body.is-locked {
 }
 .modal-wrapper {
   position: relative;
-  max-width: 458px;
-  margin: 13vh auto;
   background: #fff;
 }
 @media (width <= 767.98px) {
@@ -510,9 +508,28 @@ body.is-locked {
     margin: 0;
   }
 }
-@media (width > 767.98px) {
-  .modal-wrapper {
-    max-width: calc(100% - 250px);
+.modal-wrapper.m-search {
+  margin: 13vh auto;
+}
+@media (width > 1439.98px) {
+  .modal-wrapper.m-search {
+    max-width: calc(100% - 700px);
+  }
+}
+@media (width <= 479.98px) {
+  .modal-wrapper.m-search {
+    max-width: calc(100% - 200px);
+  }
+}
+@media (width <= 1439.98px) {
+  .modal-wrapper.m-search {
+    max-width: calc(100% - 200px);
+  }
+}
+@media (width <= 767.98px) {
+  .modal-wrapper.m-search {
+    max-width: none;
+    margin: 0;
   }
 }
 .modal-actions {

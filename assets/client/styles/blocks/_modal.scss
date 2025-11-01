@@ -71,8 +71,6 @@ body.is-locked {
 
     &-wrapper {
         position: relative;
-        max-width: 458px;
-        margin: 13vh auto;
         background: #fff;
 
         @include mobile {
@@ -80,8 +78,25 @@ body.is-locked {
             margin: 0;
         }
 
-        @include mobile-above {
-            max-width: calc(100% - 250px);
+        &.m-search {
+            margin: 13vh auto;
+
+            @include laptop-above {
+                max-width: calc(100% - 700px);
+            }
+
+            @include mobile-s {
+                max-width: calc(100% - 200px);
+            }
+
+            @include laptop {
+                max-width: calc(100% - 200px);
+            }
+
+            @include mobile {
+                max-width: none;
+                margin: 0;
+            }
         }
     }
 
