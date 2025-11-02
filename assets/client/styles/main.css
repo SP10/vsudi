@@ -735,6 +735,21 @@ h4, .h4 {
   margin-top: 0;
 }
 
+h1.m-animate, h2.m-animate, h3.m-animate, h4.m-animate, h5.m-animate, h6.m-animate,
+.h1.m-animate, .h2.m-animate, .h3.m-animate, .h4.m-animate, .h5.m-animate, .h6.m-animate {
+  transform: translateY(30px);
+  opacity: 0;
+}
+h1.m-animate.is-visible, h2.m-animate.is-visible, h3.m-animate.is-visible, h4.m-animate.is-visible, h5.m-animate.is-visible, h6.m-animate.is-visible,
+.h1.m-animate.is-visible, .h2.m-animate.is-visible, .h3.m-animate.is-visible, .h4.m-animate.is-visible, .h5.m-animate.is-visible, .h6.m-animate.is-visible {
+  transform: translateY(0);
+  opacity: 1;
+  transition-property: transform, opacity;
+  transition-duration: 0.7s, 0.9s;
+  transition-timing-function: ease-out;
+  transition-delay: 0.1s;
+}
+
 .text-secondary {
   color: var(--color-secondary);
 }
