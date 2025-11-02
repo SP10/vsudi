@@ -5,6 +5,7 @@ import TextArea from "./TextArea.js";
 import defineScrollBarWidthCSSVar from "./utils/defineScrollBarWidthCSSVar.js";
 import Overlay from "./Overlay.js";
 import Modal from "./Modal.js";
+import ObserverCollection from "./Observer.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   setTimeout(() => {
@@ -14,6 +15,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     Modal.initAll();
+
+    new ObserverCollection;
     // const overlayElement = document.querySelector('[data-component="Overlay"]');
     // const overlay = new Overlay(overlayElement, {
     //   activeClass: 'm-show',

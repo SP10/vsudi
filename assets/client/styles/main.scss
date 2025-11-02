@@ -555,7 +555,7 @@ table {
         /* лише контейнер для осередку сітки */
         aspect-ratio: 1 / 1;
       }
-    
+
       /* Вся картка — це <a> */
       li > a {
         display: flex;
@@ -572,16 +572,16 @@ table {
         padding: 0 12px;
         border-radius: 8px;           /* опційно */
         transition: transform .15s ease, box-shadow .15s ease;
-    
+
         @media (min-width: 1200px) {
           padding: 0 30px;
         }
-    
+
         &:hover {
           transform: translateY(-2px);
           box-shadow: 0 6px 16px rgba(0,0,0,.06);
         }
-    
+
         &:focus-visible {
           outline: 2px solid #3b82f6; /* видимий фокус для доступності */
           outline-offset: 3px;
@@ -603,10 +603,10 @@ table {
         align-items: center;
         justify-content: center;
         line-height: 0;
-    
+
         .icon-64 { display: none; }  /* мобільний за замовчуванням */
         .icon-32 { display: inline; }
-    
+
         @include mobile-above {
           .icon-32 { display: none; } /* на десктопі показуємо 64 */
           .icon-64 { display: inline; }
@@ -836,6 +836,52 @@ table {
 .section-achievements {
     &__p {
         margin-bottom: 36px;
+    }
+
+    .achievement__image {
+        position: relative;
+
+        &::after {
+            position: absolute;
+            background-color: #2A344A;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            content: '';
+            transition: 0.3s height;
+        }
+    }
+
+
+    &.is-visible {
+        .achievement__image {
+            &::after {
+                height: 0;
+                transition: height 1s cubic-bezier(0, 0, 0.58, 1.0);
+            }
+        }
+        .achievement:first-child {
+            .achievement__image {
+                &::after {
+                    transition-delay: 250ms;
+                }
+            }
+        }
+        .achievement:nth-child(2) {
+            .achievement__image {
+                &::after {
+                    transition-delay: 500ms;
+                }
+            }
+        }
+        .achievement:last-child {
+            .achievement__image {
+                &::after {
+                    transition-delay: 750ms;
+                }
+            }
+        }
     }
 }
 
