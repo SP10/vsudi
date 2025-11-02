@@ -1,0 +1,35 @@
+@use "helpers" as *;
+
+.w-100 {
+    width: 100% !important;
+}
+
+@include mobile-s {
+    .w-xs-100 {
+        width: 100% !important;
+    }
+}
+
+@include mobile {
+    .w-sm-100 {
+        width: 100% !important;
+    }
+}
+
+@include tablet {
+    .w-md-100 {
+        width: 100% !important;
+    }
+}
+
+@include laptop {
+    .w-lg-100 {
+        width: 100% !important;
+    }
+}
+
+@include laptop-above {
+    .w-xl-100 {
+        width: 100% !important;
+    }
+}

@@ -9,6 +9,7 @@
 @use "./display";
 @use "./alignment";
 @use "./blocks/map";
+@use "./width";
 
 // variables
 :root {
@@ -67,10 +68,6 @@ p {
 
 a {
     color: inherit;
-}
-
-.w-100 {
-    width: 100%;
 }
 
 .divider {
@@ -682,18 +679,6 @@ table {
         }
     }
 
-    &__all-button {
-        width: 100%;
-
-        @media (min-width: 768px) {
-            width: calc(50%);
-        }
-
-        @media (min-width: 1025px) {
-            width: calc(33.333% - 16px);
-        }
-    }
-
     &__grid-button {
         grid-column-start: 2;
     }
@@ -1099,7 +1084,7 @@ table {
 
        @include hover-default($text-color: rgba(212, 29, 23, 1));
     }
-    
+
     li {
         display: flex;
         margin-bottom: 8px;

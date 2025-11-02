@@ -1,11 +1,6 @@
 @use "../helpers" as *;
 
 .button {
-  display: flex;
-  align-items: center;
-  align-self: center;
-  justify-content: center;
-  gap: 10px;
   background: var(--color-accent);
   border: none;
   color: #fff;
@@ -19,10 +14,6 @@
   text-decoration: none;
   text-transform: uppercase;
   transition: background .25s;
-
-  &.w-100 {
-    width: 100%;
-  }
 
   &.m-small {
     font-size: 16px;
@@ -90,6 +81,14 @@
     &:hover {
       background-color: #2A344A;
     }
+  }
+
+  &.m-icon {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    gap: 10px;
   }
 
   &.m-search {
