@@ -128,3 +128,45 @@ $spacers-px: (
     }
   }
 }
+
+
+// hover підкреслення + (опційно) зміна кольору тексту
+// $text-color: якщо null — колір тексту не змінюємо
+@mixin hover-default(
+  $underline-color: rgba(212, 29, 23, 1),
+  $offset: 6px,
+  $thickness: from-font,
+  $text-color: null
+) {
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: $offset;
+  text-decoration-thickness: $thickness;
+
+  // плавність для кольору підкреслення; колір тексту теж, якщо будемо фарбувати
+  transition: text-decoration-color .25s ease#{if($text-color != null, ', color .25s ease', '')};
+
+  @media (any-hover: hover) {
+    &:hover {
+      text-decoration-color: $underline-color;
+
+      @if $text-color != null {
+        color: $text-color;
+      }
+    }
+  }
+
+  // доступність: клавіатурний фокус
+  &:focus-visible {
+    text-decoration-color: $underline-color;
+
+    @if $text-color != null {
+      color: $text-color;
+    }
+  }
+
+  // повага до користувачів з reduced motion
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}

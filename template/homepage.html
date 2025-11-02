@@ -1,4 +1,4 @@
-<section class="hero section m-background">
+<!-- <section class="hero section m-background">
     <div class="container">
         <div class="hero__content">
             <div class="h1 hero__title">Адвокатське<br /> обʼєднання <span>вСуді</span></h1>
@@ -192,7 +192,7 @@
                             <h4>Скасування наказу про звільнення поліцейського та стягнення грошових коштів</h4>
                             <div class="inline-icon case-card__description">
                                 <svg width="24" height="24">
-                                    <use xlink:href="#svg-search" />
+                                    <use xlink:href="#svg-person" />
                                 </svg>
                                 <div class="inline-icon__content">
                                     <div>Куратор проекту</div>
@@ -210,7 +210,7 @@
                             <h4>Скасування наказу про звільнення поліцейського та стягнення грошових коштів</h4>
                             <div class="inline-icon case-card__description">
                                 <svg width="24" height="24">
-                                    <use xlink:href="#svg-search" />
+                                    <use xlink:href="#svg-person" />
                                 </svg>
                                 <div class="inline-icon__content">
                                     <div>Куратор проекту</div>
@@ -228,7 +228,7 @@
                             <h4>Скасування наказу про звільнення поліцейського та стягнення грошових коштів</h4>
                             <div class="inline-icon case-card__description">
                                 <svg width="24" height="24">
-                                    <use xlink:href="#svg-search" />
+                                    <use xlink:href="#svg-person" />
                                 </svg>
                                 <div class="inline-icon__content">
                                     <div>Куратор проекту</div>
@@ -246,7 +246,7 @@
                             <h4>Скасування наказу про звільнення поліцейського та стягнення грошових коштів</h4>
                             <div class="inline-icon case-card__description">
                                 <svg width="24" height="24">
-                                    <use xlink:href="#svg-search" />
+                                    <use xlink:href="#svg-person" />
                                 </svg>
                                 <div class="inline-icon__content">
                                     <div>Куратор проекту</div>
@@ -290,7 +290,7 @@
         <p class="h-text-center section-achievements__p">Наші спеціалісти нададуть професійну консультацію</p>
         <form class="h-text-center consultation-form-inline">
             <input type="tel" name="tel" id="tel" class="input-text m-secondary consultation-form-inline__input" placeholder="Ваш телефон" />
-            <button class="button m-primary consultation-form-inline__button">Отримати консультацію</button>
+            <button class="button">Отримати консультацію</button>
         </form>
     </div>
 </section>
@@ -404,17 +404,18 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <div class="section consult-section">
     <div class="container consult-section__container">
         <div>
             <h2>Домовитися щодо консультації</h2>
             <div class="contacts-block">
-                <div class="contacts-block__title">Наші контакти:</div>
-                <ul class="contacts-block__body">
+                <div class="contacts-block__header">Наші контакти:</div>
+                <ul class="contacts-block__list">
                     <li>
-                        <a href="tel:+380991981986">
+                        <a href="tel:+380991981986" class="contacts-block__phone"
+                            aria-label="Зателефонувати нам на номер +38 (099) 198-19-86">
                             <svg width="24" height="24">
                                 <use xlink:href="#svg-phone" />
                             </svg>
@@ -422,46 +423,59 @@
                         </a>
                     </li>
                     <li>
-                        <a href="tel:+380991981986">
+                        <a href="tel:+380732323663" class="contacts-block__phone"
+                            aria-label="Зателефонувати нам на номер +38 (073) 232-36-63">
                             <svg width="24" height="24">
                                 <use xlink:href="#svg-phone" />
                             </svg>
-                            +38 (099) 198-19-86
+                            +38 (073) 232-36-63
                         </a>
                     </li>
                     <li>
-                        <a href="tel:+380991981986">
+                        <a href="tel:+380501567392" class="contacts-block__phone"
+                            aria-label="Зателефонувати нам на номер +38 (050) 156-73-92">
                             <svg width="24" height="24">
                                 <use xlink:href="#svg-phone" />
                             </svg>
-                            +38 (099) 198-19-86
+                            +38 (050) 156-73-92
                         </a>
                     </li>
                     <li>
-                        <a href="tel:+380991981986">
+                        <a href="tel:+380680620763" class="contacts-block__phone"
+                            aria-label="Зателефонувати нам на номер +38 (068) 062-07-63">
                             <svg width="24" height="24">
                                 <use xlink:href="#svg-phone" />
                             </svg>
-                            +38 (099) 198-19-86
+                            +38 (068) 062-07-63
                         </a>
                     </li>
                 </ul>
             </div>
             <div class="contacts-block">
-                <div class="contacts-block__title">Наша адреса:</div>
-                <ul class="contacts-block__body">
-                    <li><svg width="24" height="24">
-                            <use xlink:href="#svg-location" />
-                        </svg>Харків, пл. Конституції, 1</li>
-                    <li><svg width="24" height="24">
-                            <use xlink:href="#svg-location" />
-                        </svg>Вінниця, вул. Коріатовичів, 172</li>
-                    <li><svg width="24" height="24">
-                            <use xlink:href="#svg-location" />
-                        </svg>Вінниця, вул. Коріатовичів, 172</li>
-                    <li><svg width="24" height="24">
-                            <use xlink:href="#svg-location" />
-                        </svg>Вінниця, вул. Коріатовичів, 172</li>
+                <div class="contacts-block__header">Наша адреса:</div>
+                <ul class="contacts-block__list">
+                    <li>
+                        <a href="www.google.map/" class="contacts-block__address"
+                            aria-label="Відкрити в Google Maps адресу м. Харків, пл. Конституції, 1">
+                            <svg width="24" height="24">
+                                <use xlink:href="#svg-location" />
+                            </svg>Харків, пл. Конституції, 1</a>
+                    </li>
+                    <li><a href="" class="contacts-block__address">
+                            <svg width="24" height="24">
+                                <use xlink:href="#svg-location" />
+                            </svg>Вінниця, вул. Коріатовичів, 172
+                        </a></li>
+                    <li><a href="" class="contacts-block__address">
+                            <svg width="24" height="24">
+                                <use xlink:href="#svg-location" />
+                            </svg>Київ, вул. Велика Васильківська, 116</li>
+                    </a>
+                    <li><a href="" class="contacts-block__address">
+                            <svg width="24" height="24">
+                                <use xlink:href="#svg-location" />
+                            </svg>Одеса, вул. Єврейська, 10
+                        </a></li>
                 </ul>
             </div>
             <div class="contacts-block">
@@ -494,19 +508,15 @@
                     </a></li>
             </ul>
         </div>
-        <div class="consultation-form">
-            <div class="consultation-form__title">Заповніть заявку -<br />отримайте консультацію</div>
-            <form class="consultation-form__form">
-                <label class="consultation-form__label">
-                    <div>Введіть номер телефону</div>
-                    <input type="tel" placeholder="Телефон" class="input-text consultation-form__input" />
-                </label>
-                <button class="button m-primary">Отримати консультацію</button>
-            </form>
-            <hr />
-            <button class="button m-secondary"><svg width="32" height="32">
-                <use xlink:href="#telegram" />
-            </svg>Написати в телеграм</button>
+        <div class="b-consultation-form">
+            <div class="b-consultation-form__header">Заповніть заявку -<br />отримайте консультацію</div>
+            <div include-html="/template/forms/inquire.form.html"></div>
+            <div class="divider my-5"></div>
+            <a href="https://t.me/AO_vSude" class="button m-secondary w-100"
+                aria-label="Перейти в телеграм щоб написати нам">
+                <svg width="32" height="32">
+                    <use xlink:href="#telegram" />
+                </svg>Написати в телеграм</a>
         </div>
     </div>
 </div>
@@ -515,9 +525,21 @@
     <div class="container">
         <h2>Інформація для клієнтів</h2>
         <h4>Наші спеціалісти нададуть професійну консультацію</h4>
-        <p>Адвокати адвокатського об'єднання "в Суді" у Харкові спеціалізуються на захисті у кримінальних справах, стягненні та індексації заборгованостей, визнанні угод нікчемними або недійсними, ведення справ про суперечки, пов'язані з нерухомим майном. Наші адвокати в Харкові беруть участь у вирішенні спорів майнового характеру, у шлюборозлучних процесах та поділі майна між подружжям, визначенні місця проживання дітей та порядку спілкування з ними, веденні справ про стягнення аліментів, визнання таким, що не набуло або втратило права користування, виселення, зняття громадян з реєстраційного обліку, вселення до будинків, квартир або кімнат.</p>
+        <p>Адвокати адвокатського об'єднання "в Суді" у Харкові спеціалізуються на захисті у кримінальних справах,
+            стягненні та індексації заборгованостей, визнанні угод нікчемними або недійсними, ведення справ про
+            суперечки, пов'язані з нерухомим майном. Наші адвокати в Харкові беруть участь у вирішенні спорів майнового
+            характеру, у шлюборозлучних процесах та поділі майна між подружжям, визначенні місця проживання дітей та
+            порядку спілкування з ними, веденні справ про стягнення аліментів, визнання таким, що не набуло або втратило
+            права користування, виселення, зняття громадян з реєстраційного обліку, вселення до будинків, квартир або
+            кімнат.</p>
         <h4>Повний спектр послуг адвоката у Харкові</h4>
-        <p>Адвокати адвокатського об'єднання "в Суді" у Харкові спеціалізуються на захисті у кримінальних справах, стягненні та індексації заборгованостей, визнанні угод нікчемними або недійсними, ведення справ про суперечки, пов'язані з нерухомим майном. Наші адвокати в Харкові беруть участь у вирішенні спорів майнового характеру, у шлюборозлучних процесах та поділі майна між подружжям, визначенні місця проживання дітей та порядку спілкування з ними, веденні справ про стягнення аліментів, визнання таким, що не набуло або втратило права користування, виселення, зняття громадян з реєстраційного обліку, вселення до будинків, квартир або кімнат.</p>
+        <p>Адвокати адвокатського об'єднання "в Суді" у Харкові спеціалізуються на захисті у кримінальних справах,
+            стягненні та індексації заборгованостей, визнанні угод нікчемними або недійсними, ведення справ про
+            суперечки, пов'язані з нерухомим майном. Наші адвокати в Харкові беруть участь у вирішенні спорів майнового
+            характеру, у шлюборозлучних процесах та поділі майна між подружжям, визначенні місця проживання дітей та
+            порядку спілкування з ними, веденні справ про стягнення аліментів, визнання таким, що не набуло або втратило
+            права користування, виселення, зняття громадян з реєстраційного обліку, вселення до будинків, квартир або
+            кімнат.</p>
         <div class="h-text-center">
             <button class="button m-quaternary">Показати все</button>
         </div>
@@ -528,15 +550,22 @@
     <div class="container">
         <h2>Найчастіші питання</h2>
         <div class="c-collapsed ">
-            <input class="c-collapsed__input visually-hidden" type="radio" name="collapsed" id="37" aria-label="Скільки коштує консультація адвоката у Вінниці?">
+            <input class="c-collapsed__input visually-hidden" type="radio" name="collapsed" id="37"
+                aria-label="Скільки коштує консультація адвоката у Вінниці?">
             <div class="c-collapsed__panel">
                 <label class="c-collapsed__label" for="37">
-                    <svg class="c-collapsed__icon" width="48" height="48" arria-hidden="true"><use xlink:href="#svg-faq"></use></svg>
-                    <svg class="c-collapsed__icon m-active" width="48" height="48" arria-hidden="true"><use xlink:href="#svg-faq-active"></use></svg>
+                    <svg class="c-collapsed__icon" width="48" height="48" arria-hidden="true">
+                        <use xlink:href="#svg-faq"></use>
+                    </svg>
+                    <svg class="c-collapsed__icon m-active" width="48" height="48" arria-hidden="true">
+                        <use xlink:href="#svg-faq-active"></use>
+                    </svg>
                     <div class="h2 c-collapsed__title">
                         Скільки коштує консультація адвоката у Вінниці?
                     </div>
-                    <svg class="c-collapsed__icon-arrow" width="24" height="24" arria-hidden="true"><use xlink:href="#svg-arrow-down"></use></svg>
+                    <svg class="c-collapsed__icon-arrow" width="24" height="24" arria-hidden="true">
+                        <use xlink:href="#svg-arrow-down"></use>
+                    </svg>
                 </label>
                 <div class="c-collapsed__content">
                     <p>Усна консультація адвоката коштує від 1200 грн.</p>
@@ -544,15 +573,22 @@
             </div>
         </div>
         <div class="c-collapsed ">
-            <input class="c-collapsed__input visually-hidden" type="radio" name="collapsed" id="38" aria-label="Скільки коштує консультація адвоката у Вінниці?">
+            <input class="c-collapsed__input visually-hidden" type="radio" name="collapsed" id="38"
+                aria-label="Скільки коштує консультація адвоката у Вінниці?">
             <div class="c-collapsed__panel">
                 <label class="c-collapsed__label" for="38">
-                    <svg class="c-collapsed__icon" width="48" height="48" arria-hidden="true"><use xlink:href="#svg-faq"></use></svg>
-                    <svg class="c-collapsed__icon m-active" width="48" height="48" arria-hidden="true"><use xlink:href="#svg-faq-active"></use></svg>
+                    <svg class="c-collapsed__icon" width="48" height="48" arria-hidden="true">
+                        <use xlink:href="#svg-faq"></use>
+                    </svg>
+                    <svg class="c-collapsed__icon m-active" width="48" height="48" arria-hidden="true">
+                        <use xlink:href="#svg-faq-active"></use>
+                    </svg>
                     <div class="h2 c-collapsed__title">
                         Скільки коштує консультація адвоката у Вінниці?
                     </div>
-                    <svg class="c-collapsed__icon-arrow" width="24" height="24" arria-hidden="true"><use xlink:href="#svg-arrow-down"></use></svg>
+                    <svg class="c-collapsed__icon-arrow" width="24" height="24" arria-hidden="true">
+                        <use xlink:href="#svg-arrow-down"></use>
+                    </svg>
                 </label>
                 <div class="c-collapsed__content">
                     <p>Усна консультація адвоката коштує від 1200 грн.</p>
@@ -561,4 +597,3 @@
         </div>
     </div>
 </div>
-

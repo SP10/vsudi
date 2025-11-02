@@ -33,7 +33,20 @@
     --swiper-navigation-size: 10px;
     --swiper-navigation-top-offset: 0;
 
+  --levitate-distance: 7px;
+  --levitate-duration: 2s;
+  --levitate-ease: ease-in-out;
 }
+
+@keyframes levitate {
+    0%   { transform: translateY(0) }
+    100% { transform: translateY(calc(-1 * var(--levitate-distance))) }
+  }
+  
+  @keyframes shadow-breathe {
+    0%   { transform: translateX(-50%) scale(1);   opacity: .22 }
+    100% { transform: translateX(-50%) scale(1.12); opacity: .14 }
+  }
 
 html {
     &.is-lock {
@@ -400,11 +413,7 @@ table {
             text-decoration-color: rgba(255, 255, 255, 0);
             transition: rgba(255, 255, 255, 0) .25;
 
-            &:hover {
-                text-decoration: underline;
-                text-decoration-color: rgba(212, 29, 23, 1);
-                text-underline-offset: 6px;
-            }
+            @include hover-default;
 
             svg {
                 margin-left: 8px;
@@ -993,56 +1002,68 @@ table {
 }
 
 // component - consultation-form
-.consultation-form {
-    border-top: 1px solid #000000;
+.b-consultation-form {
+    position: sticky;
+    top: rem(100);
+    border-top: 1px solid #000;
     padding: 40px 0 0;
     max-width: 440px;
     margin: 0 auto;
-
+  
+    /* плавність і окремий шар */
+    transform: translateZ(0);
+    will-change: transform, opacity;
+  
+    /* безперервна “левітація” */
+    animation: levitate var(--levitate-duration) var(--levitate-ease) infinite alternate;
+  
+    /* легка “підкладка”-тінь (без blur-фільтра) */
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -6px;
+      width: 64%;
+      height: 12px;
+      transform: translateX(-50%) scale(1);
+      pointer-events: none;
+      z-index: -1;
+      /* імітація плями тіні через розмиту тінь box-shadow */
+      box-shadow:
+        0 12px 24px rgba(0,0,0,.18),
+        0 4px 12px rgba(0,0,0,.10);
+      border-radius: 999px;
+      opacity: .2;
+      animation: shadow-breathe var(--levitate-duration) var(--levitate-ease) infinite alternate;
+    }
+  
+    /* НЕ змінюємо duration, щоб не було рестартів */
+    /* @media (any-hover: hover) { ... нічого з animation тут не чіпаємо } */
+  
+    /* Пауза під час фокусу, без примусового transform */
+    &:has(input:focus, textarea:focus, select:focus) {
+      animation-play-state: paused;
+      &::before { animation-play-state: paused; }
+    }
+  
+    @media (prefers-reduced-motion: reduce) {
+      animation: none !important;
+      &::before { animation: none !important; opacity: .18 }
+    }
+  
     @media (min-width: 1025px) {
-        border: 1px solid #000000;
-        padding: 40px;
+      border: 1px solid #000;
+      padding: 40px;
     }
-
-    &__title {
-        margin-bottom: 40px;
-        font-size: 24px;
-        line-height: 29px;
-        font-weight: 700;
-        text-align: center;
+  
+    &__header {
+      margin-bottom: 40px;
+      font-size: 24px;
+      line-height: 29px;
+      font-weight: 700;
+      text-align: center;
     }
-
-    input {
-        width: 100%;
-        margin-top: 8px;
-    }
-
-    hr {
-        margin: 40px 0;
-    }
-
-    .button.m-secondary {
-        width: 100%;
-        padding: rem(19);
-        text-transform: uppercase;
-        font-size: 18px;
-        line-height: 22px;
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        justify-content: center;
-
-        svg {
-            color: #687084;
-        }
-    }
-
-    &__form {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-    }
-}
+  }
 
 .contacts-block {
     display: flex;
@@ -1056,7 +1077,7 @@ table {
         text-align: left;
     }
 
-    &__title {
+    &__header {
         min-width: 180px;
         text-transform: uppercase;
         font-size: 18px;
@@ -1068,15 +1089,17 @@ table {
         margin-right: 12px;
     }
 
-    a {
+    &__phone, &__address {
+        display: flex;
         font-weight: 600;
         color: #2A344A;
         text-decoration: none;
-        display: flex;
-        font-size: 21px;
+        font-size: 18px;
         line-height: 25px;
-    }
 
+       @include hover-default($text-color: rgba(212, 29, 23, 1));
+    }
+    
     li {
         display: flex;
         margin-bottom: 8px;

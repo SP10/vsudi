@@ -38,11 +38,9 @@
 
   label {
     display: block;
-    color: #000;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 22px;
-    letter-spacing: 0.16px;
+    color: #1E1E1E;
+    font-size: 18px;
+    font-weight: normal;
     margin-bottom: 6px;
   }
 
@@ -99,8 +97,7 @@
 
   input.m-error,
   textarea.m-error {
-    border-radius: 12px;
-    border: 1px solid #FF4C16;
+    border: 1px solid var(--color-accent);;
     background: #FFF;
   }
 
@@ -114,6 +111,16 @@
     margin-bottom: 0;
     &.m-horizontal {
       display: flex;
+    }
+
+    &:has(input[required]:not([type="hidden"]),
+        .iti input[required],
+        input[id$="_e164"][required],
+        textarea[required],
+        select[required]) > label::after {
+        content: '*';
+        color: var(--color-accent);
+        margin-left: 4px;
     }
   }
 

@@ -13,7 +13,7 @@ class TelInput {
         separateDialCode: true,
         nationalMode: false, 
         autoPlaceholder: 'polite',
-        preferredCountries: ['ua','pl','de'],
+        preferredCountries: ['ua'],
       });
 
       const id = this.element.getAttribute('id');
