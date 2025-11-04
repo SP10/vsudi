@@ -34,24 +34,38 @@
     --swiper-navigation-size: 10px;
     --swiper-navigation-top-offset: 0;
 
-  --levitate-distance: 7px;
-  --levitate-duration: 2s;
-  --levitate-ease: ease-in-out;
+    --levitate-distance: 7px;
+    --levitate-duration: 2s;
+    --levitate-ease: ease-in-out;
+
+    --z-index-modal: 101;
 }
 
 @keyframes levitate {
-    0%   { transform: translateY(0) }
-    100% { transform: translateY(calc(-1 * var(--levitate-distance))) }
-  }
-  
-  @keyframes shadow-breathe {
-    0%   { transform: translateX(-50%) scale(1);   opacity: .22 }
-    100% { transform: translateX(-50%) scale(1.12); opacity: .14 }
-  }
+    0% {
+        transform: translateY(0)
+    }
+
+    100% {
+        transform: translateY(calc(-1 * var(--levitate-distance)))
+    }
+}
+
+@keyframes shadow-breathe {
+    0% {
+        transform: translateX(-50%) scale(1);
+        opacity: .22
+    }
+
+    100% {
+        transform: translateX(-50%) scale(1.12);
+        opacity: .14
+    }
+}
 
 html {
     &.is-lock {
-      overflow: hidden;
+        overflow: hidden;
     }
 }
 
@@ -345,6 +359,8 @@ table {
         font-weight: 700;
 
         &-link {
+            display: flex;
+            align-self: center;
             color: var(--color-primary);
             text-decoration: none;
 
@@ -560,10 +576,10 @@ table {
     li {
         /* лише контейнер для осередку сітки */
         aspect-ratio: 1 / 1;
-      }
+    }
 
-      /* Вся картка — це <a> */
-      li > a {
+    /* Вся картка — це <a> */
+    li>a {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -576,23 +592,25 @@ table {
         color: inherit;
         text-decoration: none;
         padding: 0 12px;
-        border-radius: 8px;           /* опційно */
+        border-radius: 8px;
+        /* опційно */
         transition: transform .15s ease, box-shadow .15s ease;
 
         @media (min-width: 1200px) {
-          padding: 0 30px;
+            padding: 0 30px;
         }
 
         &:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 6px 16px rgba(0,0,0,.06);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, .06);
         }
 
         &:focus-visible {
-          outline: 2px solid #3b82f6; /* видимий фокус для доступності */
-          outline-offset: 3px;
+            outline: 2px solid #3b82f6;
+            /* видимий фокус для доступності */
+            outline-offset: 3px;
         }
-      }
+    }
 
     p {
         font-weight: 500;
@@ -610,14 +628,26 @@ table {
         justify-content: center;
         line-height: 0;
 
-        .icon-64 { display: none; }  /* мобільний за замовчуванням */
-        .icon-32 { display: inline; }
+        .icon-64 {
+            display: none;
+        }
+
+        /* мобільний за замовчуванням */
+        .icon-32 {
+            display: inline;
+        }
 
         @include mobile-above {
-          .icon-32 { display: none; } /* на десктопі показуємо 64 */
-          .icon-64 { display: inline; }
+            .icon-32 {
+                display: none;
+            }
+
+            /* на десктопі показуємо 64 */
+            .icon-64 {
+                display: inline;
+            }
         }
-      }
+    }
 }
 
 // component - principles
@@ -855,6 +885,7 @@ table {
                 transition: height 1s cubic-bezier(0, 0, 0.58, 1.0);
             }
         }
+
         .achievement:first-child {
             .achievement__image {
                 &::after {
@@ -862,6 +893,7 @@ table {
                 }
             }
         }
+
         .achievement:nth-child(2) {
             .achievement__image {
                 &::after {
@@ -869,6 +901,7 @@ table {
                 }
             }
         }
+
         .achievement:last-child {
             .achievement__image {
                 &::after {
@@ -1040,61 +1073,68 @@ table {
     padding: 40px 0 0;
     max-width: 440px;
     margin: 0 auto;
-  
+
     /* плавність і окремий шар */
     transform: translateZ(0);
     will-change: transform, opacity;
-  
+
     /* безперервна “левітація” */
     animation: levitate var(--levitate-duration) var(--levitate-ease) infinite alternate;
-  
+
     /* легка “підкладка”-тінь (без blur-фільтра) */
     &::before {
-      content: "";
-      position: absolute;
-      left: 50%;
-      bottom: -6px;
-      width: 64%;
-      height: 12px;
-      transform: translateX(-50%) scale(1);
-      pointer-events: none;
-      z-index: -1;
-      /* імітація плями тіні через розмиту тінь box-shadow */
-      box-shadow:
-        0 12px 24px rgba(0,0,0,.18),
-        0 4px 12px rgba(0,0,0,.10);
-      border-radius: 999px;
-      opacity: .2;
-      animation: shadow-breathe var(--levitate-duration) var(--levitate-ease) infinite alternate;
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -6px;
+        width: 64%;
+        height: 12px;
+        transform: translateX(-50%) scale(1);
+        pointer-events: none;
+        z-index: -1;
+        /* імітація плями тіні через розмиту тінь box-shadow */
+        box-shadow:
+            0 12px 24px rgba(0, 0, 0, .18),
+            0 4px 12px rgba(0, 0, 0, .10);
+        border-radius: 999px;
+        opacity: .2;
+        animation: shadow-breathe var(--levitate-duration) var(--levitate-ease) infinite alternate;
     }
-  
+
     /* НЕ змінюємо duration, щоб не було рестартів */
     /* @media (any-hover: hover) { ... нічого з animation тут не чіпаємо } */
-  
+
     /* Пауза під час фокусу, без примусового transform */
     &:has(input:focus, textarea:focus, select:focus) {
-      animation-play-state: paused;
-      &::before { animation-play-state: paused; }
+        animation-play-state: paused;
+
+        &::before {
+            animation-play-state: paused;
+        }
     }
-  
+
     @media (prefers-reduced-motion: reduce) {
-      animation: none !important;
-      &::before { animation: none !important; opacity: .18 }
+        animation: none !important;
+
+        &::before {
+            animation: none !important;
+            opacity: .18
+        }
     }
-  
+
     @media (min-width: 1025px) {
-      border: 1px solid #000;
-      padding: 40px;
+        border: 1px solid #000;
+        padding: 40px;
     }
-  
+
     &__header {
-      margin-bottom: 40px;
-      font-size: 24px;
-      line-height: 29px;
-      font-weight: 700;
-      text-align: center;
+        margin-bottom: 40px;
+        font-size: 24px;
+        line-height: 29px;
+        font-weight: 700;
+        text-align: center;
     }
-  }
+}
 
 .contacts-block {
     display: flex;
@@ -1120,7 +1160,8 @@ table {
         margin-right: 12px;
     }
 
-    &__phone, &__address {
+    &__phone,
+    &__address {
         display: flex;
         font-weight: 600;
         color: #2A344A;
@@ -1128,7 +1169,7 @@ table {
         font-size: 18px;
         line-height: 25px;
 
-       @include hover-default($text-color: rgba(212, 29, 23, 1));
+        @include hover-default($text-color: rgba(212, 29, 23, 1));
     }
 
     li {
@@ -1297,6 +1338,11 @@ table {
 
 //component - footer
 .footer {
+    &__column {
+        display: grid;
+        row-gap: 12px;
+    }
+
     &__top {
         background: #1C2333;
         padding: 80px 0;
@@ -1306,9 +1352,7 @@ table {
             color: #fff;
             text-decoration: none;
 
-            &:hover {
-                text-decoration: underline;
-            }
+            @include hover-default($text-color: #fff, $underline-color: #fff);
         }
     }
 
@@ -1354,24 +1398,22 @@ table {
                     width: auto;
                 }
             }
-
-            a {
-                color: #CACFDA;
-                text-decoration: none;
-
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
         }
 
         &:not(.m-secondary) {
-            li:last-child a {
-                font-weight: 600;
-            }
-
             li {
                 margin-bottom: 12px;
+            }
+        }
+
+        &__link {
+            color: #CACFDA;
+            text-decoration: none;
+
+            @include hover-default($text-color: #CACFDA);
+
+            &.m-active {
+                font-weight: 700;
             }
         }
     }
@@ -1384,11 +1426,6 @@ table {
             position: relative;
             top: 50%;
         }
-    }
-
-    &__logo,
-    p {
-        margin-bottom: 12px;
     }
 }
 
@@ -1931,5 +1968,28 @@ table {
         border: none;
         padding: 0;
         cursor: pointer;
+    }
+}
+
+.social-list {
+    display: flex;
+    column-gap: 24px;
+    list-style: none;
+
+    &__item {
+        display: flex;
+        align-items: center;
+        align-self: center;
+    }
+
+    &__link {
+        color: var(--color-grey-100);
+    }
+
+    @media (any-hover: hover) {
+        &__link:hover {
+            color: var(--color-icon-hover);
+            transform: scale(1.05);
+        }
     }
 }

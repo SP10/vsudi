@@ -153,27 +153,6 @@
             }
         }
 
-        .social-list {
-            display: flex;
-            column-gap: 24px;
-            list-style: none;
-
-            &__item {
-                display: flex;
-            }
-
-            &__link {
-                color: var(--color-grey-100);
-            }
-
-            @media (any-hover: hover) {
-                &__link:hover {
-                    color: var(--color-icon-hover);
-                    transform: scale(1.05);
-                }
-            }
-        }
-
         .work-time {
             &__header {
                 font-size: 18px;

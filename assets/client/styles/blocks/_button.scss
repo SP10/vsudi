@@ -42,6 +42,7 @@
     line-height: 1;
     padding: rem(12) rem(14);
     transition: color .25s;
+    text-align: center;
 
     &:hover {
       color: #D41D17;
@@ -71,8 +72,8 @@
 
   &.m-primary {
     background: var(--color-grey-100);
+    border: 1px solid #687084;
     color: #fff;
-    text-transform: none;
     font-size: 16px;
     line-height: 1;
     padding: rem(12) rem(14);

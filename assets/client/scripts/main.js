@@ -107,6 +107,25 @@ document.addEventListener("DOMContentLoaded", async () => {
       },
     });
 
+    document.addEventListener('fetchit:success', (e) => {
+      const { response, form } = e.detail;
+
+      if (response && response.success) {
+        form.classList.add('d-none');
+        let formName = form.getAttribute('name');
+        let successMessage = document.querySelector(`[data-form="${formName}"]`);
+        successMessage.classList.remove('d-none');
+
+        let closeButton = document.querySelector('[data-component="CloseButton"]');
+        closeButton.addEventListener('click', () => {
+          form.classList.remove('d-none');
+          successMessage.classList.add('d-none');
+        });
+
+        console.log('SUCCESS JSON:', response);
+      }
+    }, { once: false });
+
     defineScrollBarWidthCSSVar();
   }, 1000); // Delay to ensure all elements are loaded
 });

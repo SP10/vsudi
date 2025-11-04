@@ -6,7 +6,7 @@
                 турбот.</p>
             <p class="hero__description">Ми прагнемо завжди бути поруч, напоготові захистити Ваші права та інтереси з
                 рішучістю і переконливими аргументами.</p>
-            <button class="hero__button button" aria-label="Відкрити форму щоб відправити заявку на консультацію">Отримати консультацію</button>
+            <button class="hero__button button" aria-label="Відкрити форму щоб відправити заявку на консультацію" data-modal-target="ConsultationDetailForm">Отримати консультацію</button>
         </div>
     </div>
     <div class="c-swiper swiper carousel" data-carousel="hero">
@@ -54,7 +54,7 @@
 
 <section class="section services">
     <div class="container">
-      <div class="h2" data-js-observer>Наші послуги</div>
+      <div class="h2 text-sm-center" data-js-observer>Наші послуги</div>
       <ul>
         <li>
           <a href="https://vsude.com.ua/semejnyj-advokat-jurist-harkov/" aria-label="Переглянути детально послугу сімейний адвокат">
@@ -175,8 +175,8 @@
 <section class="section m-secondary cases">
     <div class="container">
         <div class="swiper" data-carousel="cases">
-            <div class="swiper-title">
-                <h2 class="m-animate" data-js-observer>Успішні справи</h2>
+            <div class="swiper-title justify-content-sm-center">
+                <div class="h2 text-sm-center m-animate" data-js-observer>Успішні справи</div>
                 <div class="swiper-controls">
                     <button class="swiper-button m-static swiper-button-prev" aria-label="Previous slide">
                     </button>
@@ -199,7 +199,9 @@
                                     <strong>адвокат Хлопов Андрій Володимирович</strong>
                                 </div>
                             </div>
-                            <div class="h-text-center"><a class="button m-secondary">Детальніше</a></div>
+                            <div class="d-flex justify-content-center">
+                                <a class="button m-secondary">Детальніше</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -217,7 +219,9 @@
                                     <strong>адвокат Хлопов Андрій Володимирович</strong>
                                 </div>
                             </div>
-                            <div class="h-text-center"><a class="button m-secondary">Детальніше</a></div>
+                            <div class="d-flex justify-content-center">
+                                <a class="button m-secondary">Детальніше</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -235,7 +239,9 @@
                                     <strong>адвокат Хлопов Андрій Володимирович</strong>
                                 </div>
                             </div>
-                            <div class="h-text-center"><a class="button m-secondary">Детальніше</a></div>
+                            <div class="d-flex justify-content-center">
+                                <a class="button m-secondary">Детальніше</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -253,7 +259,9 @@
                                     <strong>адвокат Хлопов Андрій Володимирович</strong>
                                 </div>
                             </div>
-                            <div class="h-text-center"><a class="button m-secondary">Детальніше</a></div>
+                            <div class="d-flex justify-content-center">
+                                <a class="button m-secondary">Детальніше</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -262,13 +270,13 @@
                 <div class="swiper-pagination"></div>
             </div>
         </div>
-        <div class="h-text-center"><a class="button w-sm-100 m-tertiary">Переглянути всі</a></div>
+        <div class="h-text-center"><a class="button d-sm-flex w-sm-100 m-tertiary justify-content-sm-center">Переглянути всі</a></div>
     </div>
 </section>
 
 <section class="section m-background section-achievements" data-js-observer>
     <div class="container">
-        <h2 class="m-animate" data-js-observer>Наші досягнення</h2>
+        <div class="h2 text-sm-center m-animate" data-js-observer>Наші досягнення</div>
         <div class="achievements">
             <div class="achievement">
                 <div class="achievement__title"><span>></span> 1 000</div>
@@ -288,10 +296,9 @@
         </div>
         <h1 class="h-text-center">Домовитися щодо консультації</h1>
         <p class="h-text-center section-achievements__p">Наші спеціалісти нададуть професійну консультацію</p>
-        <form class="h-text-center consultation-form-inline">
-            <input type="tel" name="tel" id="tel" class="input-text m-secondary consultation-form-inline__input" placeholder="Ваш телефон" />
-            <button class="button">Отримати консультацію</button>
-        </form>
+        <div class="mx-8 mx-sm-2">
+            <div include-html="/template/forms/consultation.form.html"></div>
+        </div> 
     </div>
 </section>
 
@@ -299,7 +306,7 @@
     <div class="container">
         <div class="swiper" data-carousel="сlients">
             <div class="swiper-title">
-                <h2 class="m-animate" data-js-observer>Наші клієнти</h2>
+                <div class="h2 text-sm-center m-animate" data-js-observer>Наші клієнти</div>
                 <div class="swiper-controls">
                     <button class="swiper-button m-static swiper-button-prev" aria-label="Previous slide">
                     </button>
@@ -331,7 +338,7 @@
                 <div class="swiper-pagination"></div>
             </div>
         </div>
-        <p class="h-text-center">та ще понад 20 великіх та  понад сотні меншиш брендів</p>
+        <p class="h-text-center">та ще понад 20 великих та  понад сотні менших брендів</p>
     </div>
 </section>
 
@@ -339,7 +346,7 @@
     <div class="container">
         <div class="swiper" data-carousel="reviews">
             <div class="swiper-title">
-                <h2 class="m-animate" data-js-observer>Відгуки наших клієнтів</h2>
+                <div class="h2 text-sm-center m-animate" data-js-observer>Відгуки наших клієнтів</div>
                 <div class="swiper-controls">
                     <button class="swiper-button m-static swiper-button-prev" aria-label="Previous slide">
                     </button>
@@ -409,7 +416,7 @@
 <div class="section consult-section">
     <div class="container consult-section__container">
         <div>
-            <h2 class="m-animate" data-js-observer>Домовитися щодо консультації</h2>
+            <div class="h2 text-sm-center m-animate" data-js-observer>Домовитися щодо консультації</div>
             <div class="contacts-block">
                 <div class="contacts-block__header">Наші контакти:</div>
                 <ul class="contacts-block__list">
@@ -485,28 +492,7 @@
                     <li><span class="contacts-block__gray">сб-нд:</span> 10:00 - 14:00</li>
                 </ul>
             </div>
-            <ul class="social">
-                <li><a href="https://www.youtube.com/" aria-label="youtube">
-                        <svg width="32" height="32">
-                            <use xlink:href="#youtube" />
-                        </svg>
-                    </a></li>
-                <li><a href="https://www.youtube.com/" aria-label="youtube">
-                        <svg width="32" height="32">
-                            <use xlink:href="#telegram" />
-                        </svg>
-                    </a></li>
-                <li><a href="https://www.youtube.com/" aria-label="youtube">
-                        <svg width="32" height="32">
-                            <use xlink:href="#instagram" />
-                        </svg>
-                    </a></li>
-                <li><a href="https://www.youtube.com/" aria-label="youtube">
-                        <svg width="32" height="32">
-                            <use xlink:href="#facebook" />
-                        </svg>
-                    </a></li>
-            </ul>
+            <div class="d-flex justify-content-sm-center" include-html="/template/social.html"></div>
         </div>
         <div class="b-consultation-form">
             <div class="b-consultation-form__header">Заповніть заявку -<br />отримайте консультацію</div>
@@ -548,7 +534,7 @@
 
 <div class="section section-faq">
     <div class="container">
-        <h2 class="m-animate" data-js-observer>Найчастіші питання</h2>
+        <div class="h2 text-sm-center m-animate" data-js-observer>Найчастіші питання</div>
         <div class="c-collapsed ">
             <input class="c-collapsed__input visually-hidden" type="radio" name="collapsed" id="37"
                 aria-label="Скільки коштує консультація адвоката у Вінниці?">
@@ -560,7 +546,7 @@
                     <svg class="c-collapsed__icon m-active" width="48" height="48" arria-hidden="true">
                         <use xlink:href="#svg-faq-active"></use>
                     </svg>
-                    <div class="h2 c-collapsed__title">
+                    <div class="h5 c-collapsed__title">
                         Скільки коштує консультація адвоката у Вінниці?
                     </div>
                     <svg class="c-collapsed__icon-arrow" width="24" height="24" arria-hidden="true">
@@ -583,7 +569,7 @@
                     <svg class="c-collapsed__icon m-active" width="48" height="48" arria-hidden="true">
                         <use xlink:href="#svg-faq-active"></use>
                     </svg>
-                    <div class="h2 c-collapsed__title">
+                    <div class="h5 c-collapsed__title">
                         Скільки коштує консультація адвоката у Вінниці?
                     </div>
                     <svg class="c-collapsed__icon-arrow" width="24" height="24" arria-hidden="true">
@@ -596,4 +582,8 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="modal" data-component="Modal" name="ConsultationDetailForm">
+    <div include-html="/template/forms/consultation.detail.form.html"></div>
 </div>

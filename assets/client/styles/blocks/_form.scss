@@ -1,3 +1,5 @@
+@use "../helpers" as *;
+
 .c-form {
   position: relative;
   display: flex;
@@ -36,6 +38,31 @@
     }
   }
 
+  &-message {
+    &__icon {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    &__title {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 32px;
+      letter-spacing: -0.24px;
+      margin-bottom: 6px;
+      text-align: center;
+    }
+
+    &__description {
+      color: #858585;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 24px;
+      text-align: center;
+    }
+  }
+
   label {
     display: block;
     color: #1E1E1E;
@@ -52,11 +79,25 @@
     font-size: 18px;
     width: 100%;
     color: #2A344A;
+
+    &.m-secondary {
+      border: 1px solid #CACFDA;
+      background: #2A344A;
+      color: #fff;
+    }
+
+    &.m-large {
+      height: 62px;
+    }
   }
 
   input:hover,
   textarea:hover {
     border: 1px solid #373229;
+
+    &.m-secondary {
+      border: 1px solid #FFF;
+    }
   }
 
   input::placeholder,
@@ -99,6 +140,11 @@
   textarea.m-error {
     border: 1px solid var(--color-accent);;
     background: #FFF;
+
+    &.m-secondary {
+      border: 1px solid var(--color-accent);;
+      background: #2A344A;
+    }
   }
 
   textarea {
@@ -111,6 +157,27 @@
     margin-bottom: 0;
     &.m-horizontal {
       display: flex;
+    }
+
+    &.m-vertical {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @include mobile {
+      &.m-sm-vertical {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      } 
+    }
+
+    @include tablet {
+      &.m-md-vertical {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      } 
     }
 
     &:has(input[required]:not([type="hidden"]),

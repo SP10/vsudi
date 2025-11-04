@@ -13,6 +13,16 @@ $spacers-px: (
   9: 96px,
 );
 
+$gap-values: (
+  0: 0,
+  1: 10px,
+  2: 20px,
+  3: 30px,
+  4: 40px,
+  5: 50px,
+  6: 60px
+);
+
 @each $key, $val in $spacers-px {
     // Margin
     .m-#{$key}  { margin:        $val !important; }
@@ -64,3 +74,10 @@ $spacers-px: (
   @include laptop-above {
     @include generate-spacing(xl);
   }
+
+// --- GAP UTILS ---
+@each $key, $val in $gap-values {
+  .gap-#{$key} {
+    gap: #{$val};
+  }
+}
