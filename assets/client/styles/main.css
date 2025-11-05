@@ -385,7 +385,6 @@ svg * {
   background: var(--color-grey-100);
   border: 1px solid #687084;
   color: #fff;
-  font-size: 16px;
   line-height: 1;
   padding: 0.75rem 0.875rem;
   transition: color 0.25s;
@@ -443,6 +442,8 @@ body.is-locked {
 }
 .modal.m-open {
   display: flex;
+}
+.modal.m-form {
   justify-content: center;
   align-items: center;
 }
@@ -453,7 +454,7 @@ body.is-locked {
   align-items: baseline;
   padding: 26px 24px;
 }
-.modal-header .bg-blue {
+.modal-header.bg-blue {
   background-color: var(--color-bg);
 }
 .modal-header__content {
