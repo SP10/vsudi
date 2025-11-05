@@ -296,7 +296,7 @@
         </div>
         <h1 class="h-text-center">Домовитися щодо консультації</h1>
         <p class="h-text-center section-achievements__p">Наші спеціалісти нададуть професійну консультацію</p>
-        <div class="mx-8 mx-sm-2">
+        <div class="mx-10 mx-sm-2">
             <div include-html="/template/forms/consultation.form.html"></div>
         </div> 
     </div>
@@ -585,5 +585,20 @@
 </div>
 
 <div class="modal" data-component="Modal" name="ConsultationDetailForm">
-    <div include-html="/template/forms/consultation.detail.form.html"></div>
+    <div class="modal-wrapper m-form">
+        <div class="modal-header">
+            <div class="modal-header__content">
+                <div class="modal-header__title">Заявка</div>
+                <button href="#" class="modal-close icon-button" data-modal-close="ConsultationDetailForm"
+                    aria-label="Закрити">
+                    <svg width="48" height="48">
+                        <use xlink:href="#close" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="modal-content">
+            <div include-html="/template/forms/consultation.detail.form.html"></div>
+        </div>
+    </div>
 </div>

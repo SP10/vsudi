@@ -14,7 +14,9 @@ body.is-locked {
     overflow-y: scroll;
 
     &.m-open {
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     &-header {
@@ -22,8 +24,11 @@ body.is-locked {
         flex-direction: row;
         justify-content: space-between;
         align-items: baseline;
-        background-color: var(--color-bg);
         padding: 26px 24px;
+
+        .bg-blue {
+            background-color: var(--color-bg);
+        }
 
         &__content {
             display: flex;
@@ -96,6 +101,17 @@ body.is-locked {
             @include mobile {
                 max-width: none;
                 margin: 0;
+            }
+        }
+
+        &.m-form {
+            min-width: calc(100% - 65%);
+            @include mobile {
+                width: 100%;
+            }
+
+            @include tablet {
+                min-width: calc(100% - 40%);
             }
         }
     }
