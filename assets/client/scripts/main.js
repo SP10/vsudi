@@ -6,6 +6,7 @@ import defineScrollBarWidthCSSVar from "./utils/defineScrollBarWidthCSSVar.js";
 import Overlay from "./Overlay.js";
 import Modal from "./Modal.js";
 import ObserverCollection from "./Observer.js";
+import ExpandableContent from "./ExpandableContent.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   setTimeout(() => {
@@ -17,6 +18,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     Modal.initAll();
 
     new ObserverCollection;
+    new ExpandableContent;
 
     let phone = document.querySelectorAll(".js-phone");
     phone.forEach((element) => {
