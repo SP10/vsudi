@@ -4607,6 +4607,26 @@ blockquote svg {
   line-height: 23px;
   gap: 8px;
 }
+.map-info__link {
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 6px;
+  text-decoration-thickness: from-font;
+  transition: text-decoration-color 0.25s ease;
+}
+@media (any-hover: hover) {
+  .map-info__link:hover {
+    text-decoration-color: rgb(212, 29, 23);
+  }
+}
+.map-info__link:focus-visible {
+  text-decoration-color: rgb(212, 29, 23);
+}
+@media (prefers-reduced-motion: reduce) {
+  .map-info__link {
+    transition: none;
+  }
+}
 
 .w-100 {
   width: 100% !important;
