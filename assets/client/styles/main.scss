@@ -2026,3 +2026,14 @@ table {
         }
     }
 }
+
+.expandable-content {
+    max-height: 200px;
+    overflow: hidden;
+}
+
+.section-info {
+    .expandable-content {
+        max-height: 420px;
+    }
+}
