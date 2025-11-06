@@ -357,6 +357,39 @@ table {
     &__phone {
         display: flex;
         font-weight: 700;
+        position: relative;
+
+        @media (min-width: 1148px) {
+            padding: 12px 0;
+
+            &:hover {
+                .header__phone-popup {
+                    display: block;
+                }
+            }
+        }
+
+        &-popup {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            padding: 12px 12px 4px 12px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light box shadow */
+
+            a {
+                color: #2A344A;
+                margin-bottom: 8px;
+                justify-content: center;
+
+                &:hover {
+                    color: var(--color-accent);
+                }
+            }
+        }
 
         &-link {
             display: flex;
