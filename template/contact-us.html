@@ -12,11 +12,13 @@
     <div class="container">
         <h2>Контакти</h2>
 
-        <div class="map">
+        <div class="map js-map">
+            <div class="map__guard" aria-hidden="true">
+                <span class="map__hint">Натисніть, щоб активувати карту</span>
+              </div>
             <iframe
             src="https://www.google.com/maps/d/embed?mid=14_TmaEkGkmE9IxUlprourMKNS8q3nrky&ehbc=2E312F&z=6&ll=49.33553,32.146197&hl=uk"
-            width="100%" height="100%" style="border:0;"  loading="lazy"  allowfullscreen
-          ></iframe>          
+            width="100%" height="100%" style="border:0;"  loading="lazy"  allowfullscreen></iframe>          
         </div>
 
         <div class="map-info">
@@ -26,7 +28,7 @@
                     <svg width="24" height="24">
                         <use xlink:href="#svg-location" />
                     </svg>
-                    <a href="https://www.google.com/maps/place/м.Харків - Площа Конституції, 1" class="map-info__link"><strong>ГОЛОВНИЙ ОФІС в м.Харків</strong> - Площа Конституції, 1</a>   
+                    <a href="https://www.google.com/maps/place/м.Харків - Площа Конституції, 1" class="map-info__link" aria-label="Перейти на адресу"><strong>ГОЛОВНИЙ ОФІС в м.Харків</strong> - Площа Конституції, 1</a>   
                 </div>
                 <div class="map-info__address">
                     <svg width="24" height="24">
@@ -93,6 +95,39 @@
                 </div>
             </div>
         </div>
+
+        <div class="">
+            <blockquote>
+                <svg width="48" height="48" arria-hidden="true"><use xlink:href="#svg-faq-active"></use></svg>
+                <p>Попередній запис є гарантією, що клієнту приділять достатньо часу для відповіді на поставлені питання, запобігатиме безглуздому очікуванню за дверима для отримання юридичної послуги або консультації адвоката.</p>
+            </blockquote>
+        </div>
     </div>
 </section>
 
+<div include-html="/template/block/address.block.html"></div>
+
+<section class="section m-quaternary">
+    <div class="container">
+        <ul class="tag-list">
+            <li class="tag-list__item"><a href="#" class="tag-list__link">Юрист, адвокат Харків</a></li>
+            <li class="tag-list__item"><a href="#" class="tag-list__link">Адвокат у Києві</a></li>
+            <li class="tag-list__item"><a href="#" class="tag-list__link">Адвокат в Одесі</a></li>
+            <li class="tag-list__item"><a href="#" class="tag-list__link">Адвокат у Вінниці</a></li>
+            <li class="tag-list__item"><a href="#" class="tag-list__link">Адвокат Полтава</a></li>
+            <li class="tag-list__item"><a href="#" class="tag-list__link">Адвокат Дніпро</a></li>
+            <li class="tag-list__item"><a href="#" class="tag-list__link">Адвокат Суми </a></li>
+            <li class="tag-list__item"><a href="#" class="tag-list__link">Адвокат Краматорськ</a></li>
+            <li class="tag-list__item"><a href="#" class="tag-list__link">Адвокат Сєвєродонецьк</a></li>
+            <li class="tag-list__item"><a href="#" class="tag-list__link">Адвокат Запоріжжя</a></li>
+            <li class="tag-list__item"><a href="#" class="tag-list__link">Адвокат Львів</a></li>
+            <li class="tag-list__item"><a href="#" class="tag-list__link">Адвокат Кропивницький</a></li>
+            <li class="tag-list__item"><a href="#" class="tag-list__link">Адвокат Кривий Ріг </a></li>
+            <li class="tag-list__item"><a href="#" class="tag-list__link">Адвокат Черкаси</a></li>
+            <li class="tag-list__item"><a href="#" class="tag-list__link">Адвокат Чернівці </a></li>
+            <li class="tag-list__item"><a href="#" class="tag-list__link">Адвокат Хмельницький</a></li>
+        </ul>
+    </div>
+</section>
+
+<div include-html="/template/block/otherservices.block.html"></div>

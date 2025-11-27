@@ -32,7 +32,7 @@
   }
 
   @media (min-width: 1200px) {
-    padding: rem(19) rem(49);
+    padding: rem(19) rem(45);
   }
 
   &.m-secondary {
@@ -103,6 +103,12 @@
   padding: 0;
   margin: 0;
 
+  &:hover {
+    svg {
+      color: #CACFDA;
+    }
+  }
+
   &.m-white {
     svg {
       color: #fff;
@@ -124,5 +130,11 @@
     height: 48px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
+  }
+
+  &.m-download {
+    svg {
+      color: var(--color-accent);
+    }
   }
 }

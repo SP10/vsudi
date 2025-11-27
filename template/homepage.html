@@ -31,7 +31,7 @@
             <div class="swiper-slide">
                 <div class="container">
                     <div class="hero__slide">
-                        <img src="/assets/static/images/team/andrii.png" alt="Хлопов Андрій"
+                        <img src="/assets/static/images/team/andrii-hlopov.png" alt="Хлопов Андрій"
                             class="hero__image" />
                         <div class="hero__person">
                             <h3>Хлопов Андрій</h3>
@@ -270,7 +270,7 @@
                 <div class="swiper-pagination"></div>
             </div>
         </div>
-        <div class="h-text-center"><a class="button d-sm-flex w-sm-100 m-tertiary justify-content-sm-center">Переглянути всі</a></div>
+        <div class="text-center"><a class="button d-sm-flex w-sm-100 m-tertiary justify-content-sm-center">Переглянути всі</a></div>
     </div>
 </section>
 
@@ -294,8 +294,8 @@
                 <p>Надано<br /> консультацій</p>
             </div>
         </div>
-        <h1 class="h-text-center">Домовитися щодо консультації</h1>
-        <p class="h-text-center section-achievements__p">Наші спеціалісти нададуть професійну консультацію</p>
+        <div class="h1 text-center">Домовитися щодо консультації</div>
+        <p class="text-center section-achievements__p">Наші спеціалісти нададуть професійну консультацію</p>
         <div class="mx-10 mx-sm-2">
             <div include-html="/template/forms/consultation.form.html"></div>
         </div>
@@ -338,7 +338,7 @@
                 <div class="swiper-pagination"></div>
             </div>
         </div>
-        <p class="h-text-center">та ще понад 20 великих та  понад сотні менших брендів</p>
+        <p class="text-center">та ще понад 20 великих та  понад сотні менших брендів</p>
     </div>
 </section>
 
@@ -357,7 +357,7 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="review">
-                        <div class="rating">
+                        <div class="rating" data-rating="5">
                             <div class="rating__inner"></div>
                         </div>
                         <div class="review__person">
@@ -371,7 +371,9 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="review">
-                        <div class="rating"></div>
+                        <div class="rating" data-rating="4">
+                            <div class="rating__inner"></div>
+                        </div>
                         <div class="review__person">
                             <img src="/assets/static/images/client/client-1.jpg" alt="">
                             <div class="review__name">Лада Колеснікова</div>
@@ -383,7 +385,9 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="review">
-                        <div class="rating"></div>
+                        <div class="rating" data-rating="3">
+                            <div class="rating__inner"></div>
+                        </div>
                         <div class="review__person">
                             <img src="/assets/static/images/client/client-1.jpg" alt="">
                             <div class="review__name">Лада Колеснікова</div>
@@ -413,103 +417,11 @@
     </div>
 </section>
 
-<div class="section consult-section">
-    <div class="container consult-section__container">
-        <div>
-            <div class="h2 text-sm-center m-animate" data-js-observer>Домовитися щодо консультації</div>
-            <div class="contacts-block">
-                <div class="contacts-block__header">Наші контакти:</div>
-                <ul class="contacts-block__list">
-                    <li>
-                        <a href="tel:+380991981986" class="contacts-block__phone"
-                            aria-label="Зателефонувати нам на номер +38 (099) 198-19-86">
-                            <svg width="24" height="24">
-                                <use xlink:href="#svg-phone" />
-                            </svg>
-                            +38 (099) 198-19-86
-                        </a>
-                    </li>
-                    <li>
-                        <a href="tel:+380732323663" class="contacts-block__phone"
-                            aria-label="Зателефонувати нам на номер +38 (073) 232-36-63">
-                            <svg width="24" height="24">
-                                <use xlink:href="#svg-phone" />
-                            </svg>
-                            +38 (073) 232-36-63
-                        </a>
-                    </li>
-                    <li>
-                        <a href="tel:+380501567392" class="contacts-block__phone"
-                            aria-label="Зателефонувати нам на номер +38 (050) 156-73-92">
-                            <svg width="24" height="24">
-                                <use xlink:href="#svg-phone" />
-                            </svg>
-                            +38 (050) 156-73-92
-                        </a>
-                    </li>
-                    <li>
-                        <a href="tel:+380680620763" class="contacts-block__phone"
-                            aria-label="Зателефонувати нам на номер +38 (068) 062-07-63">
-                            <svg width="24" height="24">
-                                <use xlink:href="#svg-phone" />
-                            </svg>
-                            +38 (068) 062-07-63
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="contacts-block">
-                <div class="contacts-block__header">Наша адреса:</div>
-                <ul class="contacts-block__list">
-                    <li>
-                        <a href="www.google.map/" class="contacts-block__address"
-                            aria-label="Відкрити в Google Maps адресу м. Харків, пл. Конституції, 1">
-                            <svg width="24" height="24">
-                                <use xlink:href="#svg-location" />
-                            </svg>Харків, пл. Конституції, 1</a>
-                    </li>
-                    <li><a href="" class="contacts-block__address">
-                            <svg width="24" height="24">
-                                <use xlink:href="#svg-location" />
-                            </svg>Вінниця, вул. Коріатовичів, 172
-                        </a></li>
-                    <li><a href="" class="contacts-block__address">
-                            <svg width="24" height="24">
-                                <use xlink:href="#svg-location" />
-                            </svg>Київ, вул. Велика Васильківська, 116</li>
-                    </a>
-                    <li><a href="" class="contacts-block__address">
-                            <svg width="24" height="24">
-                                <use xlink:href="#svg-location" />
-                            </svg>Одеса, вул. Єврейська, 10
-                        </a></li>
-                </ul>
-            </div>
-            <div class="contacts-block">
-                <div class="contacts-block__title">Графік роботи:</div>
-                <ul class="contacts-block__body">
-                    <li><span class="contacts-block__gray">пн-пт:</span> 09:00 - 18:00</li>
-                    <li><span class="contacts-block__gray">сб-нд:</span> 10:00 - 14:00</li>
-                </ul>
-            </div>
-            <div class="d-flex justify-content-sm-center" include-html="/template/social.html"></div>
-        </div>
-        <div class="b-consultation-form">
-            <div class="b-consultation-form__header">Заповніть заявку -<br />отримайте консультацію</div>
-            <div include-html="/template/forms/inquire.form.html"></div>
-            <div class="divider my-5"></div>
-            <a href="https://t.me/AO_vSude" class="button m-secondary m-icon w-100"
-                aria-label="Перейти в телеграм щоб написати нам">
-                <svg width="32" height="32">
-                    <use xlink:href="#telegram" />
-                </svg>Написати в телеграм</a>
-        </div>
-    </div>
-</div>
+<div include-html="/template/block/address.block.html"></div>
 
 <section class="section m-background section-info" data-js-expandable-content>
     <div class="container">
-        <h2 class="m-animate" data-js-observer>Інформація для клієнтів</h2>
+        <div class="h2 m-animate" data-js-observer>Інформація для клієнтів</div>
         <div class="expandable-content" data-js-expandable-content-body>
             <h4>Наші спеціалісти нададуть професійну консультацію</h4>
             <p>Адвокати адвокатського об'єднання "в Суді" у Харкові спеціалізуються на захисті у кримінальних справах,
@@ -544,7 +456,7 @@
                 права користування, виселення, зняття громадян з реєстраційного обліку, вселення до будинків, квартир або
                 кімнат.</p>
         </div>
-        <div class="h-text-center">
+        <div class="text-center">
             <br>
             <button class="button m-quaternary" data-js-expandable-content-button>Показати все</button>
         </div>

@@ -10,6 +10,9 @@
 @use "./alignment";
 @use "./blocks/map";
 @use "./width";
+@use "./blocks/pagination";
+
+@use "sass:math";
 
 // variables
 :root {
@@ -170,13 +173,6 @@ a {
                 width: 216px;
             }
         }
-
-        th:nth-child(3),
-        td:nth-child(3) {
-            @media (max-width: 1024px) {
-                display: none;
-            }
-        }
     }
 }
 
@@ -258,9 +254,44 @@ a {
         display: flex;
         gap: 68px;
 
+        > * {
+            flex: 1;
+            min-width: 0;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
         @media (max-width: 1024px) {
             flex-direction: column;
             gap: 30px;
+        }
+    }
+
+    ul, ol {
+        padding-left: 22px;
+        margin-bottom: 24px;
+        font-size: 18px;
+        line-height: 22px;
+
+        li::marker {
+            color: var(--color-accent)
+        }
+
+        &.m-primary {
+            li::marker {
+                color: var(--color-primary)
+            }
+        }
+
+        &.m-secondary {
+            li::marker {
+                color: var(--color-secondary)
+            }
         }
     }
 }
@@ -342,7 +373,7 @@ a {
 
     select {
         appearance: none;
-        background-image: url('/assets/static/images/svg-arrow-down.svg');
+        background-image: url('/assets/static/icons/svg-arrow-down.svg');
         background-repeat: no-repeat;
         background-position: center right;
         background-color: transparent;
@@ -431,6 +462,12 @@ a {
         }
     }
 
+    &__language {
+        @include mobile-s {
+            display: none;
+        }
+    }
+
     &__overlay {
         position: fixed;
         inset: 0;
@@ -487,6 +524,10 @@ a {
 
             svg {
                 margin-left: 8px;
+            }
+
+            &.m-active {
+                font-weight: 800;
             }
         }
     }
@@ -600,6 +641,10 @@ a {
             padding-left: 24px;
             line-height: rem(22);
             margin: 0;
+
+            li::marker {
+                color: var(--color-primary)
+            }
         }
     }
 
@@ -721,6 +766,10 @@ a {
         @media (min-width: 1200px) {
             grid-template-columns: repeat(3, 1fr);
         }
+
+        @include mobile-s {
+            grid-template-columns: 1fr;
+        }
     }
 
     li {
@@ -742,7 +791,6 @@ a {
 
     p {
         font-weight: 500;
-        text-transform: uppercase;
         font-size: 14px;
 
         @media (min-width: 1200px) {
@@ -1027,10 +1075,6 @@ a {
     img {
         margin: 0 auto;
     }
-
-    .swiper-pagination {
-        position: static;
-    }
 }
 
 // component - reviews
@@ -1076,27 +1120,31 @@ a {
 }
 
 .rating {
-    width: 116px;
-    background: url('/assets/static/images/star.svg') space 0px 0;
-    background-size: auto 200%;
-    position: relative;
-    height: 20px;
-    margin-bottom: 24px;
+  width: 116px;
+  height: 20px;
+  position: relative;
+  margin-bottom: 24px;
+  background: url('/assets/static/icons/star.svg') space 0 0;
+  background-size: auto 200%;
 }
 
 .rating__inner {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    background: url('/assets/static/images/star.svg') space 0px bottom;
-    background-size: auto 200%;
-    z-index: 1;
+  position: absolute;
+  inset: 0;
+  width: 0%;
+  background: url('/assets/static/icons/star.svg') space 0 bottom;
+  background-size: auto 200%;
+  pointer-events: none;
 }
+
+$max: 5;
+$step: 0.5;
+
+@for $i from 0 through math.div($max, $step) {
+    $val: $i * $step; // 0, 0.5, 1, 1.5, ... 5
+    $pct: math.percentage(math.div($val, $max));
+    .rating[data-rating="#{$val}"] .rating__inner { width: $pct; }
+  }
 
 .reviews {
     .swiper-slide {
@@ -1190,6 +1238,21 @@ a {
         line-height: 29px;
         font-weight: 700;
         text-align: center;
+    }
+
+    &.m-no-border {
+        border: none;
+    }
+
+    &.m-no-animation {
+        animation: none !important;
+        will-change: auto;
+        transform: none;
+
+        &::before {
+            animation: none !important;
+            opacity: .18;
+        }
     }
 }
 
@@ -1409,7 +1472,7 @@ a {
             color: #fff;
             text-decoration: none;
 
-            @include hover-default($text-color: #fff, $underline-color: #fff);
+            @include hover-default($text-color: #fff);
         }
     }
 
@@ -1591,6 +1654,18 @@ a {
         border-radius: 50%;
     }
 
+    .teammember-info {
+        display: flex;
+        gap: 10px;
+
+        &__icon {
+            flex-shrink: 0;
+        }
+
+        &__content {
+        }
+    }
+
     &__name {
         text-align: left;
         display: flex;
@@ -1604,12 +1679,7 @@ a {
 
     &__position {
         font-size: 18px;
-        padding-left: 34px;
         line-height: 22px;
-        text-align: left;
-        margin-bottom: 20px;
-        padding-bottom: 20px;
-        border-bottom: 1px solid #CACFDA;
     }
 
     li {
@@ -1755,7 +1825,7 @@ a {
     color: var(--color-primary);
     /* White text on dark background */
 
-    h3 {
+    &-item__header{
         font-size: rem(18);
         line-height: rem(22);
         font-weight: 700;
@@ -1764,12 +1834,6 @@ a {
         display: flex;
         align-items: center;
         gap: rem(10);
-    }
-
-    /* Styling for the SVG triangle inside h3 */
-    h3 svg {
-        flex-shrink: 0;
-        /* Prevents the SVG from shrinking */
     }
 
     ul {
@@ -1871,9 +1935,11 @@ a {
     /* White text color */
     transition: background-color 0.3s ease;
     border: 1px solid #2A344A;
-    /* Match border color to background initially */
-    cursor: default;
-    /* Indicate it is not a clickable link */
+    text-decoration: none;
+
+    &:hover {
+        color: var(--color-accent);
+    }
 }
 
 .service-card__icon {
@@ -1899,7 +1965,7 @@ a {
     }
 }
 
-.breadcrumbs {
+.c-breadcrumbs {
     display: flex;
 
     li {
@@ -1995,6 +2061,61 @@ a {
     font-weight: 500;
     line-height: rem(22);
     text-transform: uppercase;
+}
+
+.c-grid {
+    display: grid;
+
+    &.m-flat-tiles {
+        gap: rem(15);
+        grid-template-columns: 1fr;
+        margin-bottom: 30px;
+    
+        @media (min-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+            margin-bottom: 40px;
+        }
+    }
+}
+
+.c-tile {
+    display: flex;
+    align-items: center;
+    gap: rem(20);
+
+    &.m-flat {
+        padding: 0px 40px;
+        min-height: 80px;
+        background: #2A344A;
+        color: var(--color-primary);
+        transition: background-color 0.3s ease;
+        border: 1px solid #2A344A;
+        text-decoration: none;
+    }
+
+    &__icon {
+        flex-shrink: 0;
+        font-size: 0;
+    }
+
+    &__text {
+        font-size: rem(18);
+        font-weight: 500;
+        line-height: rem(22);
+        text-transform: uppercase;
+
+        @include mobile-s {
+            font-size: rem(16);
+            line-height: rem(20);
+        }
+    }
+
+    &__actions {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: rem(10);
+    }
 }
 
 // component - successful-cases-section

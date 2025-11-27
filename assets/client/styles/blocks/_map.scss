@@ -1,6 +1,7 @@
 @use '../helpers' as *;
 
  .map {
+    position: relative;
     height: calc(100vh - 250px);
     width: 100%;
     margin-bottom: 40px;
@@ -9,8 +10,10 @@
         height: 100%;
     }
 
-    &-info {
+    iframe { width:100%; height:100%; pointer-events: none; }
 
+    &-info {
+        margin-bottom: 40px;
         &__header {
             font-weight: bold;
             margin-bottom: 40px;
@@ -38,5 +41,19 @@
             @include hover-default;
         }
     }
+
+    &__guard {
+        position: absolute; inset: 0; cursor: pointer;
+        background: transparent;
+    }
+
+    &__hint {
+        position: absolute; right: 12px; bottom: 12px;
+        padding: 6px 10px; border-radius: 8px;
+        background: rgba(0,0,0,.55); color: #fff; font-size: 14px;
+        user-select: none; pointer-events: none;
+      }
 }
+
+.js-map.is-active .map__guard { display: none; }
 

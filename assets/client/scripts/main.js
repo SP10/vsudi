@@ -1,18 +1,22 @@
 import Header from "./Header.js";
 import Carousel from "./Сarousel.js";
 import TelInput from "./TelInput.js";
-import TextArea from "./TextArea.js";
 import defineScrollBarWidthCSSVar from "./utils/defineScrollBarWidthCSSVar.js";
-import Overlay from "./Overlay.js";
 import Modal from "./Modal.js";
 import ObserverCollection from "./Observer.js";
 import ExpandableContent from "./ExpandableContent.js";
+import LanguageSwitcher from "./LanguageSwitcher.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   setTimeout(() => {
     const header = document.querySelector('[data-component="Header"]');
     if (header) {
       new Header(header);
+    }
+
+    const languageSwitcher = document.querySelector('[data-component="LanguageSwitcher"]');
+    if (languageSwitcher){
+      new LanguageSwitcher(languageSwitcher);
     }
 
     Modal.initAll();
@@ -108,6 +112,38 @@ document.addEventListener("DOMContentLoaded", async () => {
         },
       },
     });
+
+
+    (function () {
+      const map = document.querySelector('.js-map');
+      if (!map) return;
+  
+      const iframe = map.querySelector('iframe');
+      const guard  = map.querySelector('.map__guard');
+  
+      const disable = () => {
+        iframe.style.pointerEvents = 'none';
+        map.classList.remove('is-active');
+      };
+  
+      const enable = () => {
+        iframe.style.pointerEvents = 'auto';
+        map.classList.add('is-active');
+      };
+  
+      // Активувати по кліку на оверлей
+      guard.addEventListener('click', enable);
+  
+      // Деактивувати, коли курсор пішов з області карти
+      map.addEventListener('mouseleave', disable);
+  
+      // Деактивувати по Esc
+      map.addEventListener('keydown', (e) => { if (e.key === 'Escape') disable(); });
+  
+      // На мобільних: деактивувати після втрати фокусу/тачу
+      map.addEventListener('focusout', disable);
+      map.addEventListener('touchend', () => setTimeout(disable, 300));
+    })();
 
     document.addEventListener('fetchit:success', (e) => {
       const { response, form } = e.detail;

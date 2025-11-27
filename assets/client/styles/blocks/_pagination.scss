@@ -1,0 +1,40 @@
+.c-pagination {
+    justify-content: center;
+    column-gap: 24px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+  }
+  
+  .c-pagination__item.m-first a,
+  .c-pagination__item.m-last a {
+    color: #e4aa3a;
+  }
+  
+  .c-pagination__item.m-active a {
+    background: #f5f7fa;
+  }
+  
+  .c-pagination__item.m-disabled a {
+    color: #e4aa3a;
+    opacity: .5;
+    pointer-events: none;
+  }
+  
+  .c-pagination a {
+    color: #373737;
+    text-align: center;
+    background: #fff;
+    border-radius: 50%;
+    width: 68px;
+    height: 68px;
+    font-weight: bold;
+    line-height: 68px;
+    text-decoration: none;
+    display: block;
+    box-shadow: 0 6px 42px #0000001a;
+  }
+  
+  .c-pagination a:hover {
+    opacity: .8;
+  }

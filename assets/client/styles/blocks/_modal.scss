@@ -104,6 +104,7 @@ body.is-locked {
             @include mobile {
                 max-width: none;
                 margin: 0;
+                height: 1000px;
             }
         }
 

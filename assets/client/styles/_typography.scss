@@ -1,6 +1,5 @@
 @use "helpers" as *;
 
-h2, .h2,
 h1, .h1 {
     font-size: rem(36);
     line-height: rem(44);
@@ -14,9 +13,20 @@ h1, .h1 {
         line-height: rem(57);
         margin-bottom: 40px;
     }
+
+    @include mobile-s {
+        font-size: rem(24);
+        line-height: rem(29);
+        margin-bottom: 20px;
+    }
 }
 
 h2, .h2 {
+    font-size: rem(32);
+    line-height: rem(38);
+    margin-top: 0;
+    margin-bottom: rem(30);
+    font-weight: 700;
     @media (min-width: 1200px) {
         font-size: rem(36);
         line-height: rem(44);
@@ -34,6 +44,11 @@ h4, .h4 {
     font-size: rem(24);
     line-height: rem(29);
     margin-top: 0;
+}
+
+h5, .h5 {
+    font-size: rem(18);
+    font-weight: bold;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -61,19 +76,35 @@ h1, h2, h3, h4, h5, h6,
 }
 
 blockquote {
-    display: flex;
+    display: grid;
     align-items: center;
     gap: 10px;
     padding: 12px;
     background: #2A344A;
     margin: 0 0 30px 0;
+    grid-template-columns: auto 1fr;
 
     @media (min-width: 1025px) {
         margin: 0 0 30px 0;
     }
 
+    &.m-bg-blue {
+        background: var(--color-blue)!important;
+    }
+
     svg {
         flex-shrink: 0;
+    }
+
+    .icon {
+        position: relative;
+        width: 48px;
+        height: 48px;
+        display: inline-block;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        background-image: url('/assets/static/icons/attantion.svg');
     }
 }
 
@@ -121,4 +152,12 @@ blockquote {
   .text-xs-left   { text-align: left; }
   .text-xs-center { text-align: center; }
   .text-xs-right  { text-align: right; }
+}
+
+.highlight {
+    color: var(--color-accent);
+}
+
+.text-transform-uppercase {
+    text-transform: uppercase;
 }

@@ -203,4 +203,8 @@
     max-height: 240px;
     overflow: auto;
   }
+
+  &.m-show {
+    display: flex;
+  }
 }
