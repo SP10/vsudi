@@ -102,6 +102,7 @@
   background: none;
   padding: 0;
   margin: 0;
+  text-decoration: none;
 
   &:hover {
     svg {
@@ -135,6 +136,34 @@
   &.m-download {
     svg {
       color: var(--color-accent);
+    }
+
+    .icon-button__label {
+      display: none;
+      font-size: rem(14);
+      font-weight: 600;
+      color: #2A344A;
+      text-transform: uppercase;
+    }
+
+    @include mobile-s {
+      align-items: center;
+      gap: rem(8);
+      padding: rem(12) rem(14);
+      border: 1px solid #CACFDA;
+      border-radius: 0;
+      background: transparent;
+      width: 100%;
+      justify-content: center;
+
+      svg {
+        color: var(--color-accent);
+      }
+
+      .icon-button__label {
+        display: inline;
+        color: var(--color-accent);
+      }
     }
   }
 }
