@@ -1,40 +1,75 @@
+$pagination-item-bg: #2A344A;
+$pagination-item-color: #CACFDA;
+$pagination-item-font-weight: 600;
+$pagination-item-opacity--disabled: .3;
+$pagination-item-border-color: #CACFDA;
+$pagination-item-border-color--active: var(--color-accent);
+$pagination-item-border-radius: 0;
+$pagination-item-width: 42px;
+$pagination-item-width--prev-next: 54px;
+$pagination-item-height: 42px;
+$pagination-item-gap: 16px;
+
 .c-pagination {
-    justify-content: center;
-    column-gap: 24px;
+    column-gap: $pagination-item-gap;
     padding: 0;
     list-style: none;
     display: flex;
   }
-  
-  .c-pagination__item.m-first a,
-  .c-pagination__item.m-last a {
-    color: #e4aa3a;
+
+
+
+  .c-pagination__item.m-unstyled {
+    width: $pagination-item-width;
+    height: $pagination-item-height;
+    text-align: center;
+    line-height: $pagination-item-height;
   }
-  
-  .c-pagination__item.m-active a {
-    background: #f5f7fa;
+
+  .c-pagination__item.m-active {
+    border-color: $pagination-item-border-color--active;
   }
-  
-  .c-pagination__item.m-disabled a {
-    color: #e4aa3a;
-    opacity: .5;
+
+  .c-pagination__item.m-prev,
+  .c-pagination__item.m-next {
+    width: $pagination-item-width--prev-next;
+
+    &::before {
+      font-family: "swiper-icons";
+      font-size: 11px;
+      display: block;
+    }
+  }
+
+  .c-pagination__item.m-prev::before {
+    content: 'prev';
+  }
+
+  .c-pagination__item.m-next::before {
+    content: 'next';
+  }
+
+  .c-pagination__item.m-disabled {
+    opacity: $pagination-item-opacity--disabled;
     pointer-events: none;
   }
-  
+
   .c-pagination a {
-    color: #373737;
+    color: $pagination-item-color;
     text-align: center;
-    background: #fff;
-    border-radius: 50%;
-    width: 68px;
-    height: 68px;
-    font-weight: bold;
-    line-height: 68px;
+    background: $pagination-item-bg;
+    border: 1px solid $pagination-item-border-color;
+    border-radius: $pagination-item-border-radius;
+    width: $pagination-item-width;
+    height: $pagination-item-height;
+    font-weight: $pagination-item-font-weight;
+    line-height: $pagination-item-height;
     text-decoration: none;
     display: block;
     box-shadow: 0 6px 42px #0000001a;
+    cursor: pointer;
   }
-  
+
   .c-pagination a:hover {
     opacity: .8;
   }
