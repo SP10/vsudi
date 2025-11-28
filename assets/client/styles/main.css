@@ -6762,13 +6762,14 @@ a {
   }
 }
 .c-tile.m-flat {
-  padding: 0px 40px;
-  min-height: 80px;
+  padding: 20px 40px;
   background: #2A344A;
   color: var(--color-primary);
   transition: background-color 0.3s ease;
   border: 1px solid #2A344A;
   text-decoration: none;
+  box-shadow: 0 0 77px rgba(0, 0, 0, 0.0588235294);
+  min-height: 100px;
 }
 @media (width <= 479.98px) {
   .c-tile.m-flat {

@@ -2090,13 +2090,13 @@ $step: 0.5;
     }
 
     &.m-flat {
-        padding: 0px 40px;
-        min-height: 80px;
+        padding: 20px 40px;
         background: #2A344A;
         color: var(--color-primary);
         transition: background-color 0.3s ease;
         border: 1px solid #2A344A;
         text-decoration: none;
+        box-shadow: 0 0 77px #0000000f;
 
         @include mobile-s {
             padding: rem(20);
