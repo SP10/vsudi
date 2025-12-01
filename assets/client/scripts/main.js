@@ -113,6 +113,45 @@ document.addEventListener("DOMContentLoaded", async () => {
       },
     });
 
+    const initTiltedCards = () => {
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const hasFinePointer = window.matchMedia("(pointer: fine)").matches;
+
+      if (prefersReducedMotion || !hasFinePointer) return;
+
+      const cards = document.querySelectorAll("[data-tilt-card]");
+      if (!cards.length) return;
+
+      cards.forEach((card) => {
+        const maxTilt = 10;
+
+        const handlePointerMove = (event) => {
+          const rect = card.getBoundingClientRect();
+          const x = event.clientX - rect.left;
+          const y = event.clientY - rect.top;
+          const rotateX = ((y - rect.height / 2) / rect.height) * -maxTilt;
+          const rotateY = ((x - rect.width / 2) / rect.width) * maxTilt;
+
+          card.style.setProperty("--tilt-x", `${(x / rect.width) * 100}%`);
+          card.style.setProperty("--tilt-y", `${(y / rect.height) * 100}%`);
+          card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(0)`;
+        };
+
+        const resetTilt = () => {
+          card.style.transform = "";
+          card.style.removeProperty("--tilt-x");
+          card.style.removeProperty("--tilt-y");
+          card.classList.remove("is-tilting");
+        };
+
+        card.addEventListener("pointerenter", () => card.classList.add("is-tilting"));
+        card.addEventListener("pointermove", handlePointerMove);
+        card.addEventListener("pointerleave", resetTilt);
+      });
+    };
+
+    initTiltedCards();
+
 
     (function () {
       const map = document.querySelector('.js-map');

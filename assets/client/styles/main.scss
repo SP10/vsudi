@@ -1578,6 +1578,7 @@ $step: 0.5;
     display: flex;
     gap: 30px;
     flex-direction: column;
+    perspective: 1200px;
 
     @media (min-width: 768px) {
         flex-direction: row;
@@ -1624,6 +1625,56 @@ $step: 0.5;
         font-size: 18px;
         line-height: 22px;
         margin-bottom: 10px;
+    }
+}
+
+.TiltedCard_container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    transform-style: preserve-3d;
+    transform-origin: center;
+    transition: transform 220ms ease, box-shadow 220ms ease;
+    box-shadow: 0 20px 60px rgba(13, 23, 45, 0.25);
+    will-change: transform;
+    touch-action: pan-y;
+    isolation: isolate;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0));
+        opacity: 0;
+        transition: opacity 200ms ease;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at var(--tilt-x, 50%) var(--tilt-y, 50%), rgba(255, 255, 255, 0.25), transparent 45%);
+        opacity: 0;
+        transition: opacity 180ms ease;
+        pointer-events: none;
+        z-index: 1;
+        mix-blend-mode: screen;
+    }
+
+    &.is-tilting {
+        box-shadow: 0 28px 80px rgba(13, 23, 45, 0.35);
+
+        &::before,
+        &::after {
+            opacity: 1;
+        }
+    }
+
+    @media (max-width: 767px) {
+        transform: none !important;
+        box-shadow: none;
     }
 }
 
@@ -2076,6 +2127,26 @@ $step: 0.5;
             margin-bottom: 40px;
         }
     }
+
+    &.m-gallery {
+        gap: rem(16);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        @include mobile-s {
+            grid-template-columns: 1fr;
+        }
+
+        a {
+            display: block;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: contain; // або cover, якщо хочеш підрізати
+        }
+    }
 }
 
 .c-tile {
@@ -2201,5 +2272,47 @@ $step: 0.5;
 .section-info {
     .expandable-content {
         max-height: 420px;
+    }
+}
+
+.keys-author {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    @include tablet {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    &__content {
+        display: flex;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    &__label {
+        text-transform: uppercase;
+        font-size: rem(18);
+    }
+
+    &__name {
+        font-size: rem(18);
+        font-weight: bold;
+    }
+
+    &__position {
+        font-size: rem(16);
+    }
+
+    &__photo {
+        max-width: rem(48);
+        border-radius: 50%;
+        margin-right: rem(10);
     }
 }

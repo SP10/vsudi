@@ -17,7 +17,11 @@ $pagination-item-gap: 16px;
     display: flex;
   }
 
-
+ .c-pagination__item {
+    background: $pagination-item-bg;
+    border: 1px solid $pagination-item-border-color;
+    border-radius: $pagination-item-border-radius;
+ }
 
   .c-pagination__item.m-unstyled {
     width: $pagination-item-width;
@@ -57,9 +61,6 @@ $pagination-item-gap: 16px;
   .c-pagination a {
     color: $pagination-item-color;
     text-align: center;
-    background: $pagination-item-bg;
-    border: 1px solid $pagination-item-border-color;
-    border-radius: $pagination-item-border-radius;
     width: $pagination-item-width;
     height: $pagination-item-height;
     font-weight: $pagination-item-font-weight;
