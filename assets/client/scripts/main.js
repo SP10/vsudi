@@ -6,6 +6,7 @@ import Modal from "./Modal.js";
 import ObserverCollection from "./Observer.js";
 import ExpandableContent from "./ExpandableContent.js";
 import LanguageSwitcher from "./LanguageSwitcher.js";
+import { LoadMoreButton, LoadMoreIndicator } from "./LoadMore.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   setTimeout(() => {
@@ -17,6 +18,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     const languageSwitcher = document.querySelector('[data-component="LanguageSwitcher"]');
     if (languageSwitcher){
       new LanguageSwitcher(languageSwitcher);
+    }
+
+    const loadMoreButton = document.querySelector('[data-component="LoadMoreButton"]');
+    const loadMoreIndicator = document.querySelector('[data-component="LoadMoreIndicator"]');
+    if (loadMoreButton && loadMoreIndicator) {
+      new LoadMoreButton(loadMoreButton, new LoadMoreIndicator(loadMoreIndicator));
     }
 
     Modal.initAll();
