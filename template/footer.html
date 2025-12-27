@@ -14,6 +14,17 @@
                   <li><a href="/publications.html" class="footer-nav__link">Публікації</a></li>
                   <li><a href="" class="footer-nav__link">Політика конфіденційності</a></li>
                   <li><a href="" class="footer-nav__link m-active">Адвокат</a></li>
+                  <li>
+                    <button class="footer-nav__link footer-nav__button m-cookie" type="button" data-cookie-open>
+                      <svg class="footer-nav__icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path fill="currentColor" d="M12 2a10 10 0 1 0 10 10a1 1 0 0 0-1-1h-1.5a1.5 1.5 0 0 1-1.5-1.5V8a1 1 0 0 0-1-1h-1.5A1.5 1.5 0 0 1 13 5.5V4a1 1 0 0 0-1-1Z"/>
+                        <circle cx="8.5" cy="10" r="1.2" fill="currentColor"/>
+                        <circle cx="12.5" cy="14" r="1.2" fill="currentColor"/>
+                        <circle cx="6.5" cy="14.5" r="1.2" fill="currentColor"/>
+                      </svg>
+                      Налаштування cookies
+                    </button>
+                  </li>
               </ul>
           </div>
           <div class="footer__column">
@@ -35,3 +46,80 @@
       </div>
   </div>
 </footer>
+
+<div class="mobile-contact" data-component="MobileContact" role="group" aria-label="Швидкий зв'язок">
+  <div class="mobile-contact__actions" id="mobile-contact-actions">
+    <a href="tel:+380991981986" class="button m-icon mobile-contact__button mobile-contact__button--phone"
+       aria-label="Зателефонувати нам за номером +38 (099) 198-19-86">
+      <svg width="24" height="24" aria-hidden="true" focusable="false">
+        <use xlink:href="#phone24x24" />
+      </svg>
+    </a>
+    <a href="https://t.me/AO_vSude" class="button m-icon mobile-contact__button mobile-contact__button--telegram"
+       aria-label="Написати нам у Telegram">
+      <svg width="24" height="24" aria-hidden="true" focusable="false">
+        <use xlink:href="#telegram24x24" />
+      </svg>
+    </a>
+    <a href="https://wa.me/380991981986" class="button m-icon mobile-contact__button mobile-contact__button--whatsapp"
+       aria-label="Написати нам у WhatsApp">
+      <svg width="24" height="24" aria-hidden="true" focusable="false">
+        <use xlink:href="#whatsapp" />
+      </svg>
+    </a>
+  </div>
+  <button class="mobile-contact__toggle" type="button" aria-expanded="false"
+          aria-controls="mobile-contact-actions" aria-label="Відкрити швидкий зв'язок">
+    <svg width="32" height="32" aria-hidden="true" focusable="false">
+      <use xlink:href="#chat" />
+    </svg>
+  </button>
+</div>
+
+<div class="cookie-consent is-hidden" id="cookies" data-component="CookieConsent" role="dialog" aria-live="polite" aria-label="Налаштування cookies">
+  <div class="container">
+    <div class="cookie-consent__inner">
+      <div class="cookie-consent__content">
+        <div class="cookie-consent__title">Ми використовуємо cookies</div>
+        <div class="cookie-consent__text">
+          Використовуємо файли cookies для коректної роботи сайту та покращення сервісу <a href="/privacy-policy.html">Політика конфіденційності</a>.
+          Натискаючи “Прийняти всі”, ви погоджуєтесь на використання необов’язкових cookies.
+        </div>
+      </div>
+      <div class="cookie-consent__actions">
+        <button class="button m-quaternary m-small" type="button" data-cookie-toggle aria-expanded="false">
+          Налаштування
+        </button>
+        <button class="button m-small" type="button" data-cookie-accept>Прийняти всі</button>
+      </div>
+    </div>
+    <div class="cookie-consent__details" data-cookie-details hidden>
+      <div class="cookie-consent__options">
+        <label class="cookie-consent__option">
+          <input type="checkbox" checked disabled data-cookie-required />
+          <span class="cookie-consent__option-label">Необхідні</span>
+          <span class="cookie-consent__option-text">Потрібні для базової роботи сайту та безпеки.</span>
+        </label>
+        <label class="cookie-consent__option">
+          <input type="checkbox" data-cookie-analytics />
+          <span class="cookie-consent__option-label">Аналітичні</span>
+          <span class="cookie-consent__option-text">Допомагають покращувати сайт через статистику.</span>
+        </label>
+        <label class="cookie-consent__option">
+          <input type="checkbox" data-cookie-marketing />
+          <span class="cookie-consent__option-label">Маркетингові</span>
+          <span class="cookie-consent__option-text">Використовуються для персоналізованих пропозицій.</span>
+        </label>
+      </div>
+      <div class="cookie-consent__details-actions">
+        <button class="button m-quaternary m-small" type="button" data-cookie-save>Зберегти вибір</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button class="scroll-top" type="button" data-component="ScrollTop" aria-label="Прокрутити догори">
+  <svg class="scroll-top__icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path fill="currentColor" d="M12 5.5a1 1 0 0 1 .7.3l6.5 6.5a1 1 0 1 1-1.4 1.4L12 7.9l-5.8 5.8a1 1 0 0 1-1.4-1.4l6.5-6.5a1 1 0 0 1 .7-.3Z"/>
+  </svg>
+</button>

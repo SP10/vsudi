@@ -7,6 +7,8 @@ import ObserverCollection from "./Observer.js";
 import ExpandableContent from "./ExpandableContent.js";
 import LanguageSwitcher from "./LanguageSwitcher.js";
 import { LoadMoreButton, LoadMoreIndicator } from "./LoadMore.js";
+import CookieConsent from "./CookieConsent.js";
+import ScrollTop from "./ScrollTop.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   setTimeout(() => {
@@ -24,6 +26,55 @@ document.addEventListener("DOMContentLoaded", async () => {
     const loadMoreIndicator = document.querySelector('[data-component="LoadMoreIndicator"]');
     if (loadMoreButton && loadMoreIndicator) {
       new LoadMoreButton(loadMoreButton, new LoadMoreIndicator(loadMoreIndicator));
+    }
+
+    const cookieConsent = document.querySelector('[data-component="CookieConsent"]');
+    if (cookieConsent) {
+      const consent = new CookieConsent(cookieConsent);
+      const openButtons = document.querySelectorAll("[data-cookie-open]");
+      openButtons.forEach((button) => {
+        button.addEventListener("click", (event) => {
+          event.preventDefault();
+          consent.open(false);
+        });
+      });
+    }
+
+    const scrollTopButton = document.querySelector('[data-component="ScrollTop"]');
+    if (scrollTopButton) {
+      new ScrollTop(scrollTopButton);
+    }
+
+    const mobileContact = document.querySelector('[data-component="MobileContact"]');
+    if (mobileContact) {
+      const toggle = mobileContact.querySelector(".mobile-contact__toggle");
+      const actions = mobileContact.querySelector(".mobile-contact__actions");
+
+      const closeMenu = () => {
+        mobileContact.classList.remove("is-open");
+        if (toggle) {
+          toggle.setAttribute("aria-expanded", "false");
+        }
+      };
+
+      if (toggle && actions) {
+        toggle.addEventListener("click", () => {
+          const isOpen = mobileContact.classList.toggle("is-open");
+          toggle.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        document.addEventListener("click", (event) => {
+          if (!mobileContact.contains(event.target)) {
+            closeMenu();
+          }
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") {
+            closeMenu();
+          }
+        });
+      }
     }
 
     Modal.initAll();

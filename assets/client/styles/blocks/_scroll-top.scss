@@ -1,0 +1,53 @@
+@use "../helpers" as *;
+
+.scroll-top {
+  position: fixed;
+  right: rem(24);
+  bottom: rem(24);
+  z-index: 125;
+  width: rem(44);
+  height: rem(44);
+  border-radius: 50%;
+  border: none;
+  background: var(--color-accent);
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(28, 35, 51, 0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(rem(10));
+  transition: opacity 0.25s ease, transform 0.25s ease, background 0.2s ease;
+
+  &:hover {
+    background: #F82C26;
+  }
+
+  &.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+}
+
+.scroll-top__icon {
+  width: rem(18);
+  height: rem(18);
+}
+
+.cookie-consent.is-visible + .scroll-top {
+  bottom: rem(110);
+}
+
+@media (max-width: 900px) {
+  .scroll-top {
+    right: auto;
+    left: rem(16);
+    bottom: rem(16);
+  }
+
+  .cookie-consent.is-visible + .scroll-top {
+    bottom: rem(130);
+  }
+}

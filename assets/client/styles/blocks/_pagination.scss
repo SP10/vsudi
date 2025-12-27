@@ -18,6 +18,7 @@ $pagination-item-gap: 16px;
   }
 
  .c-pagination__item {
+    display: flex;
     background: $pagination-item-bg;
     border: 1px solid $pagination-item-border-color;
     border-radius: $pagination-item-border-radius;

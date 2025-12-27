@@ -89,6 +89,7 @@
 
     &__item {
         border-bottom: 1px solid var(--color-grey);
+        background-color: var(--color-primary);
     }
 
     &__link {
@@ -99,11 +100,18 @@
         letter-spacing: 0.28px;
         text-transform: uppercase;
         align-items: center;
-        padding: 20px 10px;
+        padding: 16px 24px;
 
         svg {
             color: var(--color-accent);
             margin-right: 15px;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        &:hover {
+            svg:last-child {
+                transform: translateX(4px);
+            }
         }
     }
 
@@ -116,7 +124,7 @@
     }
 
     &__footer {
-        margin: 10px;
+        margin: 24px;
         row-gap: 40px;
         display: flex;
         flex-direction: column;
@@ -182,9 +190,12 @@
     }
 
     &.m-drawer {
-        max-width: 360px;
+        max-width: 425px;
+        min-width: 425px;
         background-color: var(--color-primary);
         height: 100%;
+        min-height: 100vh;
+        min-height: 100dvh; // ensure full height on mobile browsers
         color: var(--color-blue);
     }
 }

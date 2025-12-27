@@ -12,6 +12,8 @@
 @use "./blocks/map";
 @use "./width";
 @use "./blocks/pagination";
+@use "./blocks/cookie-consent";
+@use "./blocks/scroll-top";
 
 @use "sass:math";
 
@@ -77,6 +79,12 @@ html {
 body {
     font-family: "Inter", sans-serif;
     color: #2A344A;
+}
+
+@media (max-width: 767px) {
+    body {
+        padding-bottom: calc(88px + env(safe-area-inset-bottom));
+    }
 }
 
 p {
@@ -1379,6 +1387,10 @@ $step: 0.5;
 
         &.m-active {
             display: none;
+
+            @include mobile-s {
+                display: none;
+            }
         }
 
         &-arrow {
@@ -1393,6 +1405,10 @@ $step: 0.5;
 
     &__input:checked~&__panel &__icon.m-active {
         display: block;
+
+        @include tablet {
+            display: none;
+        }
     }
 
     &__input:checked~&__panel &__icon-arrow {
@@ -1546,6 +1562,114 @@ $step: 0.5;
             transform: translateY(-50%);
             position: relative;
             top: 50%;
+        }
+    }
+}
+
+// component - mobile contact
+.mobile-contact {
+    position: fixed;
+    bottom: 0;
+    right: 16px;
+    left: auto;
+    z-index: 40;
+    display: none;
+    align-items: flex-end;
+    padding-bottom: calc(12px + env(safe-area-inset-bottom));
+    width: min(90vw, 320px);
+
+    @media (max-width: 767px) {
+        display: grid;
+        grid-auto-flow: row;
+        justify-items: end;
+    }
+
+    &__actions {
+        display: grid;
+        gap: 10px;
+        margin-bottom: 12px;
+        opacity: 0;
+        transform: translateY(8px);
+        pointer-events: none;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    &__button {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        border: none;
+        background: #fff;
+        color: #1C2333;
+        padding: 0;
+        justify-content: center;
+        box-shadow: 0 10px 24px rgba(17, 24, 39, 0.18);
+        border: 1px solid rgba(42, 52, 74, 0.12);
+        text-transform: none;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+
+        &:hover,
+        &:focus-visible {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px rgba(17, 24, 39, 0.22);
+            border-color: rgba(42, 52, 74, 0.2);
+        }
+    }
+
+    &__button--phone {
+        color: #fff;
+    }
+
+    &__button--telegram {
+        color: #CACFDA;
+    }
+
+    &__button--whatsapp {
+        color: #CACFDA;
+    }
+
+    &__toggle {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        border: none;
+        background: #fff;
+        color: #1C2333;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+        animation: levitate var(--levitate-duration) var(--levitate-ease) infinite alternate;
+        transition: transform 0.2s ease, background 0.2s ease;
+        cursor: pointer;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    &__toggle:hover,
+    &__toggle:focus-visible {
+        background: #F5F7FA;
+        transform: translateY(-2px);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        &__toggle {
+            animation: none;
+        }
+    }
+
+    &.is-open {
+        .mobile-contact__actions {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .mobile-contact__toggle {
+            animation: none;
+            transform: rotate(-15deg);
         }
     }
 }
