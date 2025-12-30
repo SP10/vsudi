@@ -217,29 +217,43 @@ document.addEventListener("DOMContentLoaded", async () => {
   
       const iframe = map.querySelector('iframe');
       const guard  = map.querySelector('.map__guard');
+      const isTouch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
   
+      const handleOutsideTap = (event) => {
+        if (!map.contains(event.target)) disable();
+      };
+      const handleOutsideClick = (event) => {
+        if (!map.contains(event.target)) disable();
+      };
+
       const disable = () => {
         iframe.style.pointerEvents = 'none';
         map.classList.remove('is-active');
+        if (isTouch) {
+          document.removeEventListener('touchstart', handleOutsideTap);
+        } else {
+          document.removeEventListener('mousedown', handleOutsideClick);
+        }
       };
   
       const enable = () => {
         iframe.style.pointerEvents = 'auto';
         map.classList.add('is-active');
+        if (isTouch) {
+          document.addEventListener('touchstart', handleOutsideTap, { passive: true });
+        } else {
+          document.addEventListener('mousedown', handleOutsideClick);
+        }
       };
   
       // Активувати по кліку на оверлей
       guard.addEventListener('click', enable);
   
-      // Деактивувати, коли курсор пішов з області карти
-      map.addEventListener('mouseleave', disable);
-  
-      // Деактивувати по Esc
-      map.addEventListener('keydown', (e) => { if (e.key === 'Escape') disable(); });
-  
-      // На мобільних: деактивувати після втрати фокусу/тачу
-      map.addEventListener('focusout', disable);
-      map.addEventListener('touchend', () => setTimeout(disable, 300));
+      if (!isTouch) {
+        // Деактивувати по Esc
+        map.addEventListener('keydown', (e) => { if (e.key === 'Escape') disable(); });
+        map.addEventListener('focusout', disable);
+      }
     })();
 
     document.addEventListener('fetchit:success', (e) => {

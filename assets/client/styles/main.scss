@@ -81,12 +81,6 @@ body {
     color: #2A344A;
 }
 
-@media (max-width: 767px) {
-    body {
-        padding-bottom: calc(88px + env(safe-area-inset-bottom));
-    }
-}
-
 p {
     font-size: rem(18);
     line-height: rem(22);
@@ -1553,6 +1547,22 @@ $step: 0.5;
                 font-weight: 700;
             }
         }
+
+        &__button {
+            color: #fff;
+            background: none;
+            outline: none;
+            border: 0;
+            padding: 0;
+
+            text-decoration: none;
+
+            @include hover-default($text-color: #CACFDA);
+
+            &.m-active {
+                font-weight: 700;
+            }
+        }
     }
 
     .social {
@@ -1576,7 +1586,6 @@ $step: 0.5;
     display: none;
     align-items: flex-end;
     padding-bottom: calc(12px + env(safe-area-inset-bottom));
-    width: min(90vw, 320px);
 
     @media (max-width: 767px) {
         display: grid;
@@ -2162,9 +2171,7 @@ $step: 0.5;
         text-decoration: none;
         font-weight: 300;
 
-        &:hover {
-            text-decoration: underline;
-        }
+        @include hover-default()
     }
 }
 
