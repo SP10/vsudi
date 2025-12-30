@@ -5,13 +5,22 @@ export default class LanguageSwitcher extends Base {
         super(element, options);
     }
 
+    initCache() {
+        this.cache.activeLink = this.element.querySelector('.js-active');
+        this.cache.linkPopup = this.element.querySelector('.js-language-link-popup');
+        this.cache.links = this.element.querySelectorAll('.js-language-link');
+    }
+
     bindEvents() {
-        this.element.addEventListener('change', (event) => {
-            const selectedOption = event.target.selectedOptions[0];
-            const url = selectedOption.getAttribute('data-url');
-            if (url) {
-                window.location.href = url;
-            }
-        });
+        if (this.cache.links) {
+            this.cache.links.forEach((element) => {
+                element.addEventListener('click', (event) => {
+                    if (event.target.classList.contains('m-active')) {
+                        event.preventDefault();
+                        this.cache.linkPopup.classList.toggle('m-shown');
+                    }
+                });
+            })
+        }
     }
 }
