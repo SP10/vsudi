@@ -224,9 +224,18 @@
                 <a href="tel:+380680620763" class="header__phone-link">+38 (068) 062-07-63</a>
             </div>
         </div>
-        <div class="header__language" data-component="LanguageSwitcher">
-            <a href="/ua" class="header__language-link m-active js-language-link">Укр</a>
-            <a href="/ru" data-component="LanguageSwitcher" class="header__language-link js-language-link js-language-link-popup">Рус</a>
+        <div class="header__language" data-component="LanguageSwitcher" role="navigation" aria-label="Перемикач мови">
+            <button type="button" class="header__language-toggle js-language-toggle"
+                aria-haspopup="listbox" aria-expanded="false" aria-controls="language-menu">
+                <span class="header__language-toggle-text">Укр</span>
+            </button>
+            <div class="header__language-menu js-language-menu" id="language-menu" role="listbox"
+                aria-label="Оберіть мову">
+                <a href="/ua" class="header__language-link m-active js-language-link" role="option"
+                    aria-selected="true" lang="uk" hreflang="uk" aria-label="Українська">Укр</a>
+                <a href="/ru" class="header__language-link js-language-link js-language-link-popup" role="option"
+                    lang="ru" hreflang="ru" aria-label="Російська">Русский</a>
+            </div>
         </div>
         <div class="header__search">
             <button href="#" class="header__search-button" data-modal-target="SearchForm" title="Пошук"
